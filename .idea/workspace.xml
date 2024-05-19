@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Sudoku_FP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/cell.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/cell_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/cell_value.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/column.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/coordinate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/row.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/subgrid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="CLi based Sudoku game in Python following FP">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/column.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/coordinate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/subgrid.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AathiraTD"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AathiraTD/Sudoku_FP",
+    "accountId": "814ac2cc-cb8b-4f22-aed4-806a72354ff7"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
@@ -100,7 +102,20 @@
       <option name="presentableId" value="Default" />
       <updated>1716111328627</updated>
     </task>
+    <task id="LOCAL-00001" summary="CLi based Sudoku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716117312569</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716117312569</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CLi based Sudoku game in Python following FP" />
+    <option name="LAST_COMMIT_MESSAGE" value="CLi based Sudoku game in Python following FP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
