@@ -22,7 +22,8 @@ class Grid:
 
         # Validate the cells before creating the instance
         if not cls.is_valid(immutable_cells, grid_size):
-            raise ValueError(f"Grid must be {grid_size}x{grid_size} with unique values in each row, column, and subgrid.")
+            raise ValueError(
+                f"Grid must be {grid_size}x{grid_size} with unique values in each row, column, and subgrid.")
 
         # Create a new instance using the superclass (__new__ method of object)
         instance = super(Grid, cls).__new__(cls)
@@ -44,11 +45,11 @@ class Grid:
             return False
 
         # Validate all rows
-        if not Grid._validate_units(cells, grid_size, 0, Row, lambda coord: coord.row):
+        if not Grid._validate_units(cells, grid_size, 0, Row, lambda coord: coord.row_index):
             return False
 
         # Validate all columns
-        if not Grid._validate_units(cells, grid_size, 0, Column, lambda coord: coord.column):
+        if not Grid._validate_units(cells, grid_size, 0, Column, lambda coord: coord.col_index):
             return False
 
         # Validate all subgrids
@@ -79,14 +80,15 @@ class Grid:
         coord = keys[idx]
 
         # Check if the coordinate is within bounds
-        if not (0 <= coord.row < grid_size and 0 <= coord.column < grid_size):
+        if not (0 <= coord.row_index < grid_size and 0 <= coord.col_index < grid_size):
             return False
 
         # Recursive call to check the next coordinate
         return Grid._check_coordinates_within_bounds(keys, grid_size, idx + 1)
 
     @staticmethod
-    def _validate_units(cells: MappingProxyType, grid_size: int, index: int, unit_class: Callable, key_func: Callable) -> bool:
+    def _validate_units(cells: MappingProxyType, grid_size: int, index: int, unit_class: Callable,
+                        key_func: Callable) -> bool:
         """
         Recursively validate each row or column using the given unit class and key function.
         """
@@ -119,7 +121,7 @@ class Grid:
         # Extract cells belonging to the current subgrid
         subgrid_cells = {
             coord: cell for coord, cell in cells.items()
-            if row <= coord.row < row + subgrid_size and col <= coord.column < col + subgrid_size
+            if row <= coord.row_index < row + subgrid_size and col <= coord.col_index < col + subgrid_size
         }
 
         # Calculate the subgrid index
@@ -137,7 +139,7 @@ class Grid:
         # Recursive call to validate the next subgrid
         return Grid._validate_subgrids(cells, grid_size, next_row, next_col)
 
-    def get_unit(self, index: Union[int, Tuple[int, int], str]) -> Union[Row, Column, Subgrid, Cell, List[Row], List[Column], List[Subgrid]]:
+    def __getitem__(self, index: Union[int, Tuple[int, int], str]) -> Union[Row, Column, Subgrid, Cell, List[Row], List[Column], List[Subgrid]]:
         """
         Access different parts of the grid using various indices.
         """
@@ -164,14 +166,14 @@ class Grid:
         """
         Get a Row object for a given row index.
         """
-        row_cells = {coord: cell for coord, cell in self.cells.items() if coord.row == row_index}
+        row_cells = {coord: cell for coord, cell in self.cells.items() if coord.row_index == row_index}
         return Row(cells=row_cells, row_index=row_index)
 
     def _get_column(self, column_index: int) -> Column:
         """
         Get a Column object for a given column index.
         """
-        column_cells = {coord: cell for coord, cell in self.cells.items() if coord.column == column_index}
+        column_cells = {coord: cell for coord, cell in self.cells.items() if coord.col_index == column_index}
         return Column(cells=column_cells, column_index=column_index)
 
     def _get_all_rows(self, index: int) -> List[Row]:
@@ -209,7 +211,7 @@ class Grid:
         # Extract cells belonging to the current subgrid
         subgrid_cells = {
             coord: cell for coord, cell in self.cells.items()
-            if row <= coord.row < row + subgrid_size and col <= coord.column < col + subgrid_size
+            if row <= coord.row_index < row + subgrid_size and col <= coord.col_index < col + subgrid_size
         }
 
         # Calculate the subgrid index

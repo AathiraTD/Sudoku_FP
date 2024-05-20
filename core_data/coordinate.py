@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Coordinate:
-    row: int  # The row index of the coordinate
-    column: int  # The column index of the coordinate
+    row_index: int  # The row index of the coordinate
+    col_index: int  # The column index of the coordinate
     grid_size: int  # The size of the grid
 
     def __new__(cls, row: int, column: int, grid_size: int):

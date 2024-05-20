@@ -11,8 +11,10 @@ class CellValue:
         if not cls.is_valid(value, max_value):
             # Raise a ValueError if the value is not valid
             raise ValueError(f"CellValue must be between 1 and {max_value}, or None.")
+
         # Create a new instance using the superclass (__new__ method of int)
-        instance = super(CellValue, cls).__new__(cls, value if value is not None else 0)
+        # Create a new instance using object.__new__(cls)
+        instance = object.__new__(cls)
         # Set the instance attributes value and max_value
         object.__setattr__(instance, 'value', value)
         object.__setattr__(instance, 'max_value', max_value)

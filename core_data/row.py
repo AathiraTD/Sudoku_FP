@@ -47,7 +47,7 @@ class Row:
             return len(values) == len(set(values))
 
         # Check if all coordinates are in the specified row
-        row_check = all_in_row(lambda coord: coord.row == row_index)
+        row_check = all_in_row(lambda coord: coord.row_index == row_index)
 
         # Check for uniqueness of the values
         uniqueness_check = values_unique(Row._extract_values)
@@ -91,11 +91,25 @@ class Row:
         Access a specific cell in the row using its coordinate.
         """
         # Check if the coordinate is within the cells and the correct row
-        if coordinate.row != self.row_index or coordinate not in self.cells:
+        if coordinate.row_index != self.row_index or coordinate not in self.cells:
             raise IndexError("Coordinate out of range.")
 
         # Return the cell at the specified coordinate
         return self.cells[coordinate]
+
+    def __getitem__(self, col_index: int) -> Cell:
+        """
+        Access a specific cell in the row using its column index.
+        """
+        # Create the coordinate for the specified column index
+        coord = Coordinate(self.row_index, col_index, len(self.cells))
+
+        # Check if the coordinate is within the cells
+        if coord not in self.cells:
+            raise IndexError("Column index out of range.")
+
+        # Return the cell at the specified column index
+        return self.cells[coord]
 
     @staticmethod
     def create(cells: Dict[Coordinate, Cell], row_index: int) -> Tuple[Optional['Row'], Optional[str]]:

@@ -47,7 +47,7 @@ class Column:
             return len(values) == len(set(values))
 
         # Check if all coordinates are in the specified column
-        column_check = all_in_column(lambda coord: coord.column == column_index)
+        column_check = all_in_column(lambda coord: coord.col_index == column_index)
 
         # Check for uniqueness of the values
         uniqueness_check = values_unique(Column._extract_values)
@@ -91,7 +91,7 @@ class Column:
         Access a specific cell in the column using its coordinate.
         """
         # Check if the coordinate is within the cells and the correct column
-        if coordinate.column != self.column_index or coordinate not in self.cells:
+        if coordinate.col_index != self.column_index or coordinate not in self.cells:
             raise IndexError("Coordinate out of range.")
 
         # Return the cell at the specified coordinate
