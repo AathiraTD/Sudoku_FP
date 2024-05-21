@@ -65,7 +65,7 @@ def get_user_move() -> str:
     """
     Function to get the user's move input.
     """
-    print("Enter your moves in the format 'A1=5, B2=3, C3=7':")
+    print("Enter your moves in the format 'A1=5, B2=3, C3=7'. To make a cell empty - 'A1=None' :")
     return input("> ").strip()
 
 

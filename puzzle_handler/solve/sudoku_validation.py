@@ -2,13 +2,18 @@ from typing import Optional, Tuple, List, Dict
 from functools import lru_cache
 from core_data.cell import Cell
 from core_data.cell_state import CellState
+from core_data.game_state import GameState
 from core_data.grid.grid import Grid, update_cell
 from core_data.coordinate import Coordinate
 import math
+
+from puzzle_handler.solve.puzzle_solver import check_unique_solvability
+import user_actions.start_new_game
 from utils.grid_utils import find_empty_cell
 
 # Custom cache dictionary
 count_solutions_cache: Dict[Tuple, int] = {}
+
 
 def grid_to_tuple(grid: Grid) -> Tuple:
     """
@@ -21,6 +26,7 @@ def grid_to_tuple(grid: Grid) -> Tuple:
         Tuple: The tuple representation of the grid.
     """
     return tuple((coord.row_index, coord.col_index, cell.value.value) for coord, cell in sorted(grid.cells.items()))
+
 
 def is_valid(grid: Grid, row: int, col: int, num: int, grid_size: int) -> bool:
     """
@@ -53,6 +59,7 @@ def is_valid(grid: Grid, row: int, col: int, num: int, grid_size: int) -> bool:
 
     start_row, start_col = (row // subgrid_size) * subgrid_size, (col // subgrid_size) * subgrid_size
     return not in_row(row) and not in_col(col) and not in_subgrid(start_row, start_col)
+
 
 def count_solutions(grid: Grid, grid_size: int, max_solutions: int = 2) -> int:
     """
@@ -93,6 +100,7 @@ def count_solutions(grid: Grid, grid_size: int, max_solutions: int = 2) -> int:
     count_solutions_cache[grid_tuple] = num_solutions
     return num_solutions
 
+
 def validate_move(grid: Grid, move: Tuple[Coordinate, Cell]) -> Tuple[bool, str]:
     """
     Validate a single user move.
@@ -114,6 +122,7 @@ def validate_move(grid: Grid, move: Tuple[Coordinate, Cell]) -> Tuple[bool, str]
         return False, f"Invalid move at {chr(ord('A') + row)}{col + 1}. Does not satisfy Sudoku rules."
     return True, f"Move {chr(ord('A') + row)}{col + 1}={value} applied successfully."
 
+
 def is_puzzle_complete(grid: Grid) -> bool:
     """
     Check if the Sudoku puzzle is complete and valid.
@@ -124,6 +133,7 @@ def is_puzzle_complete(grid: Grid) -> bool:
     Returns:
         bool: True if the puzzle is complete and valid, False otherwise.
     """
+
     def check_cell(row: int, col: int) -> bool:
         if row >= grid.grid_size:
             return True
@@ -135,3 +145,70 @@ def is_puzzle_complete(grid: Grid) -> bool:
         return check_cell(row, col + 1)
 
     return check_cell(0, 0)
+
+
+def check_and_handle_completion(game_state: GameState) -> GameState:
+    """
+    Check if the puzzle is complete and handle the completion scenario.
+
+    Args:
+        game_state (GameState): The current state of the game.
+
+    Returns:
+        GameState: The updated game state.
+    """
+    if is_valid(game_state.grid):
+        print("Congratulations! You Won")
+        handle_completion_choice(game_state.config)
+    return game_state
+
+
+def handle_completion_choice(config: Dict) -> None:
+    """
+    Handle the user's choice after completing the puzzle.
+
+    Args:
+        config (Dict): The game configuration.
+    """
+    choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
+    handle_choice_recursively(choice, config)
+
+
+def handle_choice_recursively(choice: str, config: Dict) -> None:
+    """
+    Recursively handle the user's choice for starting a new game or returning to the main menu.
+
+    Args:
+        choice (str): The user's choice.
+        config (Dict): The game configuration.
+    """
+    if choice == 'yes':
+        user_actions.start_new_game.start_new_game(config)  # Assuming start_new_game is defined elsewhere
+    elif choice == 'no':
+        return  # Exit the recursion
+    else:
+        print("Invalid choice. Please enter 'Yes' or 'No'.")
+        choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
+        handle_choice_recursively(choice, config)
+
+
+def has_empty_cells(grid: Grid) -> bool:
+    """
+    Check if the grid has any empty cells.
+
+    Args:
+        grid (Grid): The current grid.
+
+    Returns:
+        bool: True if there are empty cells, False otherwise.
+    """
+
+    def check_cells_recursively(cells, index):
+        if index >= len(cells):
+            return False
+        cell = list(cells.values())[index]
+        if cell.state == CellState.EMPTY:
+            return True
+        return check_cells_recursively(cells, index + 1)
+
+    return check_cells_recursively(grid.cells, 0)

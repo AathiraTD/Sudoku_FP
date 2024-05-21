@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="CLi based Sudoku game in Python following FP">
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shaji06.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_interface/display/menu_display.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core_data/game_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_actions/redo_move.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/coordinate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/load_saved_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/load_saved_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/grid_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grid_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/start_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/game_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/game_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -75,7 +75,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="QodanaHighlightedReportService">
@@ -176,23 +176,20 @@
       <option name="project" value="LOCAL" />
       <updated>1716269878075</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="CLi based Sudoku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716307660403</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716307660403</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="CLi based Sudoku game in Python following FP" />
     <option name="LAST_COMMIT_MESSAGE" value="CLi based Sudoku game in Python following FP" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core_data/cell_value.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

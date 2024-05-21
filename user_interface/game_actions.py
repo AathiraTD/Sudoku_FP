@@ -1,16 +1,18 @@
+from core_data.game_state import GameState
 from core_data.grid.grid import Grid
-from puzzle_handler.solve.solve_puzzle import solve_puzzle
 from user_actions.request_hint import request_hint
 from user_actions.make_a_move import make_a_move
+from user_actions.undo_move import undo_move
+from user_actions.redo_move import redo_move
 from user_actions.save_game import save_game_to_file  # Import the save game function
 
-def game_actions(config: dict, grid: Grid) -> None:
+
+def game_actions(game_state: GameState) -> None:
     """
     Function to handle game actions.
 
     Args:
-        config (dict): Configuration settings.
-        grid (Grid): The current state of the Sudoku grid.
+        game_state (GameState): The current state of the game.
     """
 
     def display_menu() -> None:
@@ -21,37 +23,36 @@ def game_actions(config: dict, grid: Grid) -> None:
         print("1. Make a move")
         print("2. Get a hint")
         print("3. Undo last move")
-        print("4. Redo last move")
-        print("5. Solve the puzzle")
-        print("6. Save the game")
-        print("7. Back to main menu")
+        # print("4. Redo last move")
+        print("4. Solve the puzzle")
+        print("5. Save the game")
+        print("6. Back to main menu")
 
-    def handle_action(choice: int, grid: Grid) -> Grid:
+    def handle_action(choice: int, game_state: GameState) -> GameState:
         """
         Handle the user's action choice.
 
         Args:
             choice (int): The user's action choice.
-            grid (Grid): The current state of the Sudoku grid.
+            game_state (GameState): The current state of the game.
 
         Returns:
-            Grid: The updated state of the Sudoku grid.
+            GameState: The updated state of the game.
         """
         if choice == 1:
-            grid = make_a_move(grid)  # Handle making a move
+            game_state = make_a_move(game_state)  # Handle making a move
         elif choice == 2:
-            grid = request_hint(grid)  # Handle requesting a hint
+            game_state = request_hint(game_state)  # Handle requesting a hint
         elif choice == 3:
-            # Placeholder for undo last move
-            print("Undo last move is not implemented yet.")
+            game_state = undo_move(game_state)  # Handle undo last move
+        # elif choice == 4:
+        #     game_state = redo_move(game_state)  # Handle redo last move
         elif choice == 4:
-            # Placeholder for redo last move
-            print("Redo last move is not implemented yet.")
+            from puzzle_handler.solve.solve_puzzle import solve_puzzle  # Local import to avoid circular dependency
+            game_state = game_state.with_grid(solve_puzzle(game_state.grid))  # Handle solving the puzzle
         elif choice == 5:
-            grid = solve_puzzle(grid)  # Handle solving the puzzle
-        elif choice == 6:
-            save_game_to_file(grid)  # Handle saving the game
-        return grid
+            save_game_to_file(game_state.grid)  # Handle saving the game
+        return game_state
 
     def prompt_action() -> int:
         """
@@ -62,7 +63,7 @@ def game_actions(config: dict, grid: Grid) -> None:
         """
         try:
             choice = int(input("> "))  # Get input from the user
-            if 1 <= choice <= 7:
+            if 1 <= choice <= 6:
                 return choice  # Return valid choice
             else:
                 print("Invalid choice. Please enter a number between 1 and 7.")
@@ -71,9 +72,18 @@ def game_actions(config: dict, grid: Grid) -> None:
             print("Invalid input. Please enter a number between 1 and 7.")
             return prompt_action()  # Recursive call for non-integer input
 
-    while True:
+    def game_loop(game_state: GameState) -> None:
+        """
+        Recursively handle the game loop.
+
+        Args:
+            game_state (GameState): The current state of the game.
+        """
         display_menu()  # Display the game actions menu
         choice = prompt_action()  # Get the user's action choice
-        if choice == 7:
-            break  # Exit the loop to return to the main menu
-        grid = handle_action(choice, grid)  # Handle the user's action choice
+        if choice == 6:
+            return  # Exit the loop to return to the main menu
+        new_game_state = handle_action(choice, game_state)  # Handle the user's action choice
+        game_loop(new_game_state)  # Recursive call with the updated game state
+
+    game_loop(game_state)  # Initial call to start the game loop

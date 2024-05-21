@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\main.py", line 16, in main
+    menu_loop(config)  # Initial call to start the menu loop
+    ^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\main_menu.py", line 42, in menu_loop
+    handle_menu_choice(config, choice)  # Handle the user's menu choice
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\main_menu.py", line 29, in handle_menu_choice
+    menu_loop(config)  # Recursive call to display the menu again
+    ^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\main_menu.py", line 42, in menu_loop
+    handle_menu_choice(config, choice)  # Handle the user's menu choice
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\main_menu.py", line 25, in handle_menu_choice
+    load_saved_game(config)  # Load a saved game
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions\load_saved_game.py", line 198, in load_saved_game
+    game_actions(config, grid)  # Pass control to game actions
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: game_actions() takes 1 positional argument but 2 were given
