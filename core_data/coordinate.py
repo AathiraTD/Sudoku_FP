@@ -43,3 +43,8 @@ class Coordinate:
         except ValueError as e:
             # Return None for the instance and the error message if coordinates are invalid
             return None, str(e)
+
+    def __lt__(self, other: 'Coordinate') -> bool:
+        if self.row_index == other.row_index:
+            return self.col_index < other.col_index
+        return self.row_index < other.row_index

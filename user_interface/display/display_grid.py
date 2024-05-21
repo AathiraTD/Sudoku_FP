@@ -1,12 +1,14 @@
 from typing import List
+
 from core_data.coordinate import Coordinate
-from core_data.grid import Grid
+from core_data.grid.grid import Grid
 
 
 def print_column_labels(grid_size: int, subgrid_size: int):
     """
     Function to print the column labels using recursion.
     """
+
     def _print_column_labels(col_index: int):
         if col_index >= grid_size:
             print()
@@ -28,10 +30,18 @@ def display_grid(grid: Grid):
     """
     Function to display the Sudoku grid with row and column labels using recursion.
     """
+
+    # Retrieve the size of the grid and the size of subgrids
     grid_size = grid.grid_size
     subgrid_size = int(grid_size ** 0.5)
 
     def print_all_rows(row_index: int):
+        """
+        Recursively print all rows of the Sudoku grid.
+
+        Args:
+            row_index (int): The current row index to print.
+        """
         if row_index >= grid_size:
             return  # Base case: all rows have been printed
 
@@ -86,6 +96,20 @@ def print_row(grid: Grid, row_index: int):
 
     # Start the recursion for columns
     print_cell(0)
+
+
+def display_messages(messages: List[str], index: int = 0):
+    """
+    Recursively display messages.
+
+    Args:
+        messages (List[str]): The list of messages to display.
+        index (int, optional): The current index of the message to display. Defaults to 0.
+    """
+    if index >= len(messages):  # Base case: all messages have been displayed
+        return
+    print(messages[index])
+    display_messages(messages, index + 1)  # Recursively display the next message
 
 
 def get_row_label(index: int) -> str:

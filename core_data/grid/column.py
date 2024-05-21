@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Dict, Optional, Tuple, Callable
 from types import MappingProxyType
-from .cell import Cell
-from .coordinate import Coordinate
+from core_data.cell import Cell
+from core_data.coordinate import Coordinate
 
 @dataclass(frozen=True)
 class Column:
@@ -10,15 +10,15 @@ class Column:
     cells: MappingProxyType  # An immutable dictionary of Coordinate keys and Cell values
     column_index: int  # The index of the column
 
-    def __new__(cls, cells: Dict[Coordinate, Cell], column_index: int):
+    def __new__(cls, cells: Dict[Coordinate, Cell], column_index: int, skip_validation: bool = False):
         """
         Create a new Column instance with immutable cells.
         """
         # Convert the cells dictionary to an immutable MappingProxyType
         immutable_cells = MappingProxyType(cells)
 
-        # Validate the cells before creating the instance
-        if not cls.is_valid(immutable_cells, column_index):
+        # Validate the cells before creating the instance, unless validation is skipped
+        if not skip_validation and not cls.is_valid(immutable_cells, column_index):
             raise ValueError(
                 "All elements of the column must be instances of Cell and values must be unique except for None.")
 
