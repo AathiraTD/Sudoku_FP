@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Dict, Optional, Tuple, Callable
 from types import MappingProxyType
-from .cell import Cell
-from .coordinate import Coordinate
+from core_data.cell import Cell
+from core_data.coordinate import Coordinate
 
 @dataclass(frozen=True)
 class Subgrid:

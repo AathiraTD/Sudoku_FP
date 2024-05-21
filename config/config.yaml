@@ -5,6 +5,7 @@ default_size: 9         # Default size of the Sudoku grid
 max_size: 16            # Maximum size of the Sudoku grid
 subgrid_size: 3         # Size of subgrids for a 9x9 grid
 grid_size: 9            # Size of grids for the sudoku
+hint_limit: 3           # Maximum number of hints allowed per puzzle
 
 # Cell value settings
 min_value: 1
