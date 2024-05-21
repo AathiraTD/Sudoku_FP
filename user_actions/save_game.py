@@ -1,6 +1,6 @@
 import os
 import json
-from typing import Tuple, Dict
+from typing import Tuple, Dict, Any, List
 from core_data.grid.grid import Grid
 from user_interface.display.display_grid import display_grid
 
@@ -24,17 +24,42 @@ def prompt_for_file_details() -> Tuple[str, str]:
     location_choice = input("> ").strip()
 
     if location_choice == "1":
-        return file_name, os.getcwd()
+        return file_name, os.getcwd()  # Return the current directory
     elif location_choice == "2":
         directory = input("Enter the custom directory path: ").strip()
         if os.path.isdir(directory):
-            return file_name, directory
+            return file_name, directory  # Return the custom directory if it exists
         else:
             print("Invalid directory. Saving to the default location instead.")
-            return file_name, os.getcwd()
+            return file_name, os.getcwd()  # Use the default directory if the custom one is invalid
     else:
         print("Invalid choice. Saving to the default location instead.")
-        return file_name, os.getcwd()
+        return file_name, os.getcwd()  # Use the default directory if the choice is invalid
+
+
+def convert_cells_to_dict(cells: Dict[Any, Any], keys: List[Any], index: int, result: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    """
+    Recursively convert cells to a dictionary for serialization.
+
+    Args:
+        cells (Dict[Any, Any]): The cells dictionary.
+        keys (List[Any]): The list of keys in the cells dictionary.
+        index (int): The current index in the list of keys.
+        result (Dict[str, Dict[str, Any]]): The result dictionary being built.
+
+    Returns:
+        Dict[str, Dict[str, Any]]: The dictionary representation of the cells.
+    """
+    if index >= len(keys):
+        return result  # Base case: all keys have been processed
+
+    key = keys[index]
+    coord, cell = key, cells[key]
+    result[f"({coord.row_index},{coord.col_index})"] = {
+        'value': cell.value.value,
+        'state': cell.state.name
+    }
+    return convert_cells_to_dict(cells, keys, index + 1, result)  # Recursively process the next key
 
 
 def grid_to_dict(grid: Grid) -> Dict:
@@ -47,15 +72,11 @@ def grid_to_dict(grid: Grid) -> Dict:
     Returns:
         Dict: The dictionary representation of the Grid.
     """
+    keys = list(grid.cells.keys())
+    cells_dict = convert_cells_to_dict(grid.cells, keys, 0, {})
     return {
         'grid_size': grid.grid_size,
-        'cells': {
-            f"({coord.row_index},{coord.col_index})": {
-                'value': cell.value.value,
-                'state': cell.state.name
-            }
-            for coord, cell in grid.cells.items()
-        }
+        'cells': cells_dict
     }
 
 

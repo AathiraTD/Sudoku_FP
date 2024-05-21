@@ -1,20 +1,11 @@
 import os
 import sys
+
+from user_interface.display.menu_display import display_main_menu
 from user_interface.user_input import get_menu_choice
 from user_actions.start_new_game import start_new_game
 from user_actions.upload_sudoku import upload_sudoku
 from user_actions.load_saved_game import load_saved_game
-
-
-def display_main_menu() -> None:
-    """
-    Function to display the main menu to the user.
-    """
-    print("Sudoku Main Menu")
-    print("1. Start New Game")
-    print("2. Upload Sudoku")
-    print("3. Load Saved Game")
-    print("4. Exit")
 
 
 def handle_menu_choice(config: dict, choice: int) -> None:
@@ -29,7 +20,7 @@ def handle_menu_choice(config: dict, choice: int) -> None:
     if choice == 1:
         start_new_game(config)  # Start a new game
     elif choice == 2:
-        upload_sudoku()  # Upload a Sudoku puzzle
+        upload_sudoku(config)  # Upload a Sudoku puzzle
     elif choice == 3:
         load_saved_game(config)  # Load a saved game
     elif choice == 4:

@@ -1,5 +1,8 @@
 import random
 from typing import Optional, Tuple, Set, Dict, List, Callable, Any
+
+from core_data.cell_state import CellState
+from core_data.cell_value import CellValue
 from core_data.grid.grid import Grid
 from core_data.coordinate import Coordinate
 from core_data.cell import Cell
@@ -126,3 +129,44 @@ def label_to_index(label: str, grid_size: int) -> Optional[Tuple[int, int]]:
         return None  # Return None if the index is out of bounds
 
     return row, col  # Return the valid row and column index
+
+
+def convert_user_moves(user_input: str, grid_size: int) -> List[Tuple[Coordinate, int]]:
+    """
+    Convert user input moves to a list of coordinates and values.
+
+    Args:
+        user_input (str): The user input string.
+        grid_size (int): The size of the grid.
+
+    Returns:
+        List[Tuple[Coordinate, int]]: The list of coordinates and values.
+    """
+    moves = []
+    user_input = user_input.replace(" ", "")
+    for move in user_input.split(','):
+        if len(move) >= 3:
+            row = ord(move[0].upper()) - ord('A')
+            col = int(move[1]) - 1
+            value = int(move[3])
+            if 0 <= row < grid_size and 0 <= col < grid_size:
+                moves.append((Coordinate(row, col, grid_size), value))
+    return moves
+
+def create_empty_grid(grid_size: int = 9) -> Grid:
+    """
+    Create an empty Sudoku grid.
+
+    Args:
+        grid_size (int): The size of the Sudoku grid.
+
+    Returns:
+        Grid: The empty Sudoku grid.
+    """
+    cells = {
+        Coordinate(row, col, grid_size): Cell(CellValue(None, grid_size), CellState.EMPTY)
+        for row in range(grid_size)
+        for col in range(grid_size)
+    }
+    return Grid(cells, grid_size)
+

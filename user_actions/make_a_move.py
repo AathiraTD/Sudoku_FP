@@ -9,6 +9,7 @@ from user_interface.display.display_grid import display_grid, display_messages
 from user_interface.user_input import get_user_move
 from utils.input_parsing import parse_user_input
 
+
 def make_a_move(grid: Grid) -> Optional[Grid]:
     """
     Main function to handle user moves.
@@ -37,6 +38,7 @@ def make_a_move(grid: Grid) -> Optional[Grid]:
 
     return grid
 
+
 def validate_user_input(user_input: str, grid_size: int) -> bool:
     """
     Validate the user's input.
@@ -51,7 +53,9 @@ def validate_user_input(user_input: str, grid_size: int) -> bool:
     # Add actual validation logic here
     return True
 
-def convert_parsed_moves(parsed_moves: List[Tuple[Tuple[int, int], int]], grid_size: int) -> List[Tuple[Coordinate, Cell]]:
+
+def convert_parsed_moves(parsed_moves: List[Tuple[Tuple[int, int], int]], grid_size: int) -> List[
+    Tuple[Coordinate, Cell]]:
     """
     Convert parsed moves into a list of Coordinate and Cell tuples.
 
@@ -62,6 +66,7 @@ def convert_parsed_moves(parsed_moves: List[Tuple[Tuple[int, int], int]], grid_s
     Returns:
         List[Tuple[Coordinate, Cell]]: The converted list of moves.
     """
+
     def convert_recursively(index: int, acc: List[Tuple[Coordinate, Cell]]) -> List[Tuple[Coordinate, Cell]]:
         if index >= len(parsed_moves):  # Base case: all moves have been converted
             return acc
@@ -70,6 +75,7 @@ def convert_parsed_moves(parsed_moves: List[Tuple[Tuple[int, int], int]], grid_s
         return convert_recursively(index + 1, acc)
 
     return convert_recursively(0, [])
+
 
 def apply_and_report_moves(grid: Grid, moves: List[Tuple[Coordinate, Cell]]) -> Tuple[Grid, List[str]]:
     """
@@ -86,7 +92,9 @@ def apply_and_report_moves(grid: Grid, moves: List[Tuple[Coordinate, Cell]]) -> 
     grid = apply_moves_recursively(grid, moves, messages)
     return grid, messages
 
-def apply_moves_recursively(grid: Grid, moves: List[Tuple[Coordinate, Cell]], messages: List[str], index: int = 0) -> Grid:
+
+def apply_moves_recursively(grid: Grid, moves: List[Tuple[Coordinate, Cell]], messages: List[str],
+                            index: int = 0) -> Grid:
     """
     Recursively apply user moves to the grid.
 
@@ -106,11 +114,11 @@ def apply_moves_recursively(grid: Grid, moves: List[Tuple[Coordinate, Cell]], me
     current_cell = grid.cells[coord]
 
     if current_cell.state in {CellState.PRE_FILLED, CellState.HINT}:
-        messages.append(f"Cannot apply move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value}. The cell is pre-filled or a hint.")
+        messages.append(
+            f"Cannot apply move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value}. The cell is pre-filled or a hint.")
     else:
         grid = update_cell(grid, coord, cell.value.value, CellState.USER_FILLED, skip_validation=True)
-        messages.append(f"Move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value} applied successfully.")
+        messages.append(
+            f"Move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value} applied successfully.")
 
     return apply_moves_recursively(grid, moves, messages, index + 1)
-
-

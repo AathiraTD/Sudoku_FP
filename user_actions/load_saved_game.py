@@ -8,6 +8,7 @@ from puzzle_handler.solve.sudoku_validation import count_solutions
 from user_interface.display.display_grid import display_grid
 from user_interface.game_actions import game_actions
 
+
 def prompt_for_load_location() -> str:
     """
     Prompt the user for the load location.
@@ -33,6 +34,7 @@ def prompt_for_load_location() -> str:
         print("Invalid choice. Please enter 1 or 2.")
         return prompt_for_load_location()  # Recursively prompt again if invalid choice
 
+
 def list_saved_game_files(directory: str) -> List[str]:
     """
     List all saved game files in the specified directory.
@@ -44,26 +46,28 @@ def list_saved_game_files(directory: str) -> List[str]:
         List[str]: A list of saved game file names.
     """
 
-    def list_files_recursively(index: int, files: List[str]) -> List[str]:
+    def list_files_recursively(contents: List[str], index: int, files: List[str]) -> List[str]:
         """
         Recursively list .json files in the directory.
 
         Args:
+            contents (List[str]): The list of directory contents.
             index (int): The current index in the directory listing.
             files (List[str]): The list of found .json files.
 
         Returns:
             List[str]: The updated list of .json files.
         """
-        directory_contents = os.listdir(directory)
-        if index >= len(directory_contents):
+        if index >= len(contents):
             return files  # Base case: all files have been checked
-        file = directory_contents[index]
+        file = contents[index]
         if file.endswith('.json'):
             files.append(file)  # Add .json files to the list
-        return list_files_recursively(index + 1, files)  # Recursively check the next file
+        return list_files_recursively(contents, index + 1, files)  # Recursively check the next file
 
-    return list_files_recursively(0, [])  # Start the recursion with an empty list
+    directory_contents = os.listdir(directory)  # Get the directory contents
+    return list_files_recursively(directory_contents, 0, [])  # Start the recursion with an empty list
+
 
 def prompt_for_file_choice(files: List[str]) -> str:
     """
@@ -88,9 +92,6 @@ def prompt_for_file_choice(files: List[str]) -> str:
         print(f"{index + 1}. {files[index]}")
         print_files_recursively(index + 1)  # Recursively print the next file
 
-    print("Available saved game files:")
-    print_files_recursively(0)  # Start printing from the first file
-
     def get_choice() -> int:
         """
         Prompt the user to enter their choice and validate it.
@@ -109,8 +110,39 @@ def prompt_for_file_choice(files: List[str]) -> str:
             print("Invalid input. Please enter a number.")
             return get_choice()  # Recursively prompt again if invalid input
 
-    choice = get_choice()
+    print("Available saved game files:")
+    print_files_recursively(0)  # Start printing from the first file
+
+    choice = get_choice()  # Get the user's valid choice
     return files[choice - 1]  # Return the chosen file
+
+
+def parse_cells(cells: Dict[str, Dict[str, str]], index: int, cell_items: List[Tuple[str, Dict[str, str]]],
+                grid_size: int, parsed_cells: Dict[Coordinate, Cell]) -> Dict[Coordinate, Cell]:
+    """
+    Recursively parse the cells from the saved game state.
+
+    Args:
+        cells (Dict[str, Dict[str, str]]): The dictionary of cell data.
+        index (int): The current index in the cell items list.
+        cell_items (List[Tuple[str, Dict[str, str]]]): The list of cell items.
+        grid_size (int): The size of the grid.
+        parsed_cells (Dict[Coordinate, Cell]): The dictionary to store parsed cells.
+
+    Returns:
+        Dict[Coordinate, Cell]: The dictionary of parsed cells.
+    """
+    if index >= len(cell_items):
+        return parsed_cells  # Base case: all cells have been parsed
+
+    key, cell_data = cell_items[index]
+    row, col = key.strip('()').split(',')
+    parsed_cells[Coordinate(int(row), int(col), grid_size)] = Cell(
+        CellValue(cell_data['value'], grid_size),
+        CellState[cell_data['state']]
+    )
+    return parse_cells(cells, index + 1, cell_items, grid_size, parsed_cells)  # Recursively parse the next cell
+
 
 def validate_saved_game_file(file_path: str) -> Optional[Grid]:
     """
@@ -127,14 +159,8 @@ def validate_saved_game_file(file_path: str) -> Optional[Grid]:
             game_state = json.load(file)  # Load the game state from the file
 
         grid_size = game_state['grid_size']
-        cells = {
-            Coordinate(int(row), int(col), grid_size): Cell(
-                CellValue(cell_data['value'], grid_size),
-                CellState[cell_data['state']]
-            )
-            for key, cell_data in game_state['cells'].items()
-            for row, col in [key.strip('()').split(',')]
-        }
+        cell_items = list(game_state['cells'].items())
+        cells = parse_cells(game_state['cells'], 0, cell_items, grid_size, {})
 
         grid = Grid(cells, grid_size)
 
@@ -146,6 +172,7 @@ def validate_saved_game_file(file_path: str) -> Optional[Grid]:
     except (json.JSONDecodeError, KeyError, ValueError) as e:
         print(f"Failed to load the saved game file: {e}")
         return None  # Return None if there was an error loading the file
+
 
 def load_saved_game(config: dict) -> None:
     """

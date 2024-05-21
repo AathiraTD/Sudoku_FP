@@ -5,51 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="CLi based Sudoku game in Python following FP">
-      <change afterPath="$PROJECT_DIR$/core_data/grid/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/grid/grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/generate/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/solve/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/solve/backtrack.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/solve/solve_puzzle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/techniques/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/techniques/get_column_possible_values.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/techniques/get_possible_values.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/techniques/get_subgrid_possible_values.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shaji01.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shaji02.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shaji03.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shaji04.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shaji_test_01.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_interface/display/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_interface/display/display_grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/grid_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/input_parsing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/validation_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shaji06.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_interface/display/menu_display.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/cell_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/cell_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/column.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/column.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/row.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/subgrid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/display_puzzle.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/coordinate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/load_saved_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/load_saved_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/start_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/game_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/game_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/grid_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grid_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +52,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -200,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716170105625</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CLi based Sudoku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716269878075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716269878075</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
