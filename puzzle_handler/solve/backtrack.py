@@ -1,9 +1,7 @@
-from core_data.cell_value import CellValue
 from core_data.grid.grid import Grid, update_cell
 from core_data.coordinate import Coordinate
-from core_data.cell import Cell
 from core_data.cell_state import CellState
-from puzzle_handler.solve.sudoku_validation import is_valid
+from puzzle_handler.solve.helpers import is_valid
 from utils.grid_utils import find_empty_cell, try_values_recursive
 from typing import Tuple, List, Callable, Any, Optional
 import random

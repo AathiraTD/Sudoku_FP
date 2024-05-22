@@ -13,7 +13,7 @@ def load_config(file_path: str) -> Dict:
 
         # Convert the loaded configuration to an immutable dictionary.
         # This ensures that the configuration cannot be modified after loading
-        return MappingProxyType(config)
+        return dict(config)
 
     except FileNotFoundError:
         # If the specified configuration file is not found, raise a FileNotFoundError

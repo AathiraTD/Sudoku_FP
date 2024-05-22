@@ -1,8 +1,9 @@
 from typing import List
+from colorama import Fore, Style
 
 from core_data.coordinate import Coordinate
 from core_data.grid.grid import Grid
-
+from core_data.cell_state import CellState
 
 def print_column_labels(grid_size: int, subgrid_size: int):
     """
@@ -43,6 +44,7 @@ def display_grid(grid: Grid):
             row_index (int): The current row index to print.
         """
         if row_index >= grid_size:
+            print(f"\n(See your Sudoku Puzzle. Pre-Filled in {Fore.GREEN}Green{Style.RESET_ALL}, User-Filled in {Fore.BLUE}Blue{Style.RESET_ALL}, and Hint in {Fore.YELLOW}Yellow{Style.RESET_ALL})")
             return  # Base case: all rows have been printed
 
         # Print the horizontal separator for subgrids and outer boundaries
@@ -67,7 +69,7 @@ def display_grid(grid: Grid):
 
 def print_row(grid: Grid, row_index: int):
     """
-    Recursively prints the cells of a given row.
+    Recursively prints the cells of a given row with color-coding for different cell states.
     """
     grid_size = grid.grid_size
     subgrid_size = int(grid_size ** 0.5)
@@ -83,7 +85,15 @@ def print_row(grid: Grid, row_index: int):
         coord = Coordinate(row_index, col_index, grid_size)
         cell = grid.cells.get(coord)
         if cell is not None and cell.value.value is not None:
-            row_display.append(str(cell.value.value))
+            value_str = str(cell.value.value)
+            if cell.state == CellState.PRE_FILLED:
+                row_display.append(Fore.GREEN + value_str + Style.RESET_ALL)
+            elif cell.state == CellState.USER_FILLED:
+                row_display.append(Fore.BLUE + value_str + Style.RESET_ALL)
+            elif cell.state == CellState.HINT:
+                row_display.append(Fore.YELLOW + value_str + Style.RESET_ALL)
+            else:
+                row_display.append(value_str)
         else:
             row_display.append(".")
 

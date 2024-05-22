@@ -4,7 +4,7 @@ from typing import Optional, List, Dict, Tuple
 from core_data.grid.grid import Grid, Cell, Coordinate
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from puzzle_handler.solve.sudoku_validation import count_solutions
+from puzzle_handler.solve.helpers import count_solutions
 from user_interface.display.display_grid import display_grid
 from user_interface.game_actions import game_actions
 

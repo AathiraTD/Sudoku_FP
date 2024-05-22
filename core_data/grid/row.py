@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from typing import Dict, Optional, Tuple, Callable
 from types import MappingProxyType
+from typing import Dict, Callable, Optional
 from core_data.cell import Cell
 from core_data.coordinate import Coordinate
 
@@ -14,13 +14,12 @@ class Row:
         """
         Create a new Row instance with immutable cells.
         """
+        # If skip_validation is False, perform the validation
+        if not skip_validation and not cls.is_valid(cells, row_index):
+            raise ValueError("All elements of the row must be instances of Cell and values must be unique except for None.")
+
         # Convert the cells dictionary to an immutable MappingProxyType
         immutable_cells = MappingProxyType(cells)
-
-        # Validate the cells before creating the instance, unless validation is skipped
-        if not skip_validation and not cls.is_valid(immutable_cells, row_index):
-            raise ValueError(
-                "All elements of the row must be instances of Cell and values must be unique except for None.")
 
         # Create a new instance using the superclass (__new__ method of object)
         instance = super(Row, cls).__new__(cls)
@@ -111,22 +110,9 @@ class Row:
         # Return the cell at the specified column index
         return self.cells[coord]
 
-    @staticmethod
-    def create(cells: Dict[Coordinate, Cell], row_index: int, skip_validation: bool = False) -> Tuple[Optional['Row'], Optional[str]]:
+    @classmethod
+    def create(cls, cells: Dict[Coordinate, Cell], row_index: int, skip_validation: bool = False):
         """
-        Try to create a Row instance, handling ValueError if the cells are invalid.
-
-        Args:
-            cells (Dict[Coordinate, Cell]): The cells of the row.
-            row_index (int): The index of the row.
-            skip_validation (bool): If True, skip validation. Defaults to False.
-
-        Returns:
-            Tuple[Optional['Row'], Optional[str]]: The created Row instance and error message if any.
+        Create a Row instance.
         """
-        try:
-            # Attempt to create a new Row instance
-            return Row(cells, row_index, skip_validation), None
-        except ValueError as e:
-            # Return None and the error message if creation fails
-            return None, str(e)
+        return cls(cells, row_index, skip_validation)

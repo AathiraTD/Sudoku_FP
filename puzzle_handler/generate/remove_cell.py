@@ -2,8 +2,7 @@ from typing import Set, Dict, Callable
 from core_data.grid.grid import Grid, update_cell
 from core_data.coordinate import Coordinate
 from core_data.cell_state import CellState
-
-from puzzle_handler.solve.sudoku_validation import count_solutions
+from puzzle_handler.solve.helpers import count_solutions
 
 
 def memoize(func: Callable) -> Callable:

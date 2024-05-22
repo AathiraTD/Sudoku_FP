@@ -107,14 +107,14 @@ class Grid:
         Get a Row object for a given row index.
         """
         row_cells = {coord: cell for coord, cell in self.cells.items() if coord.row_index == row_index}
-        return Row(cells=row_cells, row_index=row_index, skip_validation=True)
+        return Row(cells=row_cells, row_index=row_index)
 
     def get_column(self, column_index: int) -> Column:
         """
         Get a Column object for a given column index.
         """
         column_cells = {coord: cell for coord, cell in self.cells.items() if coord.col_index == column_index}
-        return Column(cells=column_cells, column_index=column_index, skip_validation=True)
+        return Column(cells=column_cells, column_index=column_index)
 
     def get_all_rows(self, index: int) -> List[Row]:
         """

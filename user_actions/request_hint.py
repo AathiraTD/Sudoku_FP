@@ -4,7 +4,8 @@ from core_data.game_state import GameState
 from core_data.grid.grid import Grid, update_cell
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
-from puzzle_handler.solve.sudoku_validation import is_valid, count_solutions, has_empty_cells, \
+from puzzle_handler.solve.helpers import count_solutions
+from puzzle_handler.solve.sudoku_validation import is_valid, has_empty_cells, \
     check_and_handle_completion
 from user_interface.display.display_grid import display_grid
 from utils.grid_utils import find_random_empty_cell, try_values_recursive, label_to_index

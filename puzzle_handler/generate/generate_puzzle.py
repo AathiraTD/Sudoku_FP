@@ -2,9 +2,9 @@ from typing import Dict
 from core_data.grid.grid import Grid
 from core_data.coordinate import Coordinate
 from puzzle_handler.generate.remove_cell import remove_cells_recursive
+from puzzle_handler.solve.helpers import count_solutions
 from puzzle_handler.solve.solve_puzzle import backtrack
 from puzzle_handler.techniques.apply_naked_singles import apply_naked_singles
-from puzzle_handler.solve.sudoku_validation import count_solutions
 from utils.grid_utils import remove_cells
 
 

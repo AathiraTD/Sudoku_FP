@@ -1,6 +1,6 @@
 from puzzle_handler.solve.backtrack import backtrack
 from core_data.grid.grid import Grid
-from puzzle_handler.solve.sudoku_validation import count_solutions
+from puzzle_handler.solve.helpers import count_solutions
 from user_interface.display.display_grid import display_grid
 
 
