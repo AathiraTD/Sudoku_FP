@@ -1,0 +1,813 @@
+(['D:\\Athu\\Declarative Programming\\Final Project\\Sudoku_FP\\main.py'],
+ ['D:\\Athu\\Declarative Programming\\Final Project\\Sudoku_FP'],
+ [],
+ ['D:\\Athu\\Declarative Programming\\Final '
+  'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks',
+  'D:\\Athu\\Declarative Programming\\Final '
+  'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks'],
+ {},
+ [],
+ [],
+ False,
+ {},
+ 0,
+ [],
+ [('config\\__init__.py',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__init__.py',
+   'DATA'),
+  ('config\\__pycache__\\__init__.cpython-311.pyc',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__pycache__\\__init__.cpython-311.pyc',
+   'DATA'),
+  ('config\\__pycache__\\__init__.cpython-312.pyc',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__pycache__\\__init__.cpython-312.pyc',
+   'DATA'),
+  ('config\\__pycache__\\config.cpython-312.pyc',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__pycache__\\config.cpython-312.pyc',
+   'DATA'),
+  ('config\\config.py',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\config.py',
+   'DATA'),
+  ('config\\config.yaml',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\config.yaml',
+   'DATA')],
+ '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit '
+ '(AMD64)]',
+ [('pyi_rth_inspect',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('main',
+   'D:\\Athu\\Declarative Programming\\Final Project\\Sudoku_FP\\main.py',
+   'PYSOURCE')],
+ [('inspect',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\metadata\\__init__.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\typing.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources.abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\resources\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\resources\\__init__.py',
+   'PYMODULE'),
+  ('importlib.resources._legacy',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\resources\\_legacy.py',
+   'PYMODULE'),
+  ('importlib.resources._common',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\resources\\_common.py',
+   'PYMODULE'),
+  ('importlib.resources._adapters',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\resources\\_adapters.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\random.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\datetime.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\statistics.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\decimal.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\contextvars.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\fractions.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\numbers.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\_compression.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\copy.py',
+   'PYMODULE'),
+  ('struct',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\struct.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\fnmatch.py',
+   'PYMODULE'),
+  ('importlib._abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\_abc.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('importlib.metadata._itertools',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\metadata\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.metadata._functools',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\metadata\\_functools.py',
+   'PYMODULE'),
+  ('importlib.metadata._collections',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\metadata\\_collections.py',
+   'PYMODULE'),
+  ('importlib.metadata._meta',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\metadata\\_meta.py',
+   'PYMODULE'),
+  ('importlib.metadata._adapters',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\metadata\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.metadata._text',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\metadata\\_text.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\string.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\base64.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\utils.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\ipaddress.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\socket.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\zipfile.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\threading.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\pathlib.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\csv.py',
+   'PYMODULE'),
+  ('importlib.readers',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources.readers',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\resources\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources._itertools',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\resources\\_itertools.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\argparse.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\tokenize.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\dis.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\ast.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('config.config',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\config.py',
+   'PYMODULE'),
+  ('config',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__init__.py',
+   'PYMODULE'),
+  ('yaml',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\__init__.py',
+   'PYMODULE'),
+  ('yaml.cyaml',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\cyaml.py',
+   'PYMODULE'),
+  ('yaml.resolver',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\resolver.py',
+   'PYMODULE'),
+  ('yaml.representer',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\representer.py',
+   'PYMODULE'),
+  ('yaml.serializer',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\serializer.py',
+   'PYMODULE'),
+  ('yaml.constructor',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\constructor.py',
+   'PYMODULE'),
+  ('yaml.dumper',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\dumper.py',
+   'PYMODULE'),
+  ('yaml.emitter',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\emitter.py',
+   'PYMODULE'),
+  ('yaml.loader',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\loader.py',
+   'PYMODULE'),
+  ('yaml.composer',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\composer.py',
+   'PYMODULE'),
+  ('yaml.parser',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\parser.py',
+   'PYMODULE'),
+  ('yaml.scanner',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\scanner.py',
+   'PYMODULE'),
+  ('yaml.reader',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\reader.py',
+   'PYMODULE'),
+  ('yaml.nodes',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\nodes.py',
+   'PYMODULE'),
+  ('yaml.events',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\events.py',
+   'PYMODULE'),
+  ('yaml.tokens',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\tokens.py',
+   'PYMODULE'),
+  ('yaml.error',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\yaml\\error.py',
+   'PYMODULE'),
+  ('user_interface.main_menu',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_interface\\main_menu.py',
+   'PYMODULE'),
+  ('user_interface',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_interface\\__init__.py',
+   'PYMODULE'),
+  ('user_actions.load_saved_game',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\load_saved_game.py',
+   'PYMODULE'),
+  ('user_actions',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\__init__.py',
+   'PYMODULE'),
+  ('user_interface.game_actions',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_interface\\game_actions.py',
+   'PYMODULE'),
+  ('user_actions.solve_puzzle',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\solve_puzzle.py',
+   'PYMODULE'),
+  ('colorama',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\colorama\\__init__.py',
+   'PYMODULE'),
+  ('colorama.ansitowin32',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\colorama\\ansitowin32.py',
+   'PYMODULE'),
+  ('colorama.winterm',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\colorama\\winterm.py',
+   'PYMODULE'),
+  ('colorama.ansi',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\colorama\\ansi.py',
+   'PYMODULE'),
+  ('colorama.initialise',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\colorama\\initialise.py',
+   'PYMODULE'),
+  ('colorama.win32',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\venv\\Lib\\site-packages\\colorama\\win32.py',
+   'PYMODULE'),
+  ('ctypes.wintypes',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\ctypes\\wintypes.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('user_actions.save_game',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\save_game.py',
+   'PYMODULE'),
+  ('core_data.coordinate',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\coordinate.py',
+   'PYMODULE'),
+  ('core_data',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\__init__.py',
+   'PYMODULE'),
+  ('user_actions.undo_move',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\undo_move.py',
+   'PYMODULE'),
+  ('user_actions.make_a_move',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\make_a_move.py',
+   'PYMODULE'),
+  ('utils.input_parsing',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\utils\\input_parsing.py',
+   'PYMODULE'),
+  ('utils',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\utils\\__init__.py',
+   'PYMODULE'),
+  ('utils.grid_utils',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\utils\\grid_utils.py',
+   'PYMODULE'),
+  ('puzzle_handler.solve.sudoku_validation',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\solve\\sudoku_validation.py',
+   'PYMODULE'),
+  ('puzzle_handler.solve',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\solve\\__init__.py',
+   'PYMODULE'),
+  ('puzzle_handler',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\__init__.py',
+   'PYMODULE'),
+  ('core_data.cell',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\cell.py',
+   'PYMODULE'),
+  ('user_actions.request_hint',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\request_hint.py',
+   'PYMODULE'),
+  ('user_interface.display.display_grid',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_interface\\display\\display_grid.py',
+   'PYMODULE'),
+  ('user_interface.display',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_interface\\display\\__init__.py',
+   'PYMODULE'),
+  ('puzzle_handler.solve.puzzle_solver',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\solve\\puzzle_solver.py',
+   'PYMODULE'),
+  ('core_data.grid.row',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\grid\\row.py',
+   'PYMODULE'),
+  ('core_data.grid',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\grid\\__init__.py',
+   'PYMODULE'),
+  ('core_data.cell_value',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\cell_value.py',
+   'PYMODULE'),
+  ('core_data.cell_state',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\cell_state.py',
+   'PYMODULE'),
+  ('core_data.grid.grid',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\grid\\grid.py',
+   'PYMODULE'),
+  ('core_data.game_state',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\core_data\\game_state.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('user_actions.start_new_game',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\start_new_game.py',
+   'PYMODULE'),
+  ('puzzle_handler.generate.generate_puzzle',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\generate\\generate_puzzle.py',
+   'PYMODULE'),
+  ('puzzle_handler.generate',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\generate\\__init__.py',
+   'PYMODULE'),
+  ('puzzle_handler.techniques.apply_naked_singles',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\techniques\\apply_naked_singles.py',
+   'PYMODULE'),
+  ('puzzle_handler.techniques',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\techniques\\__init__.py',
+   'PYMODULE'),
+  ('puzzle_handler.techniques.get_possible_values',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\techniques\\get_possible_values.py',
+   'PYMODULE'),
+  ('puzzle_handler.techniques.get_subgrid_possible_values',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\techniques\\get_subgrid_possible_values.py',
+   'PYMODULE'),
+  ('puzzle_handler.techniques.get_column_possible_values',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\techniques\\get_column_possible_values.py',
+   'PYMODULE'),
+  ('puzzle_handler.generate.remove_cell',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\puzzle_handler\\generate\\remove_cell.py',
+   'PYMODULE'),
+  ('user_interface.user_input',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_interface\\user_input.py',
+   'PYMODULE'),
+  ('user_interface.display.menu_display',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_interface\\display\\menu_display.py',
+   'PYMODULE'),
+  ('user_actions.upload_sudoku',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\user_actions\\upload_sudoku.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\signal.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\logging\\__init__.py',
+   'PYMODULE')],
+ [('python311.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\python311.dll',
+   'BINARY'),
+  ('_decimal.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_lzma.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_bz2.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('unicodedata.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('select.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('_socket.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_ctypes.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('VCRUNTIME140.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('libcrypto-3.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\libcrypto-3.dll',
+   'BINARY'),
+  ('libffi-8.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\DLLs\\libffi-8.dll',
+   'BINARY')],
+ [],
+ [],
+ [('config\\__init__.py',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__init__.py',
+   'DATA'),
+  ('config\\__pycache__\\__init__.cpython-311.pyc',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__pycache__\\__init__.cpython-311.pyc',
+   'DATA'),
+  ('config\\__pycache__\\__init__.cpython-312.pyc',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__pycache__\\__init__.cpython-312.pyc',
+   'DATA'),
+  ('config\\__pycache__\\config.cpython-312.pyc',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\__pycache__\\config.cpython-312.pyc',
+   'DATA'),
+  ('config\\config.py',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\config.py',
+   'DATA'),
+  ('config\\config.yaml',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\config\\config.yaml',
+   'DATA'),
+  ('base_library.zip',
+   'D:\\Athu\\Declarative Programming\\Final '
+   'Project\\Sudoku_FP\\build\\main\\base_library.zip',
+   'DATA')])

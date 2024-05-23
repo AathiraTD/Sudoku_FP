@@ -33,7 +33,7 @@ def test_upload_sudoku_valid(monkeypatch):
 
     monkeypatch.setattr('builtins.input', mock_input)
     with patch("builtins.open", mock_open(read_data=valid_sudoku_content)):
-        config = load_config("config.yaml")
+        config = load_config("config/config.yaml")
         with patch('user_interface.display.display_grid') as mock_display_grid, \
              patch('user_interface.user_input.get_user_move', return_value='menu') as mock_get_user_move, \
              patch('user_interface.game_actions.game_actions') as mock_game_actions:
@@ -60,7 +60,7 @@ def test_upload_sudoku_invalid(monkeypatch):
 
     monkeypatch.setattr('builtins.input', mock_input)
     with patch("builtins.open", mock_open(read_data=invalid_sudoku_content)):
-        config = load_config("config.yaml")
+        config = load_config("config/config.yaml")
         with patch('user_interface.display.display_grid') as mock_display_grid, \
              patch('user_interface.user_input.get_user_move', return_value='menu') as mock_get_user_move, \
              patch('user_interface.game_actions.game_actions') as mock_game_actions:

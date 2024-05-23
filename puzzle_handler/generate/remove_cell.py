@@ -1,9 +1,9 @@
 import logging
 from typing import Set, Dict, Callable, Tuple
-from core_data.grid.grid import Grid, update_grid
+from core_data.grid.grid import Grid
 from core_data.coordinate import Coordinate
 from core_data.cell_state import CellState
-from puzzle_handler.solve.puzzle_solver import count_solutions
+from puzzle_handler.solve.puzzle_solver import count_solutions, update_grid
 
 
 def memoize(func: Callable) -> Callable:

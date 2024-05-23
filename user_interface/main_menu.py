@@ -1,10 +1,10 @@
 import os
 import sys
 
+from user_actions.upload_sudoku import upload_sudoku
 from user_interface.display.menu_display import display_main_menu
 from user_interface.user_input import get_menu_choice
 from user_actions.start_new_game import start_new_game
-from user_actions.upload_sudoku import upload_sudoku
 from user_actions.load_saved_game import load_saved_game
 
 

@@ -1,9 +1,13 @@
 import logging
 import random
 from typing import Dict, List, Optional, Tuple, Callable, Any
-from core_data.grid.grid import Grid, update_grid
+
+from core_data.cell import Cell
+from core_data.cell_value import CellValue
+from core_data.grid.grid import Grid
 from core_data.coordinate import Coordinate
 from core_data.cell_state import CellState
+from core_data.grid.row import Row
 from utils.grid_utils import find_empty_cell
 
 # Custom cache dictionary to store the results of counted solutions
@@ -25,18 +29,7 @@ def grid_to_string(grid: Grid) -> str:
 
 
 def is_valid(grid: Grid, row: int, col: int, num: int) -> bool:
-    """
-    Check if placing a number in a specific cell follows Sudoku rules.
 
-    Args:
-        grid (Grid): The current Sudoku grid.
-        row (int): The row index.
-        col (int): The column index.
-        num (int): The number to place.
-
-    Returns:
-        bool: True if the move is valid, False otherwise.
-    """
     grid_size = grid.grid_size
     subgrid_size = int(grid_size ** 0.5)
 
@@ -137,7 +130,6 @@ def get_possible_values(grid: Grid, row: int, col: int) -> set:
     return possible_values
 
 
-
 def backtrack(grid: Grid) -> Tuple[Grid, bool]:
     logging.debug("Starting backtrack")
     empty_cell = find_empty_cell(grid)
@@ -222,3 +214,11 @@ def count_solutions(grid: Grid, grid_size: int, max_solutions: int = 2) -> int:
         logging.error(f"Error in count_solutions: {e}")
         return 0
 
+
+def update_grid(grid: Grid, coordinate: Coordinate, value: Optional[int], state: CellState) -> Grid:
+    new_cells = {coord: cell for row in grid.rows for coord, cell in row.cells.items()}
+    new_cells[coordinate] = Cell(CellValue(value, grid.grid_size), state)
+    rows = tuple(
+        Row({coord: new_cells[coord] for coord in new_cells if coord.row_index == row_index}, row_index) for row_index
+        in range(grid.grid_size))
+    return Grid(rows=rows, grid_size=grid.grid_size)

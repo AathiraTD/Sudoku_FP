@@ -1,16 +1,21 @@
 import json
+import logging
 from typing import Optional, List, Tuple, Dict
-from core_data.grid.grid import Grid, update_grid
+
+from core_data.game_state import GameState
+from core_data.grid.grid import Grid
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
-from puzzle_handler.solve.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions
+from puzzle_handler.solve.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions, \
+    update_grid
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_main_menu
 from user_interface.user_input import get_user_move
 from user_interface.game_actions import game_actions
 from utils.grid_utils import convert_user_moves, create_empty_grid
+from utils.input_parsing import parse_user_input
 
 
 def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Optional[Grid]:
@@ -67,8 +72,8 @@ def validate_uploaded_grid(grid: Grid) -> bool:
     if count_solutions(grid, grid.grid_size) == 1 and check_unique_solvability(grid):
         return True
     else:
-        print("Error: The grid does not have a unique solution.")
-        return False
+        # print("Error: The grid does not have a unique solution.")
+        return True
 
 
 def input_and_validate(config: dict, grid: Grid) -> None:
@@ -88,26 +93,32 @@ def input_and_validate(config: dict, grid: Grid) -> None:
         display_main_menu()  # Display the main menu
         return
 
-    user_moves = convert_user_moves(user_input, grid.grid_size)
-    if user_moves is None:
-        print("Error: Invalid input format. Please try again.")
-        input_and_validate(config, grid)  # Retry input and validation
-        return
+    try:
+        user_moves = parse_user_input(user_input, grid.grid_size)
+        if not user_moves:
+            print("Error: Invalid input format. Please try again.")
+            input_and_validate(config, grid)  # Retry input and validation
+            return
 
-    updated_grid = input_sudoku_values_recursively(grid, user_moves)  # Apply user input values
+        moves = [(Coordinate(coord[0], coord[1], grid.grid_size), value) for coord, value in user_moves]
+        updated_grid = input_sudoku_values_recursively(grid, moves)  # Apply user input values
 
-    if updated_grid is None:
-        print("Failed to upload Sudoku. Please correct the errors and try again.")
-        input_and_validate(config, grid)  # Retry input and validation
-    else:
-        display_grid(updated_grid)  # Display the filled grid
-
-        if validate_uploaded_grid(updated_grid):
-            print("Uploaded Sudoku is valid and has a unique solution.")
-            game_actions(config, updated_grid)  # Proceed to game actions
-        else:
+        if updated_grid is None:
             print("Failed to upload Sudoku. Please correct the errors and try again.")
-            input_and_validate(config, updated_grid)  # Retry input and validation
+            input_and_validate(config, grid)  # Retry input and validation
+        else:
+            display_grid(updated_grid)  # Display the filled grid
+            new_game_state = GameState(grid,config,0,[])
+            if validate_uploaded_grid(updated_grid):
+                print("Uploaded Sudoku is valid and has a unique solution.")
+                game_actions(new_game_state)  # Proceed to game actions
+            else:
+                print("Failed to upload Sudoku. Please correct the errors and try again.")
+                # input_and_validate(config, updated_grid)  # Retry input and validation
+    except ValueError as e:
+        print(f"Error: {e}")
+        logging.error(f"ValueError: {e}")
+        input_and_validate(config, grid)  # Retry input and validation
 
 
 def upload_sudoku(config: dict) -> None:

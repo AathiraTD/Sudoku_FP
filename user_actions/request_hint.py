@@ -1,10 +1,10 @@
 from typing import Dict, Optional, Tuple
 
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid, update_grid
+from core_data.grid.grid import Grid
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
-from puzzle_handler.solve.puzzle_solver import count_solutions, is_valid
+from puzzle_handler.solve.puzzle_solver import count_solutions, is_valid, update_grid
 from puzzle_handler.solve.sudoku_validation import  has_empty_cells, \
     check_and_handle_completion
 from user_interface.display.display_grid import display_grid

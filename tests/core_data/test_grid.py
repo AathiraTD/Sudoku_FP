@@ -3,8 +3,9 @@ from core_data.cell import Cell
 from core_data.coordinate import Coordinate
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from core_data.grid.grid import Grid, update_cell
+from core_data.grid.grid import Grid
 from core_data.grid.row import Row
+from puzzle_handler.solve.puzzle_solver import update_grid
 
 
 class TestGrid(unittest.TestCase):
@@ -52,7 +53,7 @@ class TestGrid(unittest.TestCase):
         Test updating a cell in the grid.
         """
         coordinate = Coordinate(0, 0, self.grid_size)
-        new_grid = update_cell(self.grid, coordinate, 5, CellState.USER_FILLED)
+        new_grid = update_grid(self.grid, coordinate, 5, CellState.USER_FILLED)
         self.assertNotEqual(new_grid, self.grid)  # Ensure a new Grid instance is created
         self.assertEqual(new_grid[0, 0].value.value, 5)
         self.assertEqual(new_grid[0, 0].state, CellState.USER_FILLED)
@@ -61,7 +62,7 @@ class TestGrid(unittest.TestCase):
         """
         Test updating an empty cell in the grid.
         """
-        new_grid = update_cell(self.grid, Coordinate(0, 0, self.grid_size), None, CellState.EMPTY)
+        new_grid = update_grid(self.grid, Coordinate(0, 0, self.grid_size), None, CellState.EMPTY)
         self.assertEqual(new_grid[0, 0].value.value, None)
         self.assertEqual(new_grid[0, 0].state, CellState.EMPTY)
 
