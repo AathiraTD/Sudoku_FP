@@ -5,67 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="CLi based Sudoku game in Python following FP">
-      <change afterPath="$PROJECT_DIR$/Backup Feature/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/features/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/features/steps/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/features/steps/gameplay_interface_steps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/make_a_move_steps.p.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sudoku_Fp.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/main.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/warn-main.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/xref-main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/Sudoku_Fp.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/VCRUNTIME140.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_bz2.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_ctypes.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_decimal.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_hashlib.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_lzma.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_socket.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/libcrypto-3.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/libffi-8.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/python312.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/select.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/unicodedata.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/yaml/_yaml.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/step_display_main_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BDD.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/display_gameplay_interface.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/display_gameplay_interface.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/exit_sudoku_game_play.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/exit_sudoku_game_play.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/exit_sudoku_main_menu.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/exit_sudoku_main_menu.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/game_comletion.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/main_menu.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/main_menu.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/puzzle_generation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/puzzle_generation.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/puzzle_solver.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/request_hint.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/request_hint.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/resume_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/resume_sudoku.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/save_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/save_game.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/undo_redo_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/undo_redo_move.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/upload_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/upload_sudoku.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_main_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/exit_sudoku_game_play.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/exit_sudoku_main_menu.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/main_menu.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/test_main_menu.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/puzzle_generation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/puzzle_generation.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/request_hint.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/request_hint.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/resume_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/resume_sudoku.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/save_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/save_game.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/start_a_new_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/start_a_new_game.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/steps/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/steps/gameplay_interface_steps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/undo_redo_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/undo_redo_move.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/features/upload_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/upload_sudoku.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/make_a_move_steps.p.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/step_start_a_new_game.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backup Feature/user_input_value.feature" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/start_a_new_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/features/start_a_new_game.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/step_start_a_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backup Feature/step_start_a_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/display_gameplay_interface.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/step_display_main_menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/display/menu_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/menu_display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/grid_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grid_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Backup-before-reactoring-packages" />
+        <entry key="$PROJECT_DIR$" value="Hioerarchical-Strcture" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,6 +57,17 @@
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;AathiraTD&quot;
   }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOL9oXNM5wTNjl&quot;,
+        &quot;number&quot;: 2
+      },
+      &quot;lastSeen&quot;: 1716476010330
+    }
+  ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -167,11 +143,11 @@
     "Python.upload_sudoku.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ToolWindowRun.ShowToolbar": "false",
-    "git-widget-placeholder": "#2 on Hioerarchical-Strcture",
+    "git-widget-placeholder": "Implementing-BDD",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP/puzzle_handler/solve/puzzle_solver.py",
+    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "Errors"
   }
 }]]></component>
   <component name="QodanaHighlightedReportService">
@@ -197,14 +173,14 @@
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\user_actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\gherkin_spec" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\Backup Feature" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\feature\steps" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\feature" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_upload_sudoku.test_upload_sudoku_valid">
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Sudoku_FP" />
       <option name="ENV_FILES" value="" />
@@ -227,26 +203,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_upload_sudoku.test_upload_sudoku_valid" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Sudoku_FP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/user_actions" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_upload_sudoku.test_upload_sudoku_valid&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests for test_upload_sudoku.test_upload_sudoku_valid" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -328,13 +284,38 @@
       <option name="project" value="LOCAL" />
       <updated>1716437697090</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="CLi based Sud oku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716475506501</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716475506501</updated>
+    </task>
+    <task id="LOCAL-00010" summary="CLi based Sudoku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716475747398</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716475747398</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="CLi based Sudoku game in Python following FP" />
     <option name="LAST_COMMIT_MESSAGE" value="CLi based Sudoku game in Python following FP" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
