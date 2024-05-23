@@ -5,74 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="CLi based Sudoku game in Python following FP">
-      <change afterPath="$PROJECT_DIR$/Backup Feature/display_gameplay_interface.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/exit_sudoku_game_play.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/exit_sudoku_main_menu.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/game_comletion.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/main_menu.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/puzzle_generation.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/puzzle_solver.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/request_hint.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/resume_sudoku.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/save_game.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/undo_redo_move.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/upload_sudoku.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup Feature/user_input_value.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/start_a_new_game.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/step_start_a_new_game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/solve/helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test02.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/config/invalid_config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/config/test_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_cell.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_cell_value.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_column.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_coordinate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_game_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_row.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/test_load_saved_game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/test_make_a_move.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/test_request_hint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/test_save_game_to_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/test_start_new_game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/test_undo_move.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_interface/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_interface/test_display_grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_interface/test_main_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/user_interface/test_menu_display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test05.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test06.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/coordinate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/game_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/game_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid/column.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/column.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core_data/grid/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/grid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core_data/grid/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid/subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/subgrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/step_start_a_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/step_start_a_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/backtrack.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/backtrack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/solve_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/backtrack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaji01.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaji02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaji03.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaji04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaji05.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaji06.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaji_test_01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_row.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/load_saved_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/load_saved_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/redo_move.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface/display/display_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/display_grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/game_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/game_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/grid_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grid_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Backup-before-reactoring-packages" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,16 +125,20 @@
     "Python tests.Python tests in test_row.py.executor": "Run",
     "Python tests.Python tests in test_save_game_to_file.py.executor": "Run",
     "Python tests.Python tests in test_start_new_game.py.executor": "Run",
-    "Python tests.Python tests in test_subgrid.py.executor": "Run",
+    "Python tests.Python tests in test_subgrid.py.executor": "Debug",
     "Python tests.Python tests in test_undo_move.py.executor": "Run",
     "Python tests.Python tests in test_upload_sudoku.py.executor": "Debug",
     "Python.coordinate.executor": "Run",
-    "Python.main.executor": "Run",
+    "Python.generate_puzzle.executor": "Run",
+    "Python.grid.executor": "Debug",
+    "Python.helpers.executor": "Run",
+    "Python.main.executor": "Debug",
     "Python.row.executor": "Debug",
     "Python.step_start_a_new_game.executor": "Run",
+    "Python.subgrid.executor": "Debug",
     "Python.upload_sudoku.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Backup-before-reactoring-packages",
+    "git-widget-placeholder": "Hioerarchical-Strcture",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP/features",
     "run.code.analysis.last.selected.profile": "aDefault",
@@ -198,11 +168,11 @@
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\user_actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\Backup Feature" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\feature\steps" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\feature" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\config" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\core_data" />
     </key>
   </component>
   <component name="RunManager">
@@ -377,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716322269304</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CLi based Sudoku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716405014673</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716405014673</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -402,6 +380,11 @@
           <url>file://$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py</url>
           <line>40</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user_actions/save_game.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="203" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

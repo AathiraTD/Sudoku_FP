@@ -1,7 +1,9 @@
-from puzzle_handler.solve.backtrack import backtrack
+from colorama import Fore, Style
+
 from core_data.grid.grid import Grid
-from puzzle_handler.solve.helpers import count_solutions
+from puzzle_handler.solve.puzzle_solver import backtrack, count_solutions
 from user_interface.display.display_grid import display_grid
+from user_interface.user_input import get_post_solve_choice
 
 
 def solve_puzzle(grid: Grid) -> Grid:
@@ -20,8 +22,19 @@ def solve_puzzle(grid: Grid) -> Grid:
     if num_solutions == 1:
         solved_grid, success = backtrack(grid)
         if success:
-            print("Puzzle solved successfully.")
+            # If the puzzle is successfully solved
+
             display_grid(solved_grid)  # Display the solved grid
+
+            print(Fore.RED + Style.BRIGHT + "Puzzle solved successfully." + Style.RESET_ALL)
+
+            choice = get_post_solve_choice()  # Get user's choice after solving
+            if choice == 1:
+                print("Starting a new game...")
+                # Implement starting a new game logic here
+            elif choice == 2:
+                print("Returning to main menu...")
+                # Implement returning to main menu logic here
             return solved_grid
         else:
             print("Failed to solve the puzzle")

@@ -1,16 +1,16 @@
 import json
 from typing import Optional, List, Tuple, Dict
-from core_data.grid.grid import Grid, update_cell
+from core_data.grid.grid import Grid, update_grid
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
+from puzzle_handler.solve.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_main_menu
 from user_interface.user_input import get_user_move
 from user_interface.game_actions import game_actions
 from utils.grid_utils import convert_user_moves, create_empty_grid
-from puzzle_handler.solve.puzzle_solver import apply_naked_singles, count_solutions, check_unique_solvability
 
 
 def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Optional[Grid]:
@@ -42,7 +42,7 @@ def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinat
         return None
 
     try:
-        grid = update_cell(grid, coord, cell.value.value, cell.state, skip_validation=False)
+        grid = update_grid(grid, coord, cell.value.value, cell.state)
     except ValueError as e:
         print(f"Error: {e}")
         return None

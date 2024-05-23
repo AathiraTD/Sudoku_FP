@@ -30,12 +30,6 @@ def handle_menu_choice(config: dict, choice: int) -> None:
 
 
 def menu_loop(config: dict) -> None:
-    """
-    Function to display the menu and handle user choice using recursion.
-
-    Args:
-        config (dict): Configuration settings.
-    """
     clear_screen()
     display_main_menu()  # Display the main menu
     choice = get_menu_choice()  # Get the user's menu choice

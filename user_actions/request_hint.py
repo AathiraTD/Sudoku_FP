@@ -1,25 +1,17 @@
 from typing import Dict, Optional, Tuple
 
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid, update_cell
+from core_data.grid.grid import Grid, update_grid
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
-from puzzle_handler.solve.helpers import count_solutions
-from puzzle_handler.solve.sudoku_validation import is_valid, has_empty_cells, \
+from puzzle_handler.solve.puzzle_solver import count_solutions, is_valid
+from puzzle_handler.solve.sudoku_validation import  has_empty_cells, \
     check_and_handle_completion
 from user_interface.display.display_grid import display_grid
+from user_interface.user_input import get_hint_choice
 from utils.grid_utils import find_random_empty_cell, try_values_recursive, label_to_index
 import traceback
 
-
-def get_hint_choice() -> str:
-    """
-    Prompt the user to choose between a random or specific cell for the hint.
-    Returns the user's choice as a string.
-    """
-    prompt = "\nChoose an option for hint:\n1. Random cell\n2. Specific cell\n> "
-    choice = input(prompt).strip()
-    return 'random' if choice == '1' else 'specific' if choice == '2' else validate_hint_choice('invalid')
 
 
 def get_specific_cell(grid_size: int) -> Tuple[int, int]:
@@ -27,7 +19,7 @@ def get_specific_cell(grid_size: int) -> Tuple[int, int]:
     Prompt the user to enter a specific cell coordinate and validate the input.
     Returns a tuple of (row, col) representing the cell coordinate.
     """
-    prompt = "Enter the cell coordinate in the format 'ColumnLabel RowNumber' (e.g., 'A4'):\n> "
+    prompt = "Enter the cell coordinate in the format 'ColumnLabel RowNumber' (e.g., 'A4') or Back to return:\n> "
     user_input = input(prompt).strip().upper()
     coord = label_to_index(user_input, grid_size)
     if coord:
@@ -46,8 +38,8 @@ def generate_hint(grid: Grid, row: int, col: int) -> Optional[int]:
         Callback function to check if a number is a valid hint for the given cell.
         """
         grid, row, col = context
-        if is_valid(grid, row, col, num, grid.grid_size):
-            test_grid = update_cell(grid, Coordinate(row, col, grid.grid_size), num, CellState.HINT)
+        if is_valid(grid, row, col, num):
+            test_grid = update_grid(grid, Coordinate(row, col, grid.grid_size), num, CellState.HINT)
             if count_solutions(test_grid, grid.grid_size) == 1:
                 return num  # Return the valid hint value
         return None
@@ -97,7 +89,7 @@ def request_hint(game_state: GameState) -> GameState:
             print(f"No valid hint could be generated for the cell {chr(ord('A') + row)}{col + 1}.")
             return game_state
 
-        new_grid = update_cell(game_state.grid, Coordinate(row, col, game_state.grid.grid_size), hint_value,
+        new_grid = update_grid(game_state.grid, Coordinate(row, col, game_state.grid.grid_size), hint_value,
                                CellState.HINT)  # Apply the hint
         game_state = game_state.increment_hints().with_grid(new_grid)
         print(f"Hint applied for cell {chr(ord('A') + row)}{col + 1}. Value: {hint_value}.")

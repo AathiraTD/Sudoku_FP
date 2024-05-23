@@ -3,6 +3,7 @@ from core_data.cell import Cell, CellValue, CellState
 from core_data.coordinate import Coordinate
 from core_data.grid.row import Row
 
+
 def test_row_creation_valid():
     # Create a set of valid cells for a row
     cells = {
@@ -16,6 +17,7 @@ def test_row_creation_valid():
     assert row.row_index == 0
     assert len(row.cells) == 3
 
+
 def test_row_creation_invalid():
     # Create a set of invalid cells for a row (cells in different rows)
     cells = {
@@ -25,6 +27,7 @@ def test_row_creation_invalid():
     # Assert that creating a Row with invalid cells raises a ValueError
     with pytest.raises(ValueError):
         Row(cells, 0)
+
 
 def test_row_get_cell():
     # Create a set of valid cells for a row
@@ -38,6 +41,7 @@ def test_row_get_cell():
     # Assert that the cell's value is correct
     assert cell.value.value == 2
 
+
 def test_row_get_cell_invalid():
     # Create a set of valid cells for a row
     cells = {
@@ -49,6 +53,7 @@ def test_row_get_cell_invalid():
     # Assert that accessing an invalid cell coordinate raises an IndexError
     with pytest.raises(IndexError):
         row.get_cell(Coordinate(1, 1, 9))
+
 
 def test_row_getitem():
     # Create a set of valid cells for a row
