@@ -1,0 +1,254 @@
+2024-05-23 15:28:09,354 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,354 - root - DEBUG - Empty cell found at 0, 0
+2024-05-23 15:28:09,354 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,354 - root - DEBUG - Empty cell found at 0, 1
+2024-05-23 15:28:09,355 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,355 - root - DEBUG - Empty cell found at 0, 2
+2024-05-23 15:28:09,355 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,355 - root - DEBUG - Empty cell found at 0, 3
+2024-05-23 15:28:09,356 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,356 - root - DEBUG - Empty cell found at 0, 4
+2024-05-23 15:28:09,356 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,356 - root - DEBUG - Empty cell found at 0, 5
+2024-05-23 15:28:09,357 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,357 - root - DEBUG - Empty cell found at 0, 6
+2024-05-23 15:28:09,357 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,357 - root - DEBUG - Empty cell found at 0, 7
+2024-05-23 15:28:09,358 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,358 - root - DEBUG - Empty cell found at 0, 8
+2024-05-23 15:28:09,358 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,358 - root - DEBUG - Empty cell found at 1, 0
+2024-05-23 15:28:09,359 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,359 - root - DEBUG - Empty cell found at 1, 1
+2024-05-23 15:28:09,360 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,360 - root - DEBUG - Empty cell found at 1, 2
+2024-05-23 15:28:09,361 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,361 - root - DEBUG - Empty cell found at 1, 3
+2024-05-23 15:28:09,361 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,362 - root - DEBUG - Empty cell found at 1, 4
+2024-05-23 15:28:09,362 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,362 - root - DEBUG - Empty cell found at 1, 5
+2024-05-23 15:28:09,363 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,363 - root - DEBUG - Empty cell found at 1, 6
+2024-05-23 15:28:09,364 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,364 - root - DEBUG - Empty cell found at 1, 7
+2024-05-23 15:28:09,366 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,366 - root - DEBUG - Empty cell found at 1, 8
+2024-05-23 15:28:09,368 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,369 - root - DEBUG - Empty cell found at 1, 7
+2024-05-23 15:28:09,370 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,370 - root - DEBUG - Empty cell found at 1, 8
+2024-05-23 15:28:09,371 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,371 - root - DEBUG - Empty cell found at 1, 6
+2024-05-23 15:28:09,371 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,372 - root - DEBUG - Empty cell found at 1, 7
+2024-05-23 15:28:09,373 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,373 - root - DEBUG - Empty cell found at 1, 8
+2024-05-23 15:28:09,375 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,375 - root - DEBUG - Empty cell found at 1, 7
+2024-05-23 15:28:09,376 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,376 - root - DEBUG - Empty cell found at 1, 8
+2024-05-23 15:28:09,377 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,377 - root - DEBUG - Empty cell found at 1, 6
+2024-05-23 15:28:09,378 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,378 - root - DEBUG - Empty cell found at 1, 7
+2024-05-23 15:28:09,378 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,378 - root - DEBUG - Empty cell found at 1, 8
+2024-05-23 15:28:09,379 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,379 - root - DEBUG - Empty cell found at 2, 0
+2024-05-23 15:28:09,379 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,380 - root - DEBUG - Empty cell found at 2, 1
+2024-05-23 15:28:09,384 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,384 - root - DEBUG - Empty cell found at 2, 2
+2024-05-23 15:28:09,385 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,385 - root - DEBUG - Empty cell found at 2, 3
+2024-05-23 15:28:09,386 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,386 - root - DEBUG - Empty cell found at 2, 4
+2024-05-23 15:28:09,386 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,386 - root - DEBUG - Empty cell found at 2, 5
+2024-05-23 15:28:09,387 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,387 - root - DEBUG - Empty cell found at 2, 6
+2024-05-23 15:28:09,387 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,387 - root - DEBUG - Empty cell found at 2, 7
+2024-05-23 15:28:09,388 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,388 - root - DEBUG - Empty cell found at 2, 8
+2024-05-23 15:28:09,388 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,388 - root - DEBUG - Empty cell found at 3, 0
+2024-05-23 15:28:09,388 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,389 - root - DEBUG - Empty cell found at 3, 1
+2024-05-23 15:28:09,389 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,389 - root - DEBUG - Empty cell found at 3, 2
+2024-05-23 15:28:09,389 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,389 - root - DEBUG - Empty cell found at 3, 3
+2024-05-23 15:28:09,390 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,390 - root - DEBUG - Empty cell found at 3, 4
+2024-05-23 15:28:09,390 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,390 - root - DEBUG - Empty cell found at 3, 5
+2024-05-23 15:28:09,391 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,391 - root - DEBUG - Empty cell found at 3, 6
+2024-05-23 15:28:09,391 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,392 - root - DEBUG - Empty cell found at 3, 7
+2024-05-23 15:28:09,392 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,392 - root - DEBUG - Empty cell found at 3, 8
+2024-05-23 15:28:09,393 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,393 - root - DEBUG - Empty cell found at 4, 0
+2024-05-23 15:28:09,394 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,394 - root - DEBUG - Empty cell found at 4, 1
+2024-05-23 15:28:09,394 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,395 - root - DEBUG - Empty cell found at 4, 2
+2024-05-23 15:28:09,395 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,396 - root - DEBUG - Empty cell found at 4, 3
+2024-05-23 15:28:09,397 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,397 - root - DEBUG - Empty cell found at 4, 4
+2024-05-23 15:28:09,397 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,397 - root - DEBUG - Empty cell found at 4, 5
+2024-05-23 15:28:09,398 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,398 - root - DEBUG - Empty cell found at 4, 6
+2024-05-23 15:28:09,398 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,398 - root - DEBUG - Empty cell found at 4, 7
+2024-05-23 15:28:09,399 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,399 - root - DEBUG - Empty cell found at 4, 8
+2024-05-23 15:28:09,400 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,400 - root - DEBUG - Empty cell found at 5, 0
+2024-05-23 15:28:09,401 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,401 - root - DEBUG - Empty cell found at 5, 1
+2024-05-23 15:28:09,401 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,401 - root - DEBUG - Empty cell found at 5, 2
+2024-05-23 15:28:09,402 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,403 - root - DEBUG - Empty cell found at 5, 2
+2024-05-23 15:28:09,403 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,403 - root - DEBUG - Empty cell found at 5, 1
+2024-05-23 15:28:09,404 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,404 - root - DEBUG - Empty cell found at 5, 2
+2024-05-23 15:28:09,404 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,405 - root - DEBUG - Empty cell found at 5, 3
+2024-05-23 15:28:09,405 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,405 - root - DEBUG - Empty cell found at 5, 4
+2024-05-23 15:28:09,406 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,406 - root - DEBUG - Empty cell found at 5, 5
+2024-05-23 15:28:09,406 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,407 - root - DEBUG - Empty cell found at 5, 6
+2024-05-23 15:28:09,407 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,407 - root - DEBUG - Empty cell found at 5, 7
+2024-05-23 15:28:09,407 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,408 - root - DEBUG - Empty cell found at 5, 8
+2024-05-23 15:28:09,409 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,409 - root - DEBUG - Empty cell found at 5, 8
+2024-05-23 15:28:09,409 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,410 - root - DEBUG - Empty cell found at 6, 0
+2024-05-23 15:28:09,410 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,411 - root - DEBUG - Empty cell found at 6, 1
+2024-05-23 15:28:09,411 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,412 - root - DEBUG - Empty cell found at 6, 2
+2024-05-23 15:28:09,414 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,416 - root - DEBUG - Empty cell found at 6, 3
+2024-05-23 15:28:09,417 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,418 - root - DEBUG - Empty cell found at 6, 4
+2024-05-23 15:28:09,418 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,419 - root - DEBUG - Empty cell found at 6, 5
+2024-05-23 15:28:09,419 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,420 - root - DEBUG - Empty cell found at 6, 6
+2024-05-23 15:28:09,421 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,421 - root - DEBUG - Empty cell found at 6, 7
+2024-05-23 15:28:09,422 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,422 - root - DEBUG - Empty cell found at 6, 8
+2024-05-23 15:28:09,423 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,423 - root - DEBUG - Empty cell found at 7, 0
+2024-05-23 15:28:09,423 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,424 - root - DEBUG - Empty cell found at 7, 1
+2024-05-23 15:28:09,424 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,425 - root - DEBUG - Empty cell found at 7, 2
+2024-05-23 15:28:09,425 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,425 - root - DEBUG - Empty cell found at 7, 3
+2024-05-23 15:28:09,425 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,426 - root - DEBUG - Empty cell found at 7, 4
+2024-05-23 15:28:09,426 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,426 - root - DEBUG - Empty cell found at 7, 5
+2024-05-23 15:28:09,427 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,427 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,428 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,429 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,431 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,431 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,432 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,433 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,434 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,434 - root - DEBUG - Empty cell found at 7, 8
+2024-05-23 15:28:09,436 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,437 - root - DEBUG - Empty cell found at 7, 4
+2024-05-23 15:28:09,437 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,438 - root - DEBUG - Empty cell found at 7, 5
+2024-05-23 15:28:09,438 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,439 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,439 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,440 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,442 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,444 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,446 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,447 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,449 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,449 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,450 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,451 - root - DEBUG - Empty cell found at 7, 8
+2024-05-23 15:28:09,454 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,455 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,456 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,457 - root - DEBUG - Empty cell found at 7, 8
+2024-05-23 15:28:09,458 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,458 - root - DEBUG - Empty cell found at 7, 3
+2024-05-23 15:28:09,459 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,460 - root - DEBUG - Empty cell found at 7, 4
+2024-05-23 15:28:09,461 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,461 - root - DEBUG - Empty cell found at 7, 5
+2024-05-23 15:28:09,461 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,462 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,463 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,463 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,464 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,464 - root - DEBUG - Empty cell found at 7, 8
+2024-05-23 15:28:09,465 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,465 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,466 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,467 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,467 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,467 - root - DEBUG - Empty cell found at 7, 8
+2024-05-23 15:28:09,468 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,468 - root - DEBUG - Empty cell found at 7, 8
+2024-05-23 15:28:09,469 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,469 - root - DEBUG - Empty cell found at 7, 2
+2024-05-23 15:28:09,469 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,470 - root - DEBUG - Empty cell found at 7, 3
+2024-05-23 15:28:09,470 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,470 - root - DEBUG - Empty cell found at 7, 4
+2024-05-23 15:28:09,471 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,471 - root - DEBUG - Empty cell found at 7, 5
+2024-05-23 15:28:09,471 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,472 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,472 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,473 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,474 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,474 - root - DEBUG - Empty cell found at 7, 6
+2024-05-23 15:28:09,475 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,476 - root - DEBUG - Empty cell found at 7, 7
+2024-05-23 15:28:09,477 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,479 - root - DEBUG - Empty cell found at 7, 8
+2024-05-23 15:28:09,480 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,481 - root - DEBUG - Empty cell found at 8, 0
+2024-05-23 15:28:09,484 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,484 - root - DEBUG - Empty cell found at 8, 1
+2024-05-23 15:28:09,485 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,485 - root - DEBUG - Empty cell found at 8, 2
+2024-05-23 15:28:09,486 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,486 - root - DEBUG - Empty cell found at 8, 3
+2024-05-23 15:28:09,487 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,487 - root - DEBUG - Empty cell found at 8, 4
+2024-05-23 15:28:09,487 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,488 - root - DEBUG - Empty cell found at 8, 5
+2024-05-23 15:28:09,488 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,488 - root - DEBUG - Empty cell found at 8, 6
+2024-05-23 15:28:09,489 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,489 - root - DEBUG - Empty cell found at 8, 7
+2024-05-23 15:28:09,489 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,490 - root - DEBUG - Empty cell found at 8, 8
+2024-05-23 15:28:09,490 - root - DEBUG - Starting backtrack
+2024-05-23 15:28:09,491 - root - DEBUG - No empty cells found, puzzle solved
