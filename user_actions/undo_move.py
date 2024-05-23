@@ -1,7 +1,7 @@
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from core_data.grid.grid import update_cell
+from core_data.grid.grid import update_grid
 from user_interface.display.display_grid import display_grid
 
 
@@ -21,8 +21,8 @@ def undo_move(game_state: GameState) -> GameState:
         game_state = game_state.push_redo((row, col, game_state.grid[row, col].value.value))
 
         # Revert the grid to the previous value
-        new_grid = update_cell(game_state.grid, Coordinate(row, col, game_state.grid.grid_size), previous_value,
-                               CellState.USER_FILLED if previous_value != 0 else CellState.EMPTY, True)
+        new_grid = update_grid(game_state.grid, Coordinate(row, col, game_state.grid.grid_size), previous_value,
+                               CellState.USER_FILLED if previous_value != 0 else CellState.EMPTY)
 
         # Display a message indicating which cell was undone
         print(

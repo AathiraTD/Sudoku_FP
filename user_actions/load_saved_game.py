@@ -1,10 +1,12 @@
 import os
 import json
 from typing import Optional, List, Dict, Tuple
-from core_data.grid.grid import Grid, Cell, Coordinate
+
+from core_data.game_state import GameState
+from core_data.grid.grid import Grid, Cell, Coordinate, Row
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from puzzle_handler.solve.sudoku_validation import count_solutions
+from puzzle_handler.solve.puzzle_solver import count_solutions
 from user_interface.display.display_grid import display_grid
 from user_interface.game_actions import game_actions
 
@@ -137,14 +139,38 @@ def parse_cells(cells: Dict[str, Dict[str, str]], index: int, cell_items: List[T
 
     key, cell_data = cell_items[index]
     row, col = key.strip('()').split(',')
+    value = int(cell_data['value']) if cell_data['value'] not in [None, 'None'] else None
     parsed_cells[Coordinate(int(row), int(col), grid_size)] = Cell(
-        CellValue(cell_data['value'], grid_size),
+        CellValue(value, grid_size),
         CellState[cell_data['state']]
     )
     return parse_cells(cells, index + 1, cell_items, grid_size, parsed_cells)  # Recursively parse the next cell
 
 
-def validate_saved_game_file(file_path: str) -> Optional[Grid]:
+def create_rows_from_cells(cells: Dict[Coordinate, Cell], grid_size: int) -> Tuple[Row, ...]:
+    """
+    Create rows from the parsed cells.
+
+    Args:
+        cells (Dict[Coordinate, Cell]): The parsed cells.
+        grid_size (int): The size of the grid.
+
+    Returns:
+        Tuple[Row, ...]: The rows created from the cells.
+    """
+
+    def create_row(row_index: int, rows: List[Row]) -> Tuple[Row, ...]:
+        if row_index >= grid_size:
+            return tuple(rows)  # Base case: all rows have been created
+
+        row_cells = {coord: cell for coord, cell in cells.items() if coord.row_index == row_index}
+        rows.append(Row(row_cells, row_index))
+        return create_row(row_index + 1, rows)  # Recursively create the next row
+
+    return create_row(0, [])
+
+
+def validate_saved_game_file(file_path: str) -> Optional[GameState]:
     """
     Validate the saved game file and load the game state.
 
@@ -152,20 +178,29 @@ def validate_saved_game_file(file_path: str) -> Optional[Grid]:
         file_path (str): The path to the saved game file.
 
     Returns:
-        Optional[Grid]: The loaded game state if valid, otherwise None.
+        Optional[GameState]: The loaded game state if valid, otherwise None.
     """
     try:
         with open(file_path, 'r') as file:
-            game_state = json.load(file)  # Load the game state from the file
+            game_state_data = json.load(file)  # Load the game state from the file
 
-        grid_size = game_state['grid_size']
-        cell_items = list(game_state['cells'].items())
-        cells = parse_cells(game_state['cells'], 0, cell_items, grid_size, {})
+        grid_size = game_state_data['grid']['grid_size']
+        cell_items = list(game_state_data['grid']['cells'].items())
+        cells = parse_cells(game_state_data['grid']['cells'], 0, cell_items, grid_size, {})
 
-        grid = Grid(cells, grid_size)
+        rows = create_rows_from_cells(cells, grid_size)
+        grid = Grid(rows=rows, grid_size=grid_size)
+
+        config = game_state_data['config']
+        hints_used = game_state_data['hints_used']
+        undo_stack = game_state_data['undo_stack']
+        redo_stack = game_state_data['redo_stack']
+
+        game_state = GameState(grid=grid, config=config, hints_used=hints_used, undo_stack=undo_stack,
+                               redo_stack=redo_stack)
 
         if count_solutions(grid, grid.grid_size) == 1:
-            return grid  # Return the grid if it has a unique solution
+            return game_state  # Return the game state if the grid has a unique solution
         else:
             print("The puzzle in the saved file does not have a unique solution.")
             return None  # Return None if the puzzle does not have a unique solution
@@ -191,10 +226,10 @@ def load_saved_game(config: dict) -> None:
     chosen_file = prompt_for_file_choice(saved_game_files)  # Get the user's file choice
     file_path = os.path.join(directory, chosen_file)  # Construct the file path
 
-    grid = validate_saved_game_file(file_path)  # Validate and load the saved game file
-    if grid:
+    game_state = validate_saved_game_file(file_path)  # Validate and load the saved game file
+    if game_state:
         print("Saved game loaded successfully.")
-        display_grid(grid)  # Display the loaded grid
-        game_actions(config, grid)  # Pass control to game actions
+        display_grid(game_state.grid)  # Display the loaded grid
+        game_actions(game_state)  # Pass control to game actions
     else:
         print("Failed to load the saved game. Returning to main menu.")

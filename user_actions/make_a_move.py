@@ -3,35 +3,36 @@ from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
-from core_data.grid.grid import Grid, update_cell
+from core_data.grid.grid import Grid, update_grid
 from core_data.game_state import GameState
 from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid, display_messages
 from user_interface.user_input import get_user_move
 from utils.grid_utils import label_to_index
 from utils.input_parsing import parse_user_input
+import logging
 
 
 def make_a_move(game_state: GameState) -> Optional[GameState]:
     """
-    Main function to handle user moves.
+    Make a move in the Sudoku game.
 
     Args:
-        game_state (GameState): The current state of the game.
+        game_state (GameState): The current game state.
 
     Returns:
-        Optional[GameState]: The updated game state after applying user moves, or None if an error occurred.
+        Optional[GameState]: The updated game state if the move is valid, None otherwise.
     """
     grid = game_state.grid
-    user_input = get_user_move()
+    user_input = get_user_move()  # Get the user's move input
 
     if not validate_user_input(user_input, grid.grid_size):
-        print("Error: Invalid input format.")
+        print("Error: Invalid input format.")  # Inform the user of invalid input format
         return None
 
     try:
-        parsed_moves = parse_user_input(user_input, grid.grid_size)
-        moves = convert_parsed_moves(parsed_moves, grid.grid_size)
+        parsed_moves = parse_user_input(user_input, grid.grid_size)  # Parse the user input into moves
+        moves = convert_parsed_moves(parsed_moves, grid.grid_size)  # Convert parsed moves to Coordinate and Cell
 
         # Push each move to the undo stack before applying moves
         game_state = push_undo_recursively(game_state, moves, grid, 0)
@@ -39,17 +40,27 @@ def make_a_move(game_state: GameState) -> Optional[GameState]:
         # Clear the redo stack as new moves invalidate redo history
         game_state = game_state.clear_redo()
 
+        # Apply the moves to the grid and collect messages
         grid, messages = apply_and_report_moves(grid, moves)
+
+        # Display the messages and the updated grid
         display_messages(messages)
         display_grid(grid)
 
+        # Update the game state with the new grid
         game_state = game_state.with_grid(grid)
 
-        if not has_empty_cells(grid):  # Check for empty cells before triggering completion check
+        # Check if there are no empty cells left and handle puzzle completion
+        if not has_empty_cells(grid):
             game_state = check_and_handle_completion(game_state)
 
     except ValueError as e:
         print(f"Error: {e}")
+        logging.error(f"ValueError: {e}")
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        logging.error(f"Unexpected error: {e}", exc_info=True)
         return None
 
     return game_state
@@ -57,17 +68,17 @@ def make_a_move(game_state: GameState) -> Optional[GameState]:
 
 def validate_user_input(user_input: str, grid_size: int) -> bool:
     """
-    Validate the user's input.
+    Validate the user input format.
 
     Args:
-        user_input (str): The user's input.
-        grid_size (int): The size of the Sudoku grid.
+        user_input (str): The user's input string.
+        grid_size (int): The size of the grid.
 
     Returns:
-        bool: True if the input is valid, False otherwise.
+        bool: True if the input format is valid, False otherwise.
     """
     try:
-        parse_user_input(user_input, grid_size)
+        parse_user_input(user_input, grid_size)  # Try parsing the input
         return True
     except ValueError:
         return False
@@ -76,14 +87,14 @@ def validate_user_input(user_input: str, grid_size: int) -> bool:
 def convert_parsed_moves(parsed_moves: List[Tuple[Tuple[int, int], Optional[int]]], grid_size: int) -> List[
     Tuple[Coordinate, Cell]]:
     """
-    Convert parsed moves into a list of Coordinate and Cell tuples.
+    Convert parsed moves to Coordinate and Cell objects.
 
     Args:
-        parsed_moves (List[Tuple[Tuple[int, int], Optional[int]]]): The parsed moves.
-        grid_size (int): The size of the Sudoku grid.
+        parsed_moves (List[Tuple[Tuple[int, int], Optional[int]]]): Parsed moves.
+        grid_size (int): The size of the grid.
 
     Returns:
-        List[Tuple[Coordinate, Cell]]: The converted list of moves.
+        List[Tuple[Coordinate, Cell]]: List of coordinates and cells.
     """
 
     def convert_recursively(index: int, acc: List[Tuple[Coordinate, Cell]]) -> List[Tuple[Coordinate, Cell]]:
@@ -100,37 +111,41 @@ def convert_parsed_moves(parsed_moves: List[Tuple[Tuple[int, int], Optional[int]
 def push_undo_recursively(game_state: GameState, moves: List[Tuple[Coordinate, Cell]], grid: Grid,
                           index: int) -> GameState:
     """
-    Recursively push each move to the undo stack.
+    Push undo actions to the game state recursively.
 
     Args:
-        game_state (GameState): The current state of the game.
-        moves (List[Tuple[Coordinate, Cell]]): The list of moves.
-        grid (Grid): The current state of the grid.
-        index (int): The current index of the move to process.
+        game_state (GameState): The current game state.
+        moves (List[Tuple[Coordinate, Cell]]): List of moves.
+        grid (Grid): The current grid.
+        index (int): Current index of the move to push.
 
     Returns:
-        GameState: The updated game state with the undo stack.
+        GameState: The updated game state.
     """
     if index >= len(moves):  # Base case: all moves have been pushed to undo stack
         return game_state
 
-    coord, _ = moves[index]
-    undo_action = (coord.row_index, coord.col_index, grid.cells[coord].value.value)
-    game_state = game_state.push_undo(undo_action)
+    try:
+        coord, _ = moves[index]
+        undo_action = (coord.row_index, coord.col_index, grid[coord.row_index, coord.col_index].value.value)  # Access cell using grid indexing
+        game_state = game_state.push_undo(undo_action)
+    except Exception as e:
+        logging.error(f"Error pushing undo: {e}")
+        raise
 
     return push_undo_recursively(game_state, moves, grid, index + 1)
 
 
 def apply_and_report_moves(grid: Grid, moves: List[Tuple[Coordinate, Cell]]) -> Tuple[Grid, List[str]]:
     """
-    Apply user moves to the grid and return messages about the moves.
+    Apply moves to the grid and collect messages.
 
     Args:
-        grid (Grid): The Sudoku grid.
-        moves (List[Tuple[Coordinate, Cell]]): A list of tuples containing coordinates and cells.
+        grid (Grid): The current grid.
+        moves (List[Tuple[Coordinate, Cell]]): List of moves.
 
     Returns:
-        Tuple[Grid, List[str]]: The updated grid and a list of messages about the moves.
+        Tuple[Grid, List[str]]: The updated grid and list of messages.
     """
     messages = []
     grid = apply_moves_recursively(grid, moves, messages)
@@ -154,53 +169,20 @@ def apply_moves_recursively(grid: Grid, moves: List[Tuple[Coordinate, Cell]], me
     if index >= len(moves):  # Base case: all moves have been applied
         return grid
 
-    coord, cell = moves[index]
-    current_cell = grid.cells[coord]
+    try:
+        coord, cell = moves[index]
+        current_cell = grid[coord.row_index, coord.col_index]
 
-    if current_cell.state in {CellState.PRE_FILLED, CellState.HINT}:
-        messages.append(
-            f"Cannot apply move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value}. The cell is pre-filled or a hint.")
-    else:
-        grid = update_cell(grid, coord, cell.value.value, CellState.USER_FILLED if cell.value.value is not None else CellState.EMPTY, skip_validation=True)
-        messages.append(
-            f"Move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value if cell.value.value is not None else 'None'} applied successfully.")
+        if current_cell.state in {CellState.PRE_FILLED, CellState.HINT}:
+            messages.append(
+                f"Cannot apply move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value}. The cell is pre-filled or a hint.")
+        else:
+            grid = update_grid(grid, coord, cell.value.value,
+                               CellState.USER_FILLED if cell.value.value is not None else CellState.EMPTY)
+            messages.append(
+                f"Move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value if cell.value.value is not None else 'None'} applied successfully.")
+    except Exception as e:
+        logging.error(f"Error applying move {index}: {e}")
+        raise
 
     return apply_moves_recursively(grid, moves, messages, index + 1)
-
-
-def parse_user_input(user_input: str, grid_size: int) -> List[Tuple[Tuple[int, int], Optional[int]]]:
-    """
-    Parse user input into a list of (coordinate, value) tuples.
-
-    Args:
-        user_input (str): The user's input string.
-        grid_size (int): The size of the grid.
-
-    Returns:
-        List[Tuple[Tuple[int, int], Optional[int]]]: A list of parsed (coordinate, value) tuples.
-    """
-    moves = user_input.split(',')
-    parsed_moves = []
-
-    def parse_move(move_list: List[str], acc: List[Tuple[Tuple[int, int], Optional[int]]]) -> List[Tuple[Tuple[int, int], Optional[int]]]:
-        if not move_list:
-            return acc  # Base case: all moves have been parsed
-
-        move = move_list[0].strip()
-        if '=' not in move:
-            raise ValueError(f"Invalid input format: {move}")
-
-        position, value = move.split('=')
-        coord = label_to_index(position.strip(), grid_size)
-        if coord is None:
-            raise ValueError(f"Invalid cell coordinate: {position}")
-        if value.strip().lower() == 'none':
-            acc.append((coord, None))
-        elif value.strip().isdigit():
-            acc.append((coord, int(value.strip())))
-        else:
-            raise ValueError(f"Invalid cell value: {value}")
-
-        return parse_move(move_list[1:], acc)  # Recursively parse the next move
-
-    return parse_move(moves, parsed_moves)  # Start parsing from the first move

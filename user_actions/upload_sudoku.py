@@ -1,18 +1,19 @@
 import json
 from typing import Optional, List, Tuple, Dict
-from core_data.grid.grid import Grid, update_cell
+from core_data.grid.grid import Grid, update_grid
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
+from puzzle_handler.solve.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_main_menu
 from user_interface.user_input import get_user_move
 from user_interface.game_actions import game_actions
 from utils.grid_utils import convert_user_moves, create_empty_grid
-from puzzle_handler.solve.puzzle_solver import apply_naked_singles, count_solutions, check_unique_solvability
 
-def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Grid:
+
+def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Optional[Grid]:
     """
     Recursively input values into the Sudoku grid.
 
@@ -22,16 +23,32 @@ def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinat
         index (int): The current index of the move being processed.
 
     Returns:
-        Grid: The updated Sudoku grid.
+        Optional[Grid]: The updated Sudoku grid, or None if any move is invalid.
     """
     if index >= len(user_moves):
         return grid
 
     coord, value = user_moves[index]
-    cell = Cell(CellValue(value, grid.grid_size), CellState.USER_FILLED)
-    grid = update_cell(grid, coord, cell.value.value, cell.state, skip_validation=True)
+    if not (1 <= value <= grid.grid_size):
+        print(f"Error: Invalid value {value} for cell {coord}. Value must be between 1 and {grid.grid_size}.")
+        return None
+
+    cell_value = CellValue(value, grid.grid_size)
+    cell_state = CellState.USER_FILLED
+
+    cell, error = Cell.create(cell_value, cell_state)
+    if error is not None:
+        print(f"Error: {error}")
+        return None
+
+    try:
+        grid = update_grid(grid, coord, cell.value.value, cell.state)
+    except ValueError as e:
+        print(f"Error: {e}")
+        return None
 
     return input_sudoku_values_recursively(grid, user_moves, index + 1)
+
 
 def validate_uploaded_grid(grid: Grid) -> bool:
     """
@@ -53,6 +70,7 @@ def validate_uploaded_grid(grid: Grid) -> bool:
         print("Error: The grid does not have a unique solution.")
         return False
 
+
 def input_and_validate(config: dict, grid: Grid) -> None:
     """
     Input values and validate the Sudoku grid.
@@ -71,15 +89,26 @@ def input_and_validate(config: dict, grid: Grid) -> None:
         return
 
     user_moves = convert_user_moves(user_input, grid.grid_size)
-    grid = input_sudoku_values_recursively(grid, user_moves)  # Apply user input values
-    display_grid(grid)  # Display the filled grid
+    if user_moves is None:
+        print("Error: Invalid input format. Please try again.")
+        input_and_validate(config, grid)  # Retry input and validation
+        return
 
-    if validate_uploaded_grid(grid):
-        print("Uploaded Sudoku is valid and has a unique solution.")
-        game_actions(config, grid)  # Proceed to game actions
-    else:
+    updated_grid = input_sudoku_values_recursively(grid, user_moves)  # Apply user input values
+
+    if updated_grid is None:
         print("Failed to upload Sudoku. Please correct the errors and try again.")
         input_and_validate(config, grid)  # Retry input and validation
+    else:
+        display_grid(updated_grid)  # Display the filled grid
+
+        if validate_uploaded_grid(updated_grid):
+            print("Uploaded Sudoku is valid and has a unique solution.")
+            game_actions(config, updated_grid)  # Proceed to game actions
+        else:
+            print("Failed to upload Sudoku. Please correct the errors and try again.")
+            input_and_validate(config, updated_grid)  # Retry input and validation
+
 
 def upload_sudoku(config: dict) -> None:
     """
@@ -88,5 +117,14 @@ def upload_sudoku(config: dict) -> None:
     Args:
         config (dict): Configuration settings.
     """
-    grid = create_empty_grid()  # Create an empty grid
+    grid_size = config.get('grid_size')
+    if not grid_size or not isinstance(grid_size, int) or grid_size < 1:
+        print("Error: Invalid grid size in the configuration.")
+        return
+
+    grid = create_empty_grid(grid_size)  # Create an empty grid
+    if grid is None:
+        print("Error: Failed to create an empty grid.")
+        return
+
     input_and_validate(config, grid)  # Input values and validate

@@ -1,103 +1,66 @@
 from dataclasses import dataclass
-from typing import Dict, Optional, Tuple, Callable
-from types import MappingProxyType
+from typing import Tuple, Optional, Dict, List
 from core_data.cell import Cell
+from core_data.cell_state import CellState
+from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
+
 
 @dataclass(frozen=True)
 class Subgrid:
-    """Represents a subgrid in a Sudoku grid with immutable cells and subgrid index."""
-    cells: MappingProxyType  # An immutable dictionary of Coordinate keys and Cell values
-    subgrid_index: int  # The index of the subgrid
+    """Represents a Sudoku subgrid with immutable cells and subgrid size."""
+    cells: Tuple[Cell, ...]  # Immutable tuple of Cell objects
+    subgrid_size: int  # The size of the subgrid (e.g., 3 for a 9x9 grid)
 
-    def __new__(cls, cells: Dict[Coordinate, Cell], subgrid_index: int):
-        """
-        Create a new Subgrid instance with immutable cells.
-        """
-        # Convert the cells dictionary to an immutable MappingProxyType
-        immutable_cells = MappingProxyType(cells)
-
+    def __new__(cls, cells: Tuple[Cell, ...], subgrid_size: int):
         # Validate the cells before creating the instance
-        if not cls.is_valid(immutable_cells, subgrid_index):
-            raise ValueError(
-                "All elements of the subgrid must be instances of Cell and values must be unique except for None.")
-
-        # Create a new instance using the superclass (__new__ method of object)
+        if not cls.is_valid(cells, subgrid_size):
+            raise ValueError(f"Subgrid must be {subgrid_size}x{subgrid_size} with unique values in each cell.")
+        # Create a new instance using the superclass
         instance = super(Subgrid, cls).__new__(cls)
-
-        # Set the instance attributes cells and subgrid_index
-        object.__setattr__(instance, 'cells', immutable_cells)
-        object.__setattr__(instance, 'subgrid_index', subgrid_index)
-
+        # Set the cells attribute
+        object.__setattr__(instance, 'cells', cells)
+        # Set the subgrid_size attribute
+        object.__setattr__(instance, 'subgrid_size', subgrid_size)
         # Return the new instance
         return instance
 
     @staticmethod
-    def is_valid(cells: MappingProxyType, subgrid_index: int) -> bool:
-        """
-        Validate that all cells have unique values.
-        """
-        # Higher-order function to validate uniqueness of values
-        def values_unique(extractor: Callable[[MappingProxyType], list]) -> bool:
-            values = extractor(cells)
-            return len(values) == len(set(values))
+    def is_valid(cells: Tuple[Cell, ...], subgrid_size: int) -> bool:
+        def collect_values(index: int, values: List[int]):
+            if index == len(cells):
+                return values
+            cell_value = cells[index].value.value
+            if cell_value is not None:
+                values.append(cell_value)
+            return collect_values(index + 1, values)
 
-        # Check for uniqueness of the values
-        uniqueness_check = values_unique(Subgrid._extract_values)
-
-        # Return the result of the uniqueness check
-        return uniqueness_check
+        collected_values = collect_values(0, [])
+        return len(collected_values) == len(set(collected_values))
 
     @staticmethod
-    def _extract_values(cells: MappingProxyType, idx: int = 0, values: Optional[list] = None) -> list:
-        """
-        Extract non-None values from the cells using recursion.
-        """
-        # Initialize the values list on the first call
-        if values is None:
-            values = []
+    def create(subgrid_size: int, cells: Optional[Dict[Coordinate, Cell]] = None) -> "Subgrid":
+        # Create a Subgrid instance, optionally with predefined cells
+        if cells is None:
+            cells = {}  # Initialize an empty dictionary for cells
 
-        # Base case: if all cells have been processed, return the values list
-        if idx == len(cells):
-            return values
+            def init_cells(row: int, col: int) -> None:
+                # Define a recursive function to initialize cells
+                if row >= subgrid_size:  # Base case: if row exceeds subgrid size, return
+                    return
+                if col >= subgrid_size:  # If column exceeds subgrid size, move to next row
+                    init_cells(row + 1, 0)
+                else:
+                    coord = Coordinate(row, col, subgrid_size)  # Create a Coordinate for the current cell
+                    cells[coord] = Cell(value=CellValue(None, subgrid_size),
+                                        state=CellState.EMPTY)  # Create an empty Cell
+                    init_cells(row, col + 1)  # Move to the next column
 
-        # Convert the MappingProxyType to a list to access elements by index
-        cell_list = list(cells.values())
+            init_cells(0, 0)  # Initialize cells starting from (0, 0)
 
-        # If the current cell's value is not None, add it to the values list
-        if cell_list[idx].value.value is not None:
-            values.append(cell_list[idx].value.value)
-
-        # Recursive call to process the next cell
-        return Subgrid._extract_values(cells, idx + 1, values)
-
-    @staticmethod
-    def _are_values_unique(values: list) -> bool:
-        """
-        Check if all values are unique.
-        """
-        # Compare length of values with length of unique values (using set)
-        return len(values) == len(set(values))
-
-    def get_cell(self, coordinate: Coordinate) -> Cell:
-        """
-        Access a specific cell in the subgrid using its coordinate.
-        """
-        # Check if the coordinate is within the cells
-        if coordinate not in self.cells:
-            raise IndexError("Coordinate out of range.")
-
-        # Return the cell at the specified coordinate
-        return self.cells[coordinate]
-
-    @staticmethod
-    def create(cells: Dict[Coordinate, Cell], subgrid_index: int) -> Tuple[Optional['Subgrid'], Optional[str]]:
-        """
-        Try to create a Subgrid instance, handling ValueError if the cells are invalid.
-        """
-        try:
-            # Attempt to create a new Subgrid instance
-            return Subgrid(cells, subgrid_index), None
-        except ValueError as e:
-            # Return None and the error message if creation fails
-            return None, str(e)
+        # Collect the cells in the subgrid
+        subgrid_cells = tuple(cells[Coordinate(row, col, subgrid_size)]
+                              for row in range(subgrid_size)
+                              for col in range(subgrid_size))
+        # Return a new Subgrid instance
+        return Subgrid(cells=subgrid_cells, subgrid_size=subgrid_size)

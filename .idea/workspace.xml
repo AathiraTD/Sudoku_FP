@@ -5,19 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="CLi based Sudoku game in Python following FP">
-      <change afterPath="$PROJECT_DIR$/core_data/game_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_actions/redo_move.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test05.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test06.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/game_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/game_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid/column.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid/subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/subgrid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/step_start_a_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/step_start_a_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/backtrack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_row.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/load_saved_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/load_saved_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/redo_move.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/start_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/display/display_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/display_grid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface/game_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/game_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/grid_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grid_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Backup-before-reactoring-packages" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,10 +70,20 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/AathiraTD/Sudoku_FP&quot;,
     &quot;accountId&quot;: &quot;28358dea-0438-4af6-90f0-7afbd4bc152b&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;AathiraTD&quot;,
+    &quot;repository&quot;: &quot;Sudoku_FP&quot;
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -69,13 +100,49 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests for test_config.test_load_config_invalid_format.executor": "Run",
+    "Python tests.Python tests for test_config.test_load_config_valid.executor": "Debug",
+    "Python tests.Python tests for test_coordinate.test_coordinate_comparison.executor": "Run",
+    "Python tests.Python tests for test_coordinate.test_coordinate_create_method.executor": "Run",
+    "Python tests.Python tests for test_coordinate.test_coordinate_creation_invalid.executor": "Run",
+    "Python tests.Python tests for test_coordinate.test_coordinate_creation_valid.executor": "Debug",
+    "Python tests.Python tests for test_grid.test_grid_get_row.executor": "Debug",
+    "Python tests.Python tests for test_grid.test_grid_invalid_update.executor": "Debug",
+    "Python tests.Python tests for test_row.test_row_creation_valid.executor": "Run",
+    "Python tests.Python tests in test_cell.py.executor": "Run",
+    "Python tests.Python tests in test_cell_value.py.executor": "Run",
+    "Python tests.Python tests in test_column.py.executor": "Run",
+    "Python tests.Python tests in test_config.py.executor": "Run",
+    "Python tests.Python tests in test_coordinate.py.executor": "Run",
+    "Python tests.Python tests in test_display_grid.py.executor": "Run",
+    "Python tests.Python tests in test_game_state.py.executor": "Run",
+    "Python tests.Python tests in test_grid.py.executor": "Run",
+    "Python tests.Python tests in test_main_menu.py.executor": "Run",
+    "Python tests.Python tests in test_make_a_move.py.executor": "Run",
+    "Python tests.Python tests in test_menu_display.py.executor": "Run",
+    "Python tests.Python tests in test_menu_displays.py.executor": "Run",
+    "Python tests.Python tests in test_request_hint.py.executor": "Run",
+    "Python tests.Python tests in test_row.py.executor": "Run",
+    "Python tests.Python tests in test_save_game_to_file.py.executor": "Run",
+    "Python tests.Python tests in test_start_new_game.py.executor": "Run",
+    "Python tests.Python tests in test_subgrid.py.executor": "Debug",
+    "Python tests.Python tests in test_undo_move.py.executor": "Run",
+    "Python tests.Python tests in test_upload_sudoku.py.executor": "Debug",
+    "Python.coordinate.executor": "Run",
+    "Python.generate_puzzle.executor": "Run",
+    "Python.grid.executor": "Debug",
+    "Python.helpers.executor": "Run",
     "Python.main.executor": "Debug",
+    "Python.row.executor": "Debug",
+    "Python.step_start_a_new_game.executor": "Run",
+    "Python.subgrid.executor": "Debug",
+    "Python.upload_sudoku.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Backup-before-reactoring-packages",
+    "git-widget-placeholder": "Hioerarchical-Strcture",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku",
+    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP/features",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="QodanaHighlightedReportService">
@@ -96,12 +163,16 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\user_actions" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\utils" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\puzzle_handler\solve" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\puzzle_handler\generate" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\core_data\grid" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\Backup Feature" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\feature\steps" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\feature" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,6 +198,90 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_config.test_load_config_invalid_format" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku_FP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/config" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_config.test_load_config_invalid_format&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_coordinate.test_coordinate_comparison" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku_FP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/core_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_coordinate.test_coordinate_comparison&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_grid.test_grid_get_row" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku_FP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/core_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_grid.test_grid_get_row&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_grid.test_grid_invalid_update" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku_FP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/core_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_grid.test_grid_invalid_update&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_row.test_row_creation_valid" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku_FP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/core_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_row.test_row_creation_valid&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_config.test_load_config_invalid_format" />
+        <item itemvalue="Python tests.Python tests for test_grid.test_grid_get_row" />
+        <item itemvalue="Python tests.Python tests for test_row.test_row_creation_valid" />
+        <item itemvalue="Python tests.Python tests for test_grid.test_grid_invalid_update" />
+        <item itemvalue="Python tests.Python tests for test_coordinate.test_coordinate_comparison" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -184,12 +339,54 @@
       <option name="project" value="LOCAL" />
       <updated>1716307660403</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="CLi based Sudoku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716322269304</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716322269304</updated>
+    </task>
+    <task id="LOCAL-00007" summary="CLi based Sudoku game in Python following FP">
+      <option name="closed" value="true" />
+      <created>1716405014673</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716405014673</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="CLi based Sudoku game in Python following FP" />
     <option name="LAST_COMMIT_MESSAGE" value="CLi based Sudoku game in Python following FP" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/core_data/test_game_state.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user_actions/save_game.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

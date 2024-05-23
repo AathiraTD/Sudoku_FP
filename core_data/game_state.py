@@ -1,8 +1,10 @@
 from typing import Dict, Tuple, List, Optional
 from core_data.grid.grid import Grid
 
+
 class GameState:
-    def __new__(cls, grid: Grid, config: Dict, hints_used: int = 0, undo_stack: List[Tuple[int, int, int]] = None, redo_stack: List[Tuple[int, int, int]] = None):
+    def __new__(cls, grid: Grid, config: Dict, hints_used: int = 0, undo_stack: List[Tuple[int, int, int]] = None,
+                redo_stack: List[Tuple[int, int, int]] = None):
         instance = super(GameState, cls).__new__(cls)
         instance.grid = grid
         instance.config = config

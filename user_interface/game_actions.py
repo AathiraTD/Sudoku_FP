@@ -1,9 +1,7 @@
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid
 from user_actions.request_hint import request_hint
 from user_actions.make_a_move import make_a_move
 from user_actions.undo_move import undo_move
-from user_actions.redo_move import redo_move
 from user_actions.save_game import save_game_to_file  # Import the save game function
 
 
@@ -48,10 +46,10 @@ def game_actions(game_state: GameState) -> None:
         # elif choice == 4:
         #     game_state = redo_move(game_state)  # Handle redo last move
         elif choice == 4:
-            from puzzle_handler.solve.solve_puzzle import solve_puzzle  # Local import to avoid circular dependency
+            from user_actions.solve_puzzle import solve_puzzle  # Local import to avoid circular dependency
             game_state = game_state.with_grid(solve_puzzle(game_state.grid))  # Handle solving the puzzle
         elif choice == 5:
-            save_game_to_file(game_state.grid)  # Handle saving the game
+            save_game_to_file(game_state)  # Handle saving the game
         return game_state
 
     def prompt_action() -> int:
