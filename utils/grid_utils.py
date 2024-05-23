@@ -2,7 +2,8 @@ import random
 from typing import Optional, Tuple, Set, List, Callable, Any, Dict
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from core_data.grid.grid import Grid, update_grid
+from core_data.grid.grid import Grid
+
 from core_data.coordinate import Coordinate
 from core_data.cell import Cell
 
@@ -17,8 +18,8 @@ def find_empty_cell(grid: Grid) -> Optional[Tuple[int, int]]:
         if cell.value.value is None or cell.value.value == 0:
             return row, col  # Empty cell found
         return find_cell(row, col + 1)  # Recursively check the next cell
-    return find_cell(0, 0)
 
+    return find_cell(0, 0)
 
 
 def find_random_empty_cell(grid: Grid) -> Optional[Tuple[int, int]]:
@@ -107,24 +108,45 @@ def label_to_index(label: str, grid_size: int) -> Optional[Tuple[int, int]]:
     return row, col  # Return the valid row and column index
 
 
-def convert_user_moves(user_input: str, grid_size: int) -> List[Tuple[Coordinate, int]]:
+def convert_user_moves(user_input: str, grid_size: int) -> List[Tuple[Coordinate, Optional[int]]]:
     """
     Convert user input moves to a list of coordinates and values.
-    """
 
-    def parse_moves(moves: List[str], index: int, parsed: List[Tuple[Coordinate, int]]) -> List[Tuple[Coordinate, int]]:
+    Args:
+        user_input (str): The user's input string.
+        grid_size (int): The size of the grid.
+
+    Returns:
+        List[Tuple[Coordinate, Optional[int]]]: List of coordinates and values.
+    """
+    def parse_moves(moves: List[str], index: int, parsed: List[Tuple[Coordinate, Optional[int]]]) -> List[Tuple[Coordinate, Optional[int]]]:
         if index >= len(moves):
             return parsed  # Base case: all moves parsed
         move = moves[index]
-        if len(move) >= 3:
-            row = ord(move[0].upper()) - ord('A')
-            col = int(move[1]) - 1
-            value = int(move[2])
-            if 0 <= row < grid_size and 0 <= col < grid_size:
-                parsed.append((Coordinate(row, col, grid_size), value))
+        if len(move) >= 3 and '=' in move:
+            label, value_str = move.split('=')
+            coord = label_to_index(label, grid_size)
+            if coord is not None:
+                value = int(value_str) if value_str.isdigit() else None
+                parsed.append((Coordinate(coord[0], coord[1], grid_size), value))
         return parse_moves(moves, index + 1, parsed)
 
     return parse_moves(user_input.replace(" ", "").split(','), 0, [])
+
+def label_to_index(label: str, grid_size: int) -> Optional[Tuple[int, int]]:
+    """
+    Convert a cell label (e.g., 'A1') to a grid index (row, col).
+    """
+    if len(label) < 2 or not label[0].isalpha() or not label[1:].isdigit():
+        return None  # Return None if the format is invalid
+
+    row = ord(label[0].upper()) - ord('A')  # Convert letter to row index
+    col = int(label[1:]) - 1  # Convert number to column index
+
+    if row < 0 or col < 0 or row >= grid_size or col >= grid_size:
+        return None  # Return None if the index is out of bounds
+
+    return row, col  # Return the valid row and column index
 
 
 def create_empty_grid(grid_size: int = 9) -> Grid:

@@ -1,10 +1,8 @@
 from dataclasses import dataclass
 from types import MappingProxyType
 from typing import Dict, Optional, Callable
-
 from core_data.cell import Cell
 from core_data.coordinate import Coordinate
-
 
 @dataclass(frozen=True)
 class Row:

@@ -26,20 +26,9 @@ def get_menu_choice() -> int:
 
 
 def get_difficulty_choice() -> str:
-    """
-   Function to get the user's difficulty choice.
-
-   Returns:
-       str: The user's difficulty choice ('easy', 'medium', or 'hard').
-   """
 
     def prompt_difficulty_choice() -> str:
-        """
-       Recursively prompt the user for a valid difficulty choice.
 
-       Returns:
-           str: The user's valid difficulty choice ('easy', 'medium', or 'hard').
-       """
         print("Choose difficulty level:")
         print("1. Easy")
         print("2. Medium")
