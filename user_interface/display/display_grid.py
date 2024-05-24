@@ -1,8 +1,10 @@
 from typing import List
+
 from colorama import Fore, Style
-from core_data.coordinate import Coordinate
-from core_data.grid.grid import Grid
+
 from core_data.cell_state import CellState
+from core_data.grid.grid import Grid
+
 
 def print_column_labels(grid_size: int, subgrid_size: int):
     """
@@ -13,10 +15,10 @@ def print_column_labels(grid_size: int, subgrid_size: int):
             print()
             return  # Base case: all column labels have been printed
         if col_index == 0:
-            print("   ", end="")
+            print("    ", end="")
         if col_index > 0 and col_index % subgrid_size == 0:
-            print(" ", end=" ")  # Add space for separator
-        print(f" {col_index + 1}", end="")
+            print("  ", end="")  # Add space for separator
+        print(f" {col_index + 1}  ", end="")
         _print_column_labels(col_index + 1)  # Recursive call to print the next column label
 
     _print_column_labels(0)
@@ -35,17 +37,16 @@ def display_grid(grid: Grid):
         """
         Recursively print all rows of the Sudoku grid.
         """
-
         if row_index >= grid_size:
             return  # Base case: all rows have been printed
         if row_index % subgrid_size == 0 or row_index == 0:
-            print("   " + "-" * (2 * grid_size + subgrid_size + 1))  # Print the horizontal separator
+            print("   " + "-" * (4 * grid_size + subgrid_size + 1))  # Print the horizontal separator
         print_row(grid, row_index)  # Print the current row
         print_all_rows(row_index + 1)  # Recursive call to print the next row
 
     print_column_labels(grid_size, subgrid_size)  # Print the column labels
     print_all_rows(0)  # Start the recursion for rows
-    print("   " + "-" * (2 * grid_size + subgrid_size + 1))  # Print the bottom boundary
+    print("   " + "-" * (4 * grid_size + subgrid_size + 1))  # Print the bottom boundary
 
 def print_row(grid: Grid, row_index: int):
     """
@@ -66,15 +67,15 @@ def print_row(grid: Grid, row_index: int):
         if cell is not None and cell.value.value is not None:
             value_str = str(cell.value.value)
             if cell.state == CellState.PRE_FILLED:
-                row_display.append(Fore.GREEN + value_str + Style.RESET_ALL)
+                row_display.append(Fore.GREEN + f" {value_str} " + Style.RESET_ALL)
             elif cell.state == CellState.USER_FILLED:
-                row_display.append(Fore.BLUE + value_str + Style.RESET_ALL)
+                row_display.append(Fore.BLUE + f" {value_str} " + Style.RESET_ALL)
             elif cell.state == CellState.HINT:
-                row_display.append(Fore.YELLOW + value_str + Style.RESET_ALL)
+                row_display.append(Fore.YELLOW + f" {value_str} " + Style.RESET_ALL)
             else:
-                row_display.append(value_str)
+                row_display.append(f" {value_str} ")
         else:
-            row_display.append(".")
+            row_display.append(" . ")
 
         if (col_index + 1) % subgrid_size == 0 and (col_index + 1) != grid_size:
             row_display.append("|")  # Add vertical separator for subgrids

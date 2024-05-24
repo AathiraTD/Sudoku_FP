@@ -1,10 +1,10 @@
-from typing import Tuple,  Dict
+from typing import Tuple, Dict
+
 from core_data.cell import Cell
 from core_data.cell_state import CellState
+from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
 from core_data.grid.grid import Grid
-from core_data.coordinate import Coordinate
-import user_actions.start_new_game
 from puzzle_handler.solve.puzzle_solver import is_valid
 
 # Custom cache dictionary
@@ -34,27 +34,18 @@ def validate_move(grid: Grid, move: Tuple[Coordinate, Cell]) -> Tuple[bool, str]
 
 
 def is_puzzle_complete(grid: Grid) -> bool:
-    """
-    Check if the Sudoku puzzle is complete and valid.
-
-    Args:
-        grid (Grid): The Sudoku grid.
-
-    Returns:
-        bool: True if the puzzle is complete and valid, False otherwise.
-    """
-
     def check_cell(row: int, col: int) -> bool:
         if row >= grid.grid_size:
             return True
         if col >= grid.grid_size:
             return check_cell(row + 1, 0)
-        cell = grid.cells[Coordinate(row, col, grid.grid_size)]
-        if cell.value.value is None or not is_valid(grid, row, col, cell.value.value, grid.grid_size):
+        cell = grid[row, col]
+        if cell.value.value is None or not is_valid(grid, row, col, cell.value.value):
             return False
         return check_cell(row, col + 1)
 
     return check_cell(0, 0)
+
 
 
 def check_and_handle_completion(game_state: GameState) -> GameState:
@@ -84,6 +75,8 @@ def handle_completion_choice(config: Dict) -> None:
     handle_choice_recursively(choice, config)
 
 
+from user_actions.start_new_game import start_new_game
+
 def handle_choice_recursively(choice: str, config: Dict) -> None:
     """
     Recursively handle the user's choice for starting a new game or returning to the main menu.
@@ -93,7 +86,7 @@ def handle_choice_recursively(choice: str, config: Dict) -> None:
         config (Dict): The game configuration.
     """
     if choice == 'yes':
-        user_actions.start_new_game.start_new_game(config)  # Assuming start_new_game is defined elsewhere
+        start_new_game(config)  # Call start_new_game directly
     elif choice == 'no':
         return  # Exit the recursion
     else:

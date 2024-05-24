@@ -9,9 +9,6 @@ from user_interface.user_input_handler import get_menu_choice
 
 
 def clear_screen() -> None:
-    """
-    Function to clear the console screen.
-    """
     if os.name == 'nt':  # For Windows
         os.system('cls')
     else:  # For Mac and Linux
@@ -21,18 +18,7 @@ def clear_screen() -> None:
     else:
         print("\n" * 100)  # Fallback for IDEs like PyCharm
 
-
 def handle_menu_choice(config: dict, choice: int) -> bool:
-    """
-    Function to handle the user's menu choice.
-
-    Args:
-        config (dict): Configuration settings.
-        choice (int): The user's menu choice.
-
-    Returns:
-        bool: False if the user chooses to exit, True otherwise.
-    """
     clear_screen()
     if choice == 1:
         start_new_game(config)  # Start a new game
@@ -45,20 +31,15 @@ def handle_menu_choice(config: dict, choice: int) -> bool:
         return False
     return True
 
-
 def menu_loop(config: dict) -> None:
-    """
-    Function to manage the main menu loop.
-    """
-
-    def loop(config: dict) -> None:
-        """
-        Inner loop function to facilitate the recursive structure.
-        """
+    while True:
         clear_screen()
         display_main_menu()  # Display the main menu
         choice = get_menu_choice()  # Get the user's menu choice
-        if handle_menu_choice(config, choice):
-            loop(config)  # Continue the loop if not exiting
+        if not handle_menu_choice(config, choice):
+            break  # Exit the loop if the user chooses to exit
 
-    loop(config)  # Start the loop
+
+if __name__ == "__main__":
+    config = {"grid_size": 9, "hint_limit": 3}
+    menu_loop(config)

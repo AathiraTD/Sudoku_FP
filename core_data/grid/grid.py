@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from typing import Tuple, Dict, Optional, Union
+
 from core_data.cell import Cell
-from core_data.coordinate import Coordinate
-from core_data.grid.row import Row
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
+from core_data.coordinate import Coordinate
+from core_data.grid.row import Row
 
 
 @dataclass(frozen=True)
@@ -12,7 +13,7 @@ class Grid:
     rows: Tuple[Row, ...]
     grid_size: int
 
-    def __new__(cls, rows: Tuple[Row, ...], grid_size: int):
+    def __new__(cls, rows: Tuple[Row, ...], grid_size: int) -> object:
         instance = super(Grid, cls).__new__(cls)
         object.__setattr__(instance, 'rows', rows)
         object.__setattr__(instance, 'grid_size', grid_size)
@@ -30,7 +31,7 @@ class Grid:
         raise IndexError("Invalid index")
 
     @staticmethod
-    def create(grid_size: int, cells: Optional[Dict[Coordinate, Cell]] = None) -> "Grid":
+    def create(grid_size: int, cells: Optional[Dict[Coordinate, Cell]] = None) -> object:
         if cells is None:
             cells = {}
 
@@ -49,5 +50,3 @@ class Grid:
             Row({coord: cells[coord] for coord in cells if coord.row_index == row_index}, row_index) for row_index in
             range(grid_size))
         return Grid(rows=rows, grid_size=grid_size)
-
-

@@ -1,5 +1,5 @@
 import logging
-from typing import Optional, List, Tuple
+from typing import Optional, List, Tuple, Dict
 
 from core_data.cell import Cell
 from core_data.cell_state import CellState
@@ -7,7 +7,7 @@ from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
 from core_data.grid.grid import Grid
-from puzzle_handler.solve.puzzle_solver import update_grid
+from puzzle_handler.solve.puzzle_solver import is_valid
 from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid, display_messages
 from user_interface.user_input_handler import get_user_move
@@ -128,7 +128,7 @@ def push_undo_recursively(game_state: GameState, moves: List[Tuple[Coordinate, C
 
     try:
         coord, _ = moves[index]
-        undo_action = (coord.row_index, coord.col_index, grid[coord.row_index, coord.col_index].value.value)  # Access cell using grid indexing
+        undo_action = (coord.row_index, coord.col_index, grid[coord].value.value)  # Access cell using grid indexing
         game_state = game_state.push_undo(undo_action)
     except Exception as e:
         logging.error(f"Error pushing undo: {e}")
@@ -172,14 +172,13 @@ def apply_moves_recursively(grid: Grid, moves: List[Tuple[Coordinate, Cell]], me
 
     try:
         coord, cell = moves[index]
-        current_cell = grid[coord.row_index, coord.col_index]
+        current_cell = grid[coord]
 
         if current_cell.state in {CellState.PRE_FILLED, CellState.HINT}:
             messages.append(
                 f"Cannot apply move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value}. The cell is pre-filled or a hint.")
         else:
-            grid = update_grid(grid, coord, cell.value.value,
-                               CellState.USER_FILLED if cell.value.value is not None else CellState.EMPTY)
+            grid = grid.with_updated_cell(coord, cell)
             messages.append(
                 f"Move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value if cell.value.value is not None else 'None'} applied successfully.")
     except Exception as e:
@@ -187,3 +186,89 @@ def apply_moves_recursively(grid: Grid, moves: List[Tuple[Coordinate, Cell]], me
         raise
 
     return apply_moves_recursively(grid, moves, messages, index + 1)
+
+
+def has_empty_cells(grid: Grid) -> bool:
+    def check_rows_recursively(rows, row_index, col_index, grid_size):
+        if row_index >= len(rows):
+            return False
+        if col_index >= grid_size:
+            return check_rows_recursively(rows, row_index + 1, 0, grid_size)
+
+        cell = grid[Coordinate(row_index, col_index, grid_size)]
+        if cell.state == CellState.EMPTY:
+            return True
+
+        return check_rows_recursively(rows, row_index, col_index + 1, grid_size)
+
+    return check_rows_recursively(grid.rows, 0, 0, grid.grid_size)
+
+
+def check_and_handle_completion(game_state: GameState) -> GameState:
+    """
+    Check if the puzzle is complete and handle the completion scenario.
+
+    Args:
+        game_state (GameState): The current state of the game.
+
+    Returns:
+        GameState: The updated game state.
+    """
+    if is_puzzle_complete(game_state.grid):
+        print("Congratulations! You Won")
+        handle_completion_choice(game_state.config)
+    return game_state
+
+
+def is_puzzle_complete(grid: Grid) -> bool:
+    """
+    Check if the Sudoku puzzle is complete and valid.
+
+    Args:
+        grid (Grid): The Sudoku grid.
+
+    Returns:
+        bool: True if the puzzle is complete and valid, False otherwise.
+    """
+
+    def check_cell(row: int, col: int) -> bool:
+        if row >= grid.grid_size:
+            return True
+        if col >= grid.grid_size:
+            return check_cell(row + 1, 0)
+        cell = grid[Coordinate(row, col, grid.grid_size)]
+        if cell.value.value is None or not is_valid(grid, row, col, cell.value.value):
+            return False
+        return check_cell(row, col + 1)
+
+    return check_cell(0, 0)
+
+
+def handle_completion_choice(config: Dict) -> None:
+    """
+    Handle the user's choice after completing the puzzle.
+
+    Args:
+        config (Dict): The game configuration.
+    """
+    choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
+    handle_choice_recursively(choice, config)
+
+
+def handle_choice_recursively(choice: str, config: Dict) -> None:
+    """
+    Recursively handle the user's choice for starting a new game or returning to the main menu.
+
+    Args:
+        choice (str): The user's choice.
+        config (Dict): The game configuration.
+    """
+    from user_actions import start_new_game
+    if choice == 'yes':
+        start_new_game(config)  # Assuming start_new_game is defined elsewhere
+    elif choice == 'no':
+        return  # Exit the recursion
+    else:
+        print("Invalid choice. Please enter 'Yes' or 'No'.")
+        choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
+        handle_choice_recursively(choice, config)

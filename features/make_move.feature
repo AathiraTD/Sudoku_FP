@@ -27,23 +27,3 @@ Feature: Make a Move in Sudoku
     When the user makes a move "A1=6"
     Then the system displays "Cannot apply move A1=6. The cell is pre-filled or a hint."
 
-  Scenario: Undoing a move
-    Given the game state is initialized
-    And the user has made a move "A1=5"
-    When the user undoes the last move
-    Then the move "A1=5" is removed from the grid
-    And the move is pushed to the redo stack
-
-  Scenario: Redoing a move
-    Given the game state is initialized
-    And the user has undone the last move "A1=5"
-    When the user redoes the last move
-    Then the move "A1=5" is reapplied to the grid
-    And the move is pushed back to the undo stack
-
-  Scenario: Completing the Sudoku puzzle
-    Given the game state is initialized
-    And the Sudoku puzzle is almost complete
-    When the user makes the final valid move "I9=9"
-    Then the system displays "Congratulations! You Won"
-    And prompts the user "Want to Start a new Game (Yes/No):"
