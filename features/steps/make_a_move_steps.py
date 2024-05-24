@@ -17,6 +17,107 @@ from utils.input_parsing import parse_user_input
 
 
 # Helper functions
+def validate_user_input(user_input: str, grid_size: int) -> bool:
+    try:
+        parse_user_input(user_input, grid_size)
+        return True
+    except ValueError:
+        return False
+
+def convert_parsed_moves(parsed_moves, grid_size):
+    def convert_recursively(index, acc):
+        if index >= len(parsed_moves):
+            return acc
+        (row, col), value = parsed_moves[index]
+        state = CellState.USER_FILLED if value is not None else CellState.EMPTY
+        acc.append((Coordinate(row, col, grid_size), Cell(CellValue(value, grid_size), state)))
+        return convert_recursively(index + 1, acc)
+    return convert_recursively(0, [])
+
+def push_undo_recursively(game_state, moves, grid, index):
+    if index >= len(moves):
+        return game_state
+    try:
+        coord, _ = moves[index]
+        undo_action = (coord.row_index, coord.col_index, grid[coord.row_index, coord.col_index].value.value)
+        game_state = game_state.push_undo(undo_action)
+    except Exception as e:
+        logging.error(f"Error pushing undo: {e}")
+        raise
+    return push_undo_recursively(game_state, moves, grid, index + 1)
+
+def apply_and_report_moves(grid, moves):
+    messages = []
+    grid = apply_moves_recursively(grid, moves, messages)
+    return grid, messages
+
+def apply_moves_recursively(grid, moves, messages, index=0):
+    if index >= len(moves):
+        return grid
+    try:
+        coord, cell = moves[index]
+        current_cell = grid[coord.row_index, coord.col_index]
+        if current_cell.state in {CellState.PRE_FILLED, CellState.HINT}:
+            messages.append(
+                f"Cannot apply move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value}. The cell is pre-filled or a hint.")
+        else:
+            grid = update_grid(grid, coord, cell.value.value,
+                               CellState.USER_FILLED if cell.value.value is not None else CellState.EMPTY)
+            messages.append(
+                f"Move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value if cell.value.value is not None else 'None'} applied successfully.")
+    except Exception as e:
+        logging.error(f"Error applying move {index}: {e}")
+        raise
+    return apply_moves_recursively(grid, moves, messages, index + 1)
+
+def has_empty_cells(grid):
+    def check_rows_recursively(rows, row_index, col_index, grid_size):
+        if row_index >= len(rows):
+            return False
+        if col_index >= grid_size:
+            return check_rows_recursively(rows, row_index + 1, 0, grid_size)
+        cell = grid[row_index, col_index]
+        if cell.state == CellState.EMPTY:
+            return True
+        return check_rows_recursively(rows, row_index, col_index + 1, grid_size)
+
+    return check_rows_recursively(grid.rows, 0, 0, grid.grid_size)
+
+def check_and_handle_completion(game_state):
+    if is_puzzle_complete(game_state.grid):
+        print("Congratulations! You Won")
+        handle_completion_choice(game_state.config)
+    return game_state
+
+def is_puzzle_complete(grid):
+    def check_cell(row, col):
+        if row >= grid.grid_size:
+            return True
+        if col >= grid.grid_size:
+            return check_cell(row + 1, 0)
+        cell = grid[row, col]
+        if cell.value.value is None or not is_valid(grid, row, col, cell.value.value):
+            return False
+        return check_cell(row, col + 1)
+
+    return check_cell(0, 0)
+
+def handle_completion_choice(config):
+    choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
+    handle_choice_recursively(choice, config)
+
+def handle_choice_recursively(choice, config):
+    if choice == 'yes':
+        from user_actions.start_new_game import start_new_game
+        start_new_game(config)
+    elif choice == 'no':
+        return
+    else:
+        print("Invalid choice. Please enter 'Yes' or 'No'.")
+        choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
+        handle_choice_recursively(choice, config)
+
+
 def make_a_move(game_state: GameState, user_input: str) -> Optional[GameState]:
     grid = game_state.grid
     if not validate_user_input(user_input, grid.grid_size):
@@ -43,125 +144,11 @@ def make_a_move(game_state: GameState, user_input: str) -> Optional[GameState]:
         return None
     return game_state
 
-
-def validate_user_input(user_input: str, grid_size: int) -> bool:
-    try:
-        parse_user_input(user_input, grid_size)
-        return True
-    except ValueError:
-        return False
-
-
-def convert_parsed_moves(parsed_moves, grid_size):
-    def convert_recursively(index, acc):
-        if index >= len(parsed_moves):
-            return acc
-        (row, col), value = parsed_moves[index]
-        state = CellState.USER_FILLED if value is not None else CellState.EMPTY
-        acc.append((Coordinate(row, col, grid_size), Cell(CellValue(value, grid_size), state)))
-        return convert_recursively(index + 1, acc)
-
-    return convert_recursively(0, [])
-
-
-def push_undo_recursively(game_state, moves, grid, index):
-    if index >= len(moves):
-        return game_state
-    try:
-        coord, _ = moves[index]
-        undo_action = (coord.row_index, coord.col_index, grid[coord.row_index, coord.col_index].value.value)
-        game_state = game_state.push_undo(undo_action)
-    except Exception as e:
-        logging.error(f"Error pushing undo: {e}")
-        raise
-    return push_undo_recursively(game_state, moves, grid, index + 1)
-
-
-def apply_and_report_moves(grid, moves):
-    messages = []
-    grid = apply_moves_recursively(grid, moves, messages)
-    return grid, messages
-
-
-def apply_moves_recursively(grid, moves, messages, index=0):
-    if index >= len(moves):
-        return grid
-    try:
-        coord, cell = moves[index]
-        current_cell = grid[coord.row_index, coord.col_index]
-        if current_cell.state in {CellState.PRE_FILLED, CellState.HINT}:
-            messages.append(
-                f"Cannot apply move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value}. The cell is pre-filled or a hint.")
-        else:
-            grid = update_grid(grid, coord, cell.value.value,
-                               CellState.USER_FILLED if cell.value.value is not None else CellState.EMPTY)
-            messages.append(
-                f"Move {chr(ord('A') + coord.row_index)}{coord.col_index + 1}={cell.value.value if cell.value.value is not None else 'None'} applied successfully.")
-    except Exception as e:
-        logging.error(f"Error applying move {index}: {e}")
-        raise
-    return apply_moves_recursively(grid, moves, messages, index + 1)
-
-
-def has_empty_cells(grid):
-    def check_rows_recursively(rows, row_index, col_index, grid_size):
-        if row_index >= len(rows):
-            return False
-        if col_index >= grid_size:
-            return check_rows_recursively(rows, row_index + 1, 0, grid_size)
-        cell = grid[row_index, col_index]
-        if cell.state == CellState.EMPTY:
-            return True
-        return check_rows_recursively(rows, row_index, col_index + 1, grid_size)
-
-    return check_rows_recursively(grid.rows, 0, 0, grid.grid_size)
-
-
-def check_and_handle_completion(game_state):
-    if is_puzzle_complete(game_state.grid):
-        print("Congratulations! You Won")
-        handle_completion_choice(game_state.config)
-    return game_state
-
-
-def is_puzzle_complete(grid):
-    def check_cell(row, col):
-        if row >= grid.grid_size:
-            return True
-        if col >= grid.grid_size:
-            return check_cell(row + 1, 0)
-        cell = grid[row, col]
-        if cell.value.value is None or not is_valid(grid, row, col, cell.value.value):
-            return False
-        return check_cell(row, col + 1)
-
-    return check_cell(0, 0)
-
-
-def handle_completion_choice(config):
-    choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
-    handle_choice_recursively(choice, config)
-
-
-def handle_choice_recursively(choice, config):
-    if choice == 'yes':
-        from user_actions.start_new_game import start_new_game
-        start_new_game(config)
-    elif choice == 'no':
-        return
-    else:
-        print("Invalid choice. Please enter 'Yes' or 'No'.")
-        choice = input("Want to Start a new Game (Yes/No): ").strip().lower()
-        handle_choice_recursively(choice, config)
-
-
-# Given steps
 @given('the game state is initialized')
 def step_given_game_state_is_initialized(context):
     config = {"grid_size": 9}
     grid = generate_puzzle(config, "easy")
     context.game_state = GameState(grid, config)
-
 
 @given('the current grid has a pre-filled cell')
 def step_given_grid_has_pre_filled_cell(context):
@@ -169,11 +156,8 @@ def step_given_grid_has_pre_filled_cell(context):
     cell = Cell(CellValue(5, context.game_state.grid.grid_size), CellState.PRE_FILLED)
     context.game_state.grid = context.game_state.grid.with_updated_cell(coord, cell)
 
-
-# When steps
 @when('the user makes a valid move by filling an empty cell')
 def step_when_user_makes_valid_move_filling_empty_cell(context):
-    # Find an empty cell to make a valid move
     grid = context.game_state.grid
     for row_index in range(grid.grid_size):
         for col_index in range(grid.grid_size):
@@ -188,7 +172,6 @@ def step_when_user_makes_valid_move_filling_empty_cell(context):
                 sys.stdout = sys.__stdout__
                 return
 
-
 @when('the user makes an invalid move by A1=XYZ')
 def step_when_user_makes_invalid_move_a1_XYZ(context):
     context.stdout = StringIO()
@@ -196,7 +179,6 @@ def step_when_user_makes_invalid_move_a1_XYZ(context):
     context.game_state = make_a_move(context.game_state, "A1=XYZ")
     context.make_a_move_output = context.stdout.getvalue().strip().split('\n')
     sys.stdout = sys.__stdout__
-
 
 @when('the user makes a move')
 def step_when_user_makes_move(context):
@@ -207,17 +189,13 @@ def step_when_user_makes_move(context):
     context.make_a_move_output = context.stdout.getvalue().strip().split('\n')
     sys.stdout = sys.__stdout__
 
-
-# Then steps
 @then('the move is applied to the grid')
 def step_then_move_applied_to_grid(context):
     assert context.game_state.grid[context.valid_move_coord].value.value == 5, "The move was not applied to the grid."
 
-
 @then('the move is pushed to the undo stack')
 def step_then_move_pushed_to_undo_stack(context):
     assert context.game_state.undo_stack, "The move was not pushed to the undo stack."
-
 
 @then('the system displays a success message')
 def step_then_system_displays_success_message(context):
@@ -225,13 +203,11 @@ def step_then_system_displays_success_message(context):
     assert any(success_message in message for message in context.make_a_move_output), \
         f"Expected message containing '{success_message}', but got: {context.make_a_move_output}"
 
-
 @then('the system displays an error message for invalid format')
 def step_then_system_displays_error_message_invalid_format(context):
     error_message = "Error: Invalid input format."
     assert any(error_message in message for message in context.make_a_move_output), \
         f"Expected message containing '{error_message}', but got: {context.make_a_move_output}"
-
 
 @then('the system displays an error message for pre-filled cell')
 def step_then_system_displays_error_message_pre_filled_cell(context):

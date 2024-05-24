@@ -4,38 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/load_save_game_step.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/save_game_step.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gherkin_spec/step_undo_move.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gherkin_spec/test_request_hint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test0002.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_oo1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_save.json" afterDir="false" />
+    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="Final working Copy with distributable">
+      <change afterPath="$PROJECT_DIR$/build/project/Aathu Sudoku.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/warn-project.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/xref-project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/project/your_project_name.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Aathu Sudoku.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/your_project_name.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project.spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dist/error_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/make_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/make_move.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/resume_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/resume_sudoku.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/steps/common_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/common_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/load_save_game_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/load_save_game_step.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/save_game_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/save_game_step.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/test_main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_main_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/steps/test_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin_spec/request_hint.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/request_hint.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin_spec/resume_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/resume_sudoku.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin_spec/save_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/save_game.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin_spec/undo_redo_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/undo_redo_move.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin_spec/upload_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/upload_sudoku.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/request_hint.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/request_hint.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/step_undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/step_undo_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/test_request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/undo_redo_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/undo_redo_move.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/upload_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/upload_sudoku.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_save.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_save.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/load_saved_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/load_saved_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/game_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/game_actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/main_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/user_input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,7 @@
     <setting file="file://$PROJECT_DIR$/features/steps/save_game_step.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -181,11 +181,11 @@
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\user_actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features\steps" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\gherkin_spec" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\Backup Feature" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions" />
     </key>
   </component>
   <component name="RunManager">
@@ -340,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716519492697</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="BDD 4 cases">
+      <option name="closed" value="true" />
+      <created>1716545901985</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716545901985</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -356,7 +364,9 @@
     <MESSAGE value="Working Start New Game BDD - test" />
     <MESSAGE value="Start game BDD workig" />
     <MESSAGE value="Moving" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving" />
+    <MESSAGE value="BDD 4 cases" />
+    <MESSAGE value="Final working Copy with distributable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final working Copy with distributable" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
