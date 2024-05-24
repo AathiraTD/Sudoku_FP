@@ -21,7 +21,6 @@ def prompt_choice(min_val: int, max_val: int) -> int:
         return prompt_choice(min_val, max_val)
     return choice
 
-
 def validate_choice(choice: str, min_val: int, max_val: int) -> int:
     try:
         choice = int(choice)
@@ -45,7 +44,6 @@ def prompt_user_move() -> str:
     if not validate_moves(user_input):
         return prompt_user_move()
     return user_input
-
 
 def validate_moves(user_input: str) -> bool:
     moves = user_input.split(",")
@@ -82,7 +80,6 @@ def prompt_for_file_details() -> Tuple[str, str]:
     location_choice = prompt_choice(1, 2)
     directory = get_directory_choice(location_choice)
     return file_name, directory
-
 
 def get_directory_choice(location_choice: int) -> str:
     if location_choice == 1:
