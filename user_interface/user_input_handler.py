@@ -1,6 +1,12 @@
 import os
-from typing import Tuple
+from typing import Tuple, List, Optional
 
+from core_data.cell import Cell
+from core_data.cell_state import CellState
+from core_data.cell_value import CellValue
+from core_data.coordinate import Coordinate
+from core_data.grid.grid import Grid
+from puzzle_handler.solve.puzzle_solver import update_grid
 from user_interface.display.menu_display import (
     display_invalid_input,
     display_difficulty_options,
@@ -73,15 +79,34 @@ def get_hint_choice() -> str:
     return 'random' if choice == 1 else 'specific'
 
 def prompt_for_file_details() -> Tuple[str, str]:
+    """
+    Prompt the user for the file name and directory details.
+
+    Returns:
+        Tuple[str, str]: The file name and directory.
+    """
     file_name = input("Enter the file name (without extension): ").strip()
+    if not file_name:
+        return "", ""
+
     if not file_name.endswith(".json"):
         file_name += ".json"
+
     display_save_location_prompt()
     location_choice = prompt_choice(1, 2)
     directory = get_directory_choice(location_choice)
     return file_name, directory
 
 def get_directory_choice(location_choice: int) -> str:
+    """
+    Get the directory choice based on user input.
+
+    Args:
+        location_choice (int): The user's directory choice.
+
+    Returns:
+        str: The chosen directory path.
+    """
     if location_choice == 1:
         return os.getcwd()
     elif location_choice == 2:
@@ -89,5 +114,43 @@ def get_directory_choice(location_choice: int) -> str:
         if os.path.isdir(directory):
             return directory
         else:
-            display_invalid_input("Invalid directory. Saving to the default location instead.")
+            print("Invalid directory. Saving to the default location instead.")
             return os.getcwd()
+
+
+def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Optional[
+    Grid]:
+    """
+    Recursively input values into the Sudoku grid.
+
+    Args:
+        grid (Grid): The Sudoku grid.
+        user_moves (List[Tuple[Coordinate, int]]): The list of user moves.
+        index (int): The current index of the move being processed.
+
+    Returns:
+        Optional[Grid]: The updated Sudoku grid, or None if any move is invalid.
+    """
+    if index >= len(user_moves):
+        return grid
+
+    coord, value = user_moves[index]
+    if not (1 <= value <= grid.grid_size):
+        print(f"Error: Invalid value {value} for cell {coord}. Value must be between 1 and {grid.grid_size}.")
+        return None
+
+    cell_value = CellValue(value, grid.grid_size)
+    cell_state = CellState.USER_FILLED
+
+    cell, error = Cell.create(cell_value, cell_state)
+    if error is not None:
+        print(f"Error: {error}")
+        return None
+
+    try:
+        grid = update_grid(grid, coord, cell.value.value, cell.state)
+    except ValueError as e:
+        print(f"Error: {e}")
+        return None
+
+    return input_sudoku_values_recursively(grid, user_moves, index + 1)

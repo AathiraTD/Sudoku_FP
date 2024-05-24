@@ -1,8 +1,10 @@
 from dataclasses import dataclass
 from types import MappingProxyType
-from typing import Dict, Optional, Callable
+from typing import Dict
+
 from core_data.cell import Cell
 from core_data.coordinate import Coordinate
+
 
 @dataclass(frozen=True)
 class Row:
@@ -51,3 +53,8 @@ class Row:
     def create(cls, cells: Dict[Coordinate, Cell], row_index: int) -> 'Row':
         # Create a Row instance
         return cls(cells, row_index)
+
+    def with_updated_cell(self, coord: Coordinate, cell: Cell) -> 'Row':
+        new_cells = dict(self.cells)
+        new_cells[coord] = cell
+        return Row(cells=new_cells, row_index=self.row_index)

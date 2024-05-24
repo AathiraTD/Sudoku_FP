@@ -5,8 +5,7 @@ from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
 from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import count_solutions, is_valid, update_grid
-from puzzle_handler.solve.sudoku_validation import has_empty_cells, \
-    check_and_handle_completion
+from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid
 from user_interface.user_input_handler import get_hint_choice
 from utils.grid_utils import find_random_empty_cell, try_values_recursive, label_to_index
@@ -51,56 +50,63 @@ def request_hint(game_state: GameState) -> GameState:
     Request a hint for the given grid based on the user's choice and configuration.
     Returns the updated game state with the applied hint (if any).
     """
-    hint_limit = game_state.config['hint_limit']
-
     if not game_state.can_use_hint():
         print("Hint limit reached. No more hints available.")
         return game_state
 
-    choice = get_hint_choice()  # Get user's hint choice
-    choice = validate_hint_choice(choice)  # Validate user input recursively
+    choice = validate_hint_choice(get_hint_choice())  # Get and validate user's hint choice
 
-    if choice == 'specific':
-        row, col = get_specific_cell(game_state.grid.grid_size)  # Get specific cell coordinate from the user
-    else:
-        cell = find_random_empty_cell(game_state.grid)  # Find a random empty cell
-        if cell is None:
-            print("No empty cells available for a hint.")
-            return game_state
-        row, col = cell
+    row, col = (get_specific_cell(game_state.grid.grid_size)
+                if choice == 'specific'
+                else find_random_empty_cell(game_state.grid))
+
+    if row is None or col is None:
+        print("No empty cells available for a hint.")
+        return game_state
 
     cell = game_state.grid[row, col]
     if cell.state == CellState.PRE_FILLED:
         print(f"The cell {chr(ord('A') + row)}{col + 1} is prefilled and cannot be modified.")
         return game_state
 
-    if cell.state == CellState.USER_FILLED:
-        print(
-            f"The cell {chr(ord('A') + row)}{col + 1} already has a value {cell.value.value}. Do you want to "
-            f"overwrite it? (Y/N)")
-        if input("> ").strip().upper() != 'Y':
-            return game_state
+    if cell.state == CellState.USER_FILLED and not confirm_overwrite(row, col, cell.value.value):
+        return game_state
 
+    return apply_hint(game_state, row, col)
+
+
+def confirm_overwrite(row: int, col: int, value: int) -> bool:
+    """
+    Confirm if the user wants to overwrite the cell value.
+    """
+    print(f"The cell {chr(ord('A') + row)}{col + 1} already has a value {value}. Do you want to overwrite it? (Y/N)")
+    return input("> ").strip().upper() == 'Y'
+
+
+def apply_hint(game_state: GameState, row: int, col: int) -> GameState:
+    """
+    Apply a hint to the given cell and return the updated game state.
+    """
     try:
-        hint_value = generate_hint(game_state.grid, row, col)  # Generate the hint value
+        hint_value = generate_hint(game_state.grid, row, col)
         if hint_value is None:
             print(f"No valid hint could be generated for the cell {chr(ord('A') + row)}{col + 1}.")
             return game_state
 
         new_grid = update_grid(game_state.grid, Coordinate(row, col, game_state.grid.grid_size), hint_value,
-                               CellState.HINT)  # Apply the hint
-        game_state = game_state.increment_hints().with_grid(new_grid)
+                               CellState.HINT)
+        new_game_state = game_state.increment_hints().with_grid(new_grid)
         print(f"Hint applied for cell {chr(ord('A') + row)}{col + 1}. Value: {hint_value}.")
-        print(f"Hints remaining: {game_state.hints_remaining()}")
+        print(f"Hints remaining: {new_game_state.hints_remaining()}")
 
-        if not has_empty_cells(new_grid):  # Check for empty cells before triggering completion check
-            game_state = check_and_handle_completion(game_state)
+        if not has_empty_cells(new_grid):
+            new_game_state = check_and_handle_completion(new_game_state)
 
+        display_grid(new_game_state.grid)
+        return new_game_state
     except ValueError as e:
         print(f"System failed to generate hint. Please check your previous moves. Error: {e}")
-
-    display_grid(game_state.grid)  # Display the updated grid
-    return game_state
+        return game_state
 
 
 def validate_hint_choice(choice: str) -> str:

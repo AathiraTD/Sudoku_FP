@@ -11,6 +11,7 @@ from utils.grid_utils import remove_cells
 class PuzzleGenerationError(Exception):
     pass
 
+
 def determine_cells_to_remove(grid_size: int, difficulty: str) -> int:
     difficulty_levels = {
         "easy": grid_size * grid_size // 4,
@@ -18,6 +19,7 @@ def determine_cells_to_remove(grid_size: int, difficulty: str) -> int:
         "hard": grid_size * grid_size // 2
     }
     return difficulty_levels.get(difficulty.lower(), grid_size * grid_size // 4)
+
 
 def generate_puzzle(config: Dict, difficulty: str) -> Grid:
     grid_size = config.get('grid_size', 9)
