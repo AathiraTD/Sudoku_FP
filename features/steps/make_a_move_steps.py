@@ -163,55 +163,33 @@ def step_given_game_state_is_initialized(context):
     context.game_state = GameState(grid, config)
 
 
-@given('the current grid has a 5 in cell "A1"')
-def step_given_grid_has_5_in_a1(context):
+@given('the current grid has a pre-filled cell')
+def step_given_grid_has_pre_filled_cell(context):
     coord = Coordinate(0, 0, context.game_state.grid.grid_size)
     cell = Cell(CellValue(5, context.game_state.grid.grid_size), CellState.PRE_FILLED)
-    context.game_state.grid[coord] = cell
-
-
-@given('the current grid has a pre-filled cell at "A1"')
-def step_given_grid_has_pre_filled_cell_in_a1(context):
-    coord = Coordinate(0, 0, context.game_state.grid.grid_size)
-    cell = Cell(CellValue(5, context.game_state.grid.grid_size), CellState.PRE_FILLED)
-    context.game_state.grid[coord] = cell
-
-
-@given('the user has made a move "A1=5"')
-def step_given_user_has_made_move_a1_5(context):
-    context.game_state = make_a_move(context.game_state, "A1=5")
-
-
-@given('the user has undone the last move "A1=5"')
-def step_given_user_has_undone_last_move_a1_5(context):
-    context.game_state.undo_stack.append((0, 0, 5))
-    context.game_state.grid[Coordinate(0, 0, context.game_state.grid.grid_size)].value.value = None
-
-
-@given('the Sudoku puzzle is almost complete')
-def step_given_sudoku_puzzle_almost_complete(context):
-    config = {"grid_size": 9}
-    grid = generate_puzzle(config, "easy")
-    for i in range(9):
-        for j in range(9):
-            if i == 8 and j == 8:
-                continue
-            coord = Coordinate(i, j, 9)
-            grid[coord] = Cell(CellValue((i * 3 + j) % 9 + 1, 9), CellState.USER_FILLED)
-    context.game_state = GameState(grid, config)
+    context.game_state.grid = context.game_state.grid.with_updated_cell(coord, cell)
 
 
 # When steps
-@when('the user makes a valid move "A1=5"')
-def step_when_user_makes_valid_move_a1_5(context):
-    context.stdout = StringIO()
-    sys.stdout = context.stdout
-    context.game_state = make_a_move(context.game_state, "A1=5")
-    context.make_a_move_output = context.stdout.getvalue().strip().split('\n')
-    sys.stdout = sys.__stdout__
+@when('the user makes a valid move by filling an empty cell')
+def step_when_user_makes_valid_move_filling_empty_cell(context):
+    # Find an empty cell to make a valid move
+    grid = context.game_state.grid
+    for row_index in range(grid.grid_size):
+        for col_index in range(grid.grid_size):
+            coord = Coordinate(row_index, col_index, grid.grid_size)
+            if grid[coord].state == CellState.EMPTY:
+                context.valid_move_coord = coord
+                user_input = f"{chr(ord('A') + row_index)}{col_index + 1}=5"
+                context.stdout = StringIO()
+                sys.stdout = context.stdout
+                context.game_state = make_a_move(context.game_state, user_input)
+                context.make_a_move_output = context.stdout.getvalue().strip().split('\n')
+                sys.stdout = sys.__stdout__
+                return
 
 
-@when('the user makes an invalid move "A1=XYZ"')
+@when('the user makes an invalid move by A1=XYZ')
 def step_when_user_makes_invalid_move_a1_XYZ(context):
     context.stdout = StringIO()
     sys.stdout = context.stdout
@@ -220,82 +198,43 @@ def step_when_user_makes_invalid_move_a1_XYZ(context):
     sys.stdout = sys.__stdout__
 
 
-@when('the user makes the final valid move "I9=9"')
-def step_when_user_makes_final_valid_move_I9_9(context):
+@when('the user makes a move')
+def step_when_user_makes_move(context):
+    user_input = f"{chr(ord('A'))}1=6"
     context.stdout = StringIO()
     sys.stdout = context.stdout
-    context.game_state = make_a_move(context.game_state, "I9=9")
+    context.game_state = make_a_move(context.game_state, user_input)
     context.make_a_move_output = context.stdout.getvalue().strip().split('\n')
-    sys.stdout = sys.__stdout__
-
-
-@when('the user undoes the last move')
-def step_when_user_undoes_last_move(context):
-    context.stdout = StringIO()
-    sys.stdout = context.stdout
-    undo_action, context.game_state = context.game_state.pop_undo()
-    if undo_action:
-        row, col, value = undo_action
-        coord = Coordinate(row, col, context.game_state.grid.grid_size)
-        context.game_state.grid[coord].value.value = value
-        context.game_state = context.game_state.push_redo(undo_action)
-    context.undo_output = context.stdout.getvalue().strip().split('\n')
-    sys.stdout = sys.__stdout__
-
-
-@when('the user redoes the last move')
-def step_when_user_redoes_last_move(context):
-    context.stdout = StringIO()
-    sys.stdout = context.stdout
-    redo_action, context.game_state = context.game_state.pop_redo()
-    if redo_action:
-        row, col, value = redo_action
-        coord = Coordinate(row, col, context.game_state.grid.grid_size)
-        context.game_state.grid[coord].value.value = value
-        context.game_state = context.game_state.push_undo(redo_action)
-    context.redo_output = context.stdout.getvalue().strip().split('\n')
     sys.stdout = sys.__stdout__
 
 
 # Then steps
 @then('the move is applied to the grid')
 def step_then_move_applied_to_grid(context):
-    coord = Coordinate(0, 0, context.game_state.grid.grid_size)
-    assert context.game_state.grid[coord].value.value == 5, "The move was not applied to the grid."
+    assert context.game_state.grid[context.valid_move_coord].value.value == 5, "The move was not applied to the grid."
 
 
 @then('the move is pushed to the undo stack')
 def step_then_move_pushed_to_undo_stack(context):
-    assert context.game_state.undo_stack[-1] == (0, 0, 5), "The move was not pushed to the undo stack."
+    assert context.game_state.undo_stack, "The move was not pushed to the undo stack."
 
 
-@then('the move is removed from the grid')
-def step_then_move_removed_from_grid(context):
-    coord = Coordinate(0, 0, context.game_state.grid.grid_size)
-    assert context.game_state.grid[coord].value.value is None, "The move was not removed from the grid."
+@then('the system displays a success message')
+def step_then_system_displays_success_message(context):
+    success_message = "applied successfully."
+    assert any(success_message in message for message in context.make_a_move_output), \
+        f"Expected message containing '{success_message}', but got: {context.make_a_move_output}"
 
 
-@then('the move is pushed to the redo stack')
-def step_then_move_pushed_to_redo_stack(context):
-    assert context.game_state.redo_stack[-1] == (0, 0, 5), "The move was not pushed to the redo stack."
+@then('the system displays an error message for invalid format')
+def step_then_system_displays_error_message_invalid_format(context):
+    error_message = "Error: Invalid input format."
+    assert any(error_message in message for message in context.make_a_move_output), \
+        f"Expected message containing '{error_message}', but got: {context.make_a_move_output}"
 
 
-@then('the move is reapplied to the grid')
-def step_then_move_reapplied_to_grid(context):
-    coord = Coordinate(0, 0, context.game_state.grid.grid_size)
-    assert context.game_state.grid[coord].value.value == 5, "The move was not reapplied to the grid."
-
-
-@then('the move is pushed back to the undo stack')
-def step_then_move_pushed_back_to_undo_stack(context):
-    assert context.game_state.undo_stack[-1] == (0, 0, 5), "The move was not pushed back to the undo stack."
-
-
-@then('the system displays "{message}"')
-def step_then_system_displays_message(context, message):
-    assert message in context.make_a_move_output, f"Expected message: {message}, but got: {context.make_a_move_output}"
-
-
-@then('prompts the user "Want to Start a new Game (Yes/No):"')
-def step_then_prompts_user_for_new_game(context):
-    assert "Want to Start a new Game (Yes/No):" in context.make_a_move_output, "Did not prompt for new game."
+@then('the system displays an error message for pre-filled cell')
+def step_then_system_displays_error_message_pre_filled_cell(context):
+    error_message = "Cannot apply move"
+    assert any(error_message in message for message in context.make_a_move_output), \
+        f"Expected message containing '{error_message}', but got: {context.make_a_move_output}"

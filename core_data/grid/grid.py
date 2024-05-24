@@ -19,16 +19,16 @@ class Grid:
         object.__setattr__(instance, 'grid_size', grid_size)
         return instance
 
-    def __getitem__(self, index: Union[int, Tuple[int, int]]) -> Union[Row, Cell]:
+    def __getitem__(self, index: Union[int, Tuple[int, int], Coordinate]) -> Union[Row, Cell]:
         if isinstance(index, int):
             return self.rows[index]
+        elif isinstance(index, Coordinate):
+            return self.rows[index.row_index].cells[index]
         elif isinstance(index, tuple) and len(index) == 2:
-            try:
-                coord = Coordinate(index[0], index[1], self.grid_size)
-                return self.rows[index[0]].cells[coord]
-            except ValueError:
-                raise IndexError("Invalid index")
-        raise IndexError("Invalid index")
+            coord = Coordinate(index[0], index[1], self.grid_size)
+            return self.rows[coord.row_index].cells[coord]
+        else:
+            raise IndexError("Invalid index")
 
     @staticmethod
     def create(grid_size: int, cells: Optional[Dict[Coordinate, Cell]] = None) -> object:
@@ -50,3 +50,9 @@ class Grid:
             Row({coord: cells[coord] for coord in cells if coord.row_index == row_index}, row_index) for row_index in
             range(grid_size))
         return Grid(rows=rows, grid_size=grid_size)
+
+    def with_updated_cell(self, coord: Coordinate, cell: Cell) -> object:
+        new_rows = list(self.rows)
+        new_row = new_rows[coord.row_index].with_updated_cell(coord, cell)
+        new_rows[coord.row_index] = new_row
+        return Grid(tuple(new_rows), self.grid_size)

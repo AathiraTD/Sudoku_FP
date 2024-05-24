@@ -1,3 +1,4 @@
+
 Feature: User wants to input custom Sudoku by inserting it
 
   Scenario: User selects "Custom Sudoku" option

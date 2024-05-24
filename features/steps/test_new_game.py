@@ -74,7 +74,7 @@ def step_then_prompt_valid_difficulty_level(context):
 @given('the system has initiated the Sudoku puzzle generation process')
 def step_given_initiated_sudoku_generation(context):
     config = {"grid_size": 9}
-    context.grid = generate_puzzle(config, "easy")
+    context.grid = generate_puzzle(config, "hard")
 
 
 @when('the system generates a Sudoku puzzle')

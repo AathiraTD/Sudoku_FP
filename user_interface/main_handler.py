@@ -18,6 +18,7 @@ def clear_screen() -> None:
     else:
         print("\n" * 100)  # Fallback for IDEs like PyCharm
 
+
 def handle_menu_choice(config: dict, choice: int) -> bool:
     clear_screen()
     if choice == 1:
@@ -31,6 +32,7 @@ def handle_menu_choice(config: dict, choice: int) -> bool:
         return False
     return True
 
+
 def menu_loop(config: dict) -> None:
     while True:
         clear_screen()
@@ -39,7 +41,3 @@ def menu_loop(config: dict) -> None:
         if not handle_menu_choice(config, choice):
             break  # Exit the loop if the user chooses to exit
 
-
-if __name__ == "__main__":
-    config = {"grid_size": 9, "hint_limit": 3}
-    menu_loop(config)

@@ -1,8 +1,8 @@
 from core_data.game_state import GameState
-from user_actions.request_hint import request_hint
 from user_actions.make_a_move import make_a_move
-from user_actions.undo_move import undo_move
+from user_actions.request_hint import request_hint
 from user_actions.save_game import save_game_to_file  # Import the save game function
+from user_actions.undo_move import undo_move
 
 
 def game_actions(game_state: GameState) -> None:
@@ -67,7 +67,7 @@ def game_actions(game_state: GameState) -> None:
                 print("Invalid choice. Please enter a number between 1 and 7.")
                 return prompt_action()  # Recursive call for invalid input
         except ValueError:
-            print("Invalid input. Please enter a number between 1 and 7.")
+            print("Invalid input. Please enter a number between 1 and 6.")
             return prompt_action()  # Recursive call for non-integer input
 
     def game_loop(game_state: GameState) -> None:
