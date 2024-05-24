@@ -1,20 +1,19 @@
-import json
 import logging
-from typing import Optional, List, Tuple, Dict
+from typing import Optional, List, Tuple
 
-from core_data.game_state import GameState
-from core_data.grid.grid import Grid
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
+from core_data.game_state import GameState
+from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions, \
     update_grid
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_main_menu
-from user_interface.user_input import get_user_move
 from user_interface.game_actions import game_actions
-from utils.grid_utils import convert_user_moves, create_empty_grid
+from user_interface.user_input_handler import get_user_move
+from utils.grid_utils import create_empty_grid
 from utils.input_parsing import parse_user_input
 
 

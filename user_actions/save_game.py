@@ -1,11 +1,12 @@
-import os
 import json
+import os
 from typing import Dict, Any, List
+
 from core_data.coordinate import Coordinate
+from core_data.game_state import GameState
 from core_data.grid.grid import Grid
 from user_interface.display.display_grid import display_grid
-from user_interface.user_input import prompt_for_file_details
-from core_data.game_state import GameState
+from user_interface.user_input_handler import prompt_for_file_details
 
 
 def convert_cells_to_dict(cells: Dict[Coordinate, Any], keys: List[Coordinate], index: int, result: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:

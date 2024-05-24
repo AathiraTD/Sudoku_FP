@@ -4,33 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="CLi based Sudoku game in Python following FP">
-      <change afterPath="$PROJECT_DIR$/BDD.txt" afterDir="false" />
+    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="Working Start New Game BDD - test">
+      <change afterPath="$PROJECT_DIR$/features/make_move.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/exit_sudoku_game_play.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/exit_sudoku_main_menu.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/main_menu.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/test_main_menu.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/puzzle_generation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/puzzle_generation.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/request_hint.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/request_hint.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/resume_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/resume_sudoku.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/save_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/save_game.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/start_a_new_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/start_a_new_game.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/steps/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/steps/gameplay_interface_steps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/undo_redo_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/undo_redo_move.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/features/upload_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/upload_sudoku.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/make_a_move_steps.p.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/step_start_a_new_game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup Feature/user_input_value.feature" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/display_gameplay_interface.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/step_display_main_menu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/display/menu_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/menu_display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/puzzle_generation.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/start_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/main_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,56 +87,56 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python tests.Python tests for test_config.test_load_config_invalid_format.executor": "Run",
-    "Python tests.Python tests for test_config.test_load_config_valid.executor": "Debug",
-    "Python tests.Python tests for test_coordinate.test_coordinate_comparison.executor": "Run",
-    "Python tests.Python tests for test_coordinate.test_coordinate_create_method.executor": "Run",
-    "Python tests.Python tests for test_coordinate.test_coordinate_creation_invalid.executor": "Run",
-    "Python tests.Python tests for test_coordinate.test_coordinate_creation_valid.executor": "Debug",
-    "Python tests.Python tests for test_grid.test_grid_get_row.executor": "Debug",
-    "Python tests.Python tests for test_grid.test_grid_invalid_update.executor": "Debug",
-    "Python tests.Python tests for test_row.test_row_creation_valid.executor": "Run",
-    "Python tests.Python tests for test_upload_sudoku.test_upload_sudoku_valid.executor": "Run",
-    "Python tests.Python tests in test_cell.py.executor": "Run",
-    "Python tests.Python tests in test_cell_value.py.executor": "Run",
-    "Python tests.Python tests in test_column.py.executor": "Run",
-    "Python tests.Python tests in test_config.py.executor": "Run",
-    "Python tests.Python tests in test_coordinate.py.executor": "Run",
-    "Python tests.Python tests in test_display_grid.py.executor": "Run",
-    "Python tests.Python tests in test_game_state.py.executor": "Run",
-    "Python tests.Python tests in test_grid.py.executor": "Run",
-    "Python tests.Python tests in test_main_menu.py.executor": "Run",
-    "Python tests.Python tests in test_make_a_move.py.executor": "Run",
-    "Python tests.Python tests in test_menu_display.py.executor": "Run",
-    "Python tests.Python tests in test_menu_displays.py.executor": "Run",
-    "Python tests.Python tests in test_request_hint.py.executor": "Run",
-    "Python tests.Python tests in test_row.py.executor": "Run",
-    "Python tests.Python tests in test_save_game_to_file.py.executor": "Run",
-    "Python tests.Python tests in test_start_new_game.py.executor": "Run",
-    "Python tests.Python tests in test_subgrid.py.executor": "Debug",
-    "Python tests.Python tests in test_undo_move.py.executor": "Run",
-    "Python tests.Python tests in test_upload_sudoku.py.executor": "Run",
-    "Python.coordinate.executor": "Run",
-    "Python.generate_puzzle.executor": "Run",
-    "Python.grid.executor": "Debug",
-    "Python.helpers.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.row.executor": "Debug",
-    "Python.step_start_a_new_game.executor": "Run",
-    "Python.subgrid.executor": "Debug",
-    "Python.upload_sudoku.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "git-widget-placeholder": "Implementing-BDD",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test_config.test_load_config_invalid_format.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_config.test_load_config_valid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_comparison.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_create_method.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_creation_invalid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_creation_valid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_grid.test_grid_get_row.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_grid.test_grid_invalid_update.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_row.test_row_creation_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_upload_sudoku.test_upload_sudoku_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cell.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cell_value.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_column.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_config.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_coordinate.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_display_grid.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_game_state.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_grid.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_main_menu.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_make_a_move.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_menu_display.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_menu_displays.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_request_hint.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_row.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_save_game_to_file.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_start_new_game.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_subgrid.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests in test_undo_move.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_upload_sudoku.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.coordinate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_puzzle.executor&quot;: &quot;Run&quot;,
+    &quot;Python.grid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.helpers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.row.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.step_start_a_new_game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.subgrid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.upload_sudoku.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Implementing-BDD&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Athu/Declarative Programming/Final Project/CLI_Sudoku_FP&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;
   }
-}]]></component>
+}</component>
   <component name="QodanaHighlightedReportService">
     <option name="localRunNotPublishedPersistedInfo">
       <LocalReportPersistedInfo>
@@ -173,9 +160,9 @@
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\user_actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\gherkin_spec" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\Backup Feature" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions" />
     </key>
@@ -300,7 +287,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716475747398</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="New BDD Test Cases">
+      <option name="closed" value="true" />
+      <created>1716503887482</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716503887482</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Working Start New Game BDD - test">
+      <option name="closed" value="true" />
+      <created>1716511137439</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716511137439</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -312,7 +315,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="CLi based Sudoku game in Python following FP" />
-    <option name="LAST_COMMIT_MESSAGE" value="CLi based Sudoku game in Python following FP" />
+    <MESSAGE value="New BDD Test Cases" />
+    <MESSAGE value="Working Start New Game BDD - test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Start New Game BDD - test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
