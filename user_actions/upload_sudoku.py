@@ -132,7 +132,7 @@ def upload_sudoku(config: dict) -> None:
     Args:
         config (dict): Configuration settings.
     """
-    grid_size = config.get('grid_size')
+    grid_size = config.get('grid_size')  #
     if not grid_size or not isinstance(grid_size, int) or grid_size < 1:
         print("Error: Invalid grid size in the configuration.")
         return

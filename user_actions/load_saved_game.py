@@ -1,15 +1,40 @@
-import os
 import json
+import os
 from typing import Optional, List, Dict, Tuple
 
-from core_data.game_state import GameState
-from core_data.grid.grid import Grid, Cell, Coordinate, Row
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
+from core_data.game_state import GameState
+from core_data.grid.grid import Grid, Cell, Coordinate, Row
 from puzzle_handler.solve.puzzle_solver import count_solutions
 from user_interface.display.display_grid import display_grid
 from user_interface.game_actions import game_actions
 
+
+#
+# def prompt_for_load_location() -> str:
+#     """
+#     Prompt the user for the load location.
+#
+#     Returns:
+#         str: The directory path where saved games are located.
+#     """
+#     while True:
+#         print("Choose the load location:")
+#         print("1. Default location (current directory)")
+#         print("2. Custom location")
+#         location_choice = input("> ").strip()
+#
+#         if location_choice == "1":
+#             return os.getcwd()  # Return the current directory
+#         elif location_choice == "2":
+#             custom_location = input("Enter the custom directory path: ").strip()
+#             if os.path.isdir(custom_location):
+#                 return custom_location  # Return the custom directory if it exists
+#             else:
+#                 print("Invalid directory. Please try again.")
+#         else:
+#             print("Invalid choice. Please enter 1 or 2.")
 
 def prompt_for_load_location() -> str:
     """
@@ -18,23 +43,22 @@ def prompt_for_load_location() -> str:
     Returns:
         str: The directory path where saved games are located.
     """
-    print("Choose the load location:")
-    print("1. Default location (current directory)")
-    print("2. Custom location")
-    location_choice = input("> ").strip()
+    while True:
+        print("Choose the load location:")
+        print("1. Default location (current directory)")
+        print("2. Custom location")
+        location_choice = input("> ").strip()
 
-    if location_choice == "1":
-        return os.getcwd()  # Return the current directory
-    elif location_choice == "2":
-        custom_location = input("Enter the custom directory path: ").strip()
-        if os.path.isdir(custom_location):
-            return custom_location  # Return the custom directory if it exists
+        if location_choice == "1":
+            return os.getcwd()  # Return the current directory
+        elif location_choice == "2":
+            custom_location = input("Enter the custom directory path: ").strip()
+            if os.path.isdir(custom_location):
+                return custom_location  # Return the custom directory if it exists
+            else:
+                print("Invalid directory. Please try again.")
         else:
-            print("Invalid directory. Please try again.")
-            return prompt_for_load_location()  # Recursively prompt again if invalid directory
-    else:
-        print("Invalid choice. Please enter 1 or 2.")
-        return prompt_for_load_location()  # Recursively prompt again if invalid choice
+            print("Invalid choice. Please enter 1 or 2.")
 
 
 def list_saved_game_files(directory: str) -> List[str]:

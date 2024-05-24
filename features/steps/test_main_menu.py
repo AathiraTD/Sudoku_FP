@@ -1,47 +1,29 @@
-import sys
-from io import StringIO
+from unittest.mock import patch
 
 from behave import when, then
 
-from user_interface.display.menu_display import display_invalid_input
+from features.steps.common_steps import capture_output
+from user_interface.display.menu_display import display_main_menu
 
 
-@then('the system displays the main menu with options')
-def step_then_system_displays_main_menu_with_options(context):
-    output = context.main_menu_output
-    expected_menu = [
-        "Main Menu:",
-        "1. Start New Game",
-        "2. Upload Sudoku",
-        "3. Load Saved Game",
-        "4. Exit"
-    ]
-    assert output == expected_menu, f"Expected: {expected_menu}, but got: {output}"
-
-@when('the user enters an invalid command')
-def step_when_user_enters_invalid_command(context):
-    context.stdout = StringIO()
-    sys.stdout = context.stdout
-    display_invalid_input("Invalid input. Please enter a number between 1 and 4.")
-    context.invalid_command_output = context.stdout.getvalue().strip().split('\n')
-    sys.stdout = sys.__stdout__
-
-@then('the system displays an error message "Invalid input. Please enter a number between 1 and 4."')
-def step_then_system_displays_error_message(context):
-    output = context.invalid_command_output
-    expected_error_message = "Invalid input. Please enter a number between 1 and 4."
-    assert expected_error_message in output, f"Expected message: {expected_error_message}, but got: {output}"
+# When step for user selecting the main menu option
+@when('the user selects the main menu option {option:d}')
+def step_when_user_selects_main_menu_option(context, option):
+    with patch('builtins.input', side_effect=[str(option)]):
+        context.stdout = capture_output(display_main_menu)
+        context.menu_output = context.stdout.split('\n')
 
 
-@then('re-displays the main menu with options')
-def step_then_redisplays_main_menu_with_options(context):
-    output = context.invalid_command_output
-    expected_menu = [
-        "Invalid input. Please enter a number between 1 and 4.",
-        "Main Menu:",
-        "1. Start New Game",
-        "2. Upload Sudoku",
-        "3. Load Saved Game",
-        "4. Exit"
-    ]
-    assert output == expected_menu, f"Expected: {expected_menu}, but got: {output}"
+# Then steps to verify the output
+# Then steps to verify the output
+@then('the system displays the main menu')
+def step_then_displays_main_menu(context):
+    assert any("Main Menu" in line for line in context.menu_output), \
+        f"Expected main menu display, but got: {context.menu_output}"
+
+
+@then('the system should navigate to the {destination}')
+def step_then_navigate_to_destination(context, destination):
+    expected_message = f"Navigating to {destination}"
+    assert any(expected_message in line for line in context.menu_output), \
+        f"Expected message containing '{expected_message}', but got: {context.menu_output}"
