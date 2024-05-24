@@ -1,17 +1,17 @@
+import logging
 from typing import Optional, List, Tuple
+
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
+from core_data.game_state import GameState
 from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import update_grid
-from core_data.game_state import GameState
 from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid, display_messages
-from user_interface.user_input import get_user_move
-from utils.grid_utils import label_to_index
+from user_interface.user_input_handler import get_user_move
 from utils.input_parsing import parse_user_input
-import logging
 
 
 def make_a_move(game_state: GameState) -> Optional[GameState]:

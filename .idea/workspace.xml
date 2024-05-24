@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/features/steps/common_steps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/test_new_game.py" afterDir="false" />
+    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="Working Start New Game BDD - test">
+      <change afterPath="$PROJECT_DIR$/features/make_move.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/test_main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin_spec/start_a_new_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/test_new_game.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/puzzle_generation.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/start_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/main_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/main_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/user_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716503887482</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Working Start New Game BDD - test">
+      <option name="closed" value="true" />
+      <created>1716511137439</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716511137439</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -301,7 +316,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="CLi based Sudoku game in Python following FP" />
     <MESSAGE value="New BDD Test Cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="New BDD Test Cases" />
+    <MESSAGE value="Working Start New Game BDD - test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Start New Game BDD - test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
