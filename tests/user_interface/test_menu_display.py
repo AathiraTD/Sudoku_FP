@@ -1,5 +1,3 @@
-import pytest
-
 from user_interface.display.menu_display import display_main_menu
 
 

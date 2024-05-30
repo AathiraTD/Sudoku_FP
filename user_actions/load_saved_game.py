@@ -7,8 +7,8 @@ from core_data.cell_value import CellValue
 from core_data.game_state import GameState
 from core_data.grid.grid import Grid, Cell, Coordinate, Row
 from puzzle_handler.solve.puzzle_solver import count_solutions
+from user_interface.controller.game_actions_controller import game_actions
 from user_interface.display.display_grid import display_grid
-from user_interface.game_actions import game_actions
 
 
 #

@@ -10,7 +10,7 @@ from features.steps.make_a_move_steps import convert_parsed_moves, apply_and_rep
 from puzzle_handler.solve.puzzle_solver import is_valid
 from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid, display_messages
-from user_interface.user_input_handler import get_user_move
+from user_interface.input.user_input_handler import get_user_move
 from utils.input_parsing import parse_user_input
 
 
@@ -66,21 +66,6 @@ def push_undo_recursively(game_state: GameState, moves: List[Tuple[Coordinate, C
 
     return push_undo_recursively(game_state, moves, grid, index + 1)
 
-
-# def has_empty_cells(grid: Grid) -> bool:
-#     def check_rows_recursively(rows: Tuple[Row, ...], row_index: int, col_index: int, grid_size: int) -> bool:
-#         if row_index >= len(rows):
-#             return False
-#         if col_index >= grid_size:
-#             return check_rows_recursively(rows, row_index + 1, 0, grid_size)
-#
-#         cell = grid[Coordinate(row_index, col_index, grid_size)]
-#         if cell.state == CellState.EMPTY:
-#             return True
-#
-#         return check_rows_recursively(rows, row_index, col_index + 1, grid_size)
-#
-#     return check_rows_recursively(grid.rows, 0, 0, grid.grid_size)
 
 def is_puzzle_complete(grid: Grid) -> bool:
     def check_cell(row: int, col: int) -> bool:

@@ -2,7 +2,7 @@ from core_data.game_state import GameState
 from puzzle_handler.generate.generate_puzzle import generate_puzzle
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_invalid_input
-from user_interface.user_input_handler import get_difficulty_choice
+from user_interface.input.user_input_handler import get_difficulty_choice
 
 
 def start_new_game(config):
@@ -40,5 +40,5 @@ def prompt_for_game_actions(game_state):
     Args:
         game_state: The current state of the game.
     """
-    from user_interface.game_actions import game_actions
+    from user_interface.controller.game_actions_controller import game_actions
     game_actions(game_state)

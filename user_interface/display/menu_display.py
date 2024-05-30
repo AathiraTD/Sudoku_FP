@@ -1,31 +1,38 @@
-def display_main_menu():
-    """
-    Display the main menu with options.
-    """
-    menu_options = [
-        "1. Start New Game",
-        "2. Upload Sudoku",
-        "3. Load Saved Game",
-        "4. Exit"
-    ]
-    print("Main Menu:")
-    print_menu_options(menu_options)
+# user_interface/display/menu_display.py
 
-
-def print_menu_options(options, index=0):
+def display_menu_with_title(title: str, options: dict, prompt: str = "Choose an option:") -> None:
     """
-    Recursively print each menu option.
+    Display a menu with a title and options.
 
     Args:
-        options (list): List of menu options.
-        index (int): Current index to print.
+        title (str): The title of the menu.
+        options (dict): A dictionary of options where keys are option numbers and values are descriptions.
+        prompt (str): The prompt message to display.
     """
-    if index < len(options):
-        print(options[index])
-        print_menu_options(options, index + 1)
+    print(title)
+    display_options_recursively(options, 1)
+    print(prompt)
 
 
-def display_invalid_input(message):
+def display_options_recursively(options: dict, current_index: int) -> None:
+    """
+    Recursively display the menu options.
+
+    Args:
+        options (dict): The menu options dictionary.
+        current_index (int): The current index to display.
+    """
+    if current_index > len(options):
+        return
+
+    if current_index in options:
+        description, _ = options[current_index]
+        print(f"{current_index}. {description}")
+
+    display_options_recursively(options, current_index + 1)
+
+
+def display_invalid_input(message: str) -> None:
     """
     Display an invalid input message.
 
@@ -33,64 +40,10 @@ def display_invalid_input(message):
         message (str): The message to display.
     """
     print(message)
-    display_main_menu()  # Ensure Menu option is displayed again
 
 
-def display_difficulty_options():
-    """
-    Display the difficulty level options.
-    """
-    options = [
-        "Choose difficulty level:",
-        "1. Easy",
-        "2. Medium",
-        "3. Hard"
-    ]
-    for option in options:
-        print(option)
-
-
-def display_post_solve_options():
-    """
-    Display the post-solve options.
-    """
-    options = [
-        "Please Select an Option",
-        "1. Play a new game",
-        "2. Return to main menu"
-    ]
-    for option in options:
-        print(option)
-
-
-def display_hint_options():
-    """
-    Display the hint options.
-    """
-    options = [
-        "Choose an option for hint:",
-        "1. Random cell",
-        "2. Specific cell"
-    ]
-    for option in options:
-        print(option)
-
-
-def display_move_prompt():
+def display_move_prompt() -> None:
     """
     Display the prompt for entering user moves.
     """
     print("Enter your moves in the format 'A1=5, B2=3, C3=7'. To make a cell empty - 'A1=None' :")
-
-
-def display_save_location_prompt():
-    """
-    Display the save location options.
-    """
-    options = [
-        "Choose the save location:",
-        "1. Default location (current directory)",
-        "2. Custom location"
-    ]
-    for option in options:
-        print(option)

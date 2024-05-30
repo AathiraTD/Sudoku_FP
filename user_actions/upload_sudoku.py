@@ -9,14 +9,16 @@ from core_data.game_state import GameState
 from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions, \
     update_grid
+from user_interface.controller.game_actions_controller import game_actions
 from user_interface.display.display_grid import display_grid
-from user_interface.display.menu_display import display_main_menu
-from user_interface.game_actions import game_actions
-from user_interface.user_input_handler import get_user_move
+from user_interface.display.menu_display import display_menu_with_title
+from user_interface.input.menu_options import get_main_menu_options
+from user_interface.input.user_input_handler import get_user_move
 from utils.input_parsing import parse_user_input
 
 
-def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Optional[Grid]:
+def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Optional[
+    Grid]:
     """
     Recursively input values into the Sudoku grid.
 
@@ -90,7 +92,7 @@ def input_and_validate(config: dict, grid: Grid) -> Optional[Grid]:
     user_input = get_user_move()  # Get user input moves
 
     if user_input.lower() == 'menu':
-        display_main_menu()  # Display the main menu
+        display_menu_with_title("Main Menu", get_main_menu_options())  # Display the main menu
         return None
 
     try:
@@ -114,15 +116,13 @@ def input_and_validate(config: dict, grid: Grid) -> Optional[Grid]:
                 return updated_grid  # Return the valid updated grid
             else:
                 print(
-                    "Failed to upload Sudoku. The grid does not have a unique solution. Please correct the errors and try again.")
+                    "Failed to upload Sudoku. The grid does not have a unique solution. Please correct the errors and "
+                    "try again.")
                 return input_and_validate(config, updated_grid)  # Retry input and validation
     except ValueError as e:
         print(f"Error: {e}")
         logging.error(f"ValueError: {e}")
         return input_and_validate(config, grid)  # Retry input and validation
-
-
-
 
 
 def upload_sudoku(config: dict) -> None:

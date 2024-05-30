@@ -1,19 +1,68 @@
+
+Pre:
+
+venv\Scripts\activate
+
 Discovery
 
-
-
-
-
-
+1. Specifiaction: MainMenu Display
 
 
 Formulation
 
-
-
-
+1. Business readable
 
 
 Automation
 
-Taking one example at a time
+    if difficulty not in ["easy", "medium", "hard"]:
+        display_invalid_input("Invalid input. Please enter a number between 1 and 3.")
+        return
+		
+		
+Enter your moves in the format 'A1=5, B2=3, C3=7' or type 'menu' to return to the main menu:
+Enter your moves in the format 'A1=5, B2=3, C3=7'. To make a cell empty - 'A1=None' :
+> 3324
+Invalid move format: '3324'. Expected format: 'A1=5'.
+Main Menu:
+1. Start New Game
+2. Upload Sudoku
+3. Load Saved Game
+4. Exit
+> 1
+Invalid move format: '1'. Expected format: 'A1=5'.
+Main Menu:
+1. Start New Game
+2. Upload Sudoku
+3. Load Saved Game
+4. Exit
+> 1
+Invalid move format: '1'. Expected format: 'A1=5'.
+Main Menu:
+1. Start New Game
+2. Upload Sudoku
+3. Load Saved Game
+4. Exit
+> 4
+
+
+
+
+1. Make a move
+2. Get a hint
+3. Undo last move
+4. Solve the puzzle
+5. Save the game
+6. Back to main menu
+> 1
+Enter your moves in the format 'A1=5, B2=3, C3=7'. To make a cell empty - 'A1=None' :
+> wqd12
+Invalid move format: 'wqd12'. Expected format: 'A1=5'.
+
+
+Enter your moves in the format 'A1=5, B2=3, C3=7'. To make a cell empty - 'A1=None' :
+> a1=12
+Error: CellValue must be between 1 and 9, or None.
+
+Choose an action:
+1. Make a move

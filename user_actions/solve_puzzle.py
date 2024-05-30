@@ -3,7 +3,7 @@ from colorama import Fore, Style
 from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import backtrack, count_solutions
 from user_interface.display.display_grid import display_grid
-from user_interface.user_input_handler import get_post_solve_choice
+from user_interface.input.user_input_handler import get_post_solve_choice
 
 
 def solve_puzzle(grid: Grid) -> Grid:

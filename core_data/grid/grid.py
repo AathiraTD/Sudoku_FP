@@ -14,6 +14,10 @@ class Grid:
     grid_size: int
 
     def __new__(cls, rows: Tuple[Row, ...], grid_size: int) -> object:
+
+        # Check the validity of the grid
+        if not cls.is_valid(rows, grid_size):
+            raise ValueError("Invalid grid configuration")
         instance = super(Grid, cls).__new__(cls)
         object.__setattr__(instance, 'rows', rows)
         object.__setattr__(instance, 'grid_size', grid_size)
@@ -56,3 +60,7 @@ class Grid:
         new_row = new_rows[coord.row_index].with_updated_cell(coord, cell)
         new_rows[coord.row_index] = new_row
         return Grid(tuple(new_rows), self.grid_size)
+
+    def is_valid(rows: Tuple[Row, ...], grid_size: int) -> bool:
+        """Check the validity of the grid configuration."""
+        return len(rows) == grid_size and all(len(row.cells) == grid_size for row in rows)
