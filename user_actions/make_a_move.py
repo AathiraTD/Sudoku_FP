@@ -5,10 +5,10 @@ from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid
+from core_data.grid import Grid
 from features.steps.make_a_move_steps import convert_parsed_moves, apply_and_report_moves, validate_user_input
-from puzzle_handler.solve.puzzle_solver import is_valid
-from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
+from puzzle_handler.puzzle_solver.puzzle_solver import is_valid
+from puzzle_handler.puzzle_solver.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid, display_messages
 from user_interface.input.user_input_handler import get_user_move
 from utils.input_parsing import parse_user_input

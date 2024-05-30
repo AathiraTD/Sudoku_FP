@@ -1,11 +1,11 @@
 import random
 from typing import Optional, Tuple, Set, List, Callable, Any, Dict
+
+from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from core_data.grid.grid import Grid
-
 from core_data.coordinate import Coordinate
-from core_data.cell import Cell
+from core_data.grid import Grid
 
 
 def find_empty_cell(grid: Grid) -> Optional[Tuple[int, int]]:

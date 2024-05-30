@@ -1,8 +1,9 @@
-import pytest
 from unittest.mock import mock_open, patch
-from user_actions.upload_sudoku import upload_sudoku
+
+import pytest
+
 from config.config import load_config
-from core_data.grid.grid import Grid
+from user_actions.upload_sudoku import upload_sudoku
 
 # Mock configuration for the tests
 config = {

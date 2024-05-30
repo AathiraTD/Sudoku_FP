@@ -1,13 +1,7 @@
-import pytest
 from unittest.mock import patch, MagicMock
-from user_actions.start_new_game import start_new_game
+
 from user_actions.request_hint import request_hint
-from core_data.grid.grid import Grid
-from core_data.game_state import GameState
-from core_data.coordinate import Coordinate
-from core_data.cell import Cell
-from core_data.cell_value import CellValue
-from core_data.cell_state import CellState
+from user_actions.start_new_game import start_new_game
 
 
 def test_start_new_game_and_request_hint(monkeypatch):

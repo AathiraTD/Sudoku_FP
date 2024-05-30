@@ -1,13 +1,12 @@
-import pytest
-from unittest.mock import patch, MagicMock
-from user_actions.start_new_game import start_new_game
-from user_actions.make_a_move import make_a_move
-from core_data.grid.grid import Grid
-from core_data.game_state import GameState
-from core_data.coordinate import Coordinate
+from unittest.mock import patch
+
 from core_data.cell import Cell
-from core_data.cell_value import CellValue
 from core_data.cell_state import CellState
+from core_data.cell_value import CellValue
+from core_data.coordinate import Coordinate
+from core_data.grid import Grid
+from user_actions.make_a_move import make_a_move
+from user_actions.start_new_game import start_new_game
 
 
 def test_start_new_game_and_make_a_move(monkeypatch):
@@ -44,7 +43,7 @@ def test_start_new_game_and_make_a_move(monkeypatch):
     }
 
     monkeypatch.setattr('builtins.input', mock_input_start_new_game)
-    monkeypatch.setattr('puzzle_handler.generate.generate_puzzle', mock_generate_puzzle)
+    monkeypatch.setattr('puzzle_handler.puzzle_generator.generate_puzzle', mock_generate_puzzle)
 
     # Mock the game_actions function to capture the game_state
     with patch('user_interface.game_actions.game_actions') as mock_game_actions:

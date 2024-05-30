@@ -1,9 +1,10 @@
 import logging
 from typing import Set, Dict, Callable, Tuple
-from core_data.grid.grid import Grid
-from core_data.coordinate import Coordinate
+
 from core_data.cell_state import CellState
-from puzzle_handler.solve.puzzle_solver import count_solutions, update_grid
+from core_data.coordinate import Coordinate
+from core_data.grid import Grid
+from puzzle_handler.puzzle_solver.puzzle_solver import count_solutions, update_grid
 
 
 def memoize(func: Callable) -> Callable:
@@ -79,7 +80,7 @@ def generate_coordinates_to_remove(grid_size: int, num: int) -> Set[Coordinate]:
 
     def generate(n: int, coords: Set[Coordinate]) -> Set[Coordinate]:
         if n == 0:
-            return coords  # Base case: no more cells to generate
+            return coords  # Base case: no more cells to puzzle_generator
         row, col = random.randint(0, grid_size - 1), random.randint(0, grid_size - 1)
         coord = Coordinate(row, col, grid_size)
         if coord not in coords:

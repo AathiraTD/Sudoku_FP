@@ -10,8 +10,8 @@ from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from puzzle_handler.generate.generate_puzzle import generate_puzzle
-from puzzle_handler.solve.puzzle_solver import update_grid, is_valid
+from puzzle_handler.puzzle_generator.generate_puzzle import generate_puzzle
+from puzzle_handler.puzzle_solver.puzzle_solver import update_grid, is_valid
 from user_interface.display.display_grid import display_grid, display_messages
 from utils.input_parsing import parse_user_input
 

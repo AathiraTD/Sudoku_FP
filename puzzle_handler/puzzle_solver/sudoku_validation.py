@@ -4,8 +4,8 @@ from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid
-from puzzle_handler.solve.puzzle_solver import is_valid
+from core_data.grid import Grid
+from puzzle_handler.puzzle_solver.puzzle_solver import is_valid
 
 # Custom cache dictionary
 count_solutions_cache: Dict[Tuple, int] = {}
@@ -28,7 +28,7 @@ def validate_move(grid: Grid, move: Tuple[Coordinate, Cell]) -> Tuple[bool, str]
 
     if not (1 <= value <= grid.grid_size):
         return False, f"Invalid value: {value}. Must be between 1 and {grid.grid_size}."
-    if not is_valid(grid, row, col, value, grid.grid_size):
+    if not is_valid(grid, row, col, value):
         return False, f"Invalid move at {chr(ord('A') + row)}{col + 1}. Does not satisfy Sudoku rules."
     return True, f"Move {chr(ord('A') + row)}{col + 1}={value} applied successfully."
 
@@ -45,7 +45,6 @@ def is_puzzle_complete(grid: Grid) -> bool:
         return check_cell(row, col + 1)
 
     return check_cell(0, 0)
-
 
 
 def check_and_handle_completion(game_state: GameState) -> GameState:
@@ -76,6 +75,7 @@ def handle_completion_choice(config: Dict) -> None:
 
 
 from user_actions.start_new_game import start_new_game
+
 
 def handle_choice_recursively(choice: str, config: Dict) -> None:
     """

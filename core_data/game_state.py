@@ -1,5 +1,6 @@
 from typing import Dict, Tuple, List, Optional
-from core_data.grid.grid import Grid
+
+from core_data.grid import Grid
 
 
 class GameState:

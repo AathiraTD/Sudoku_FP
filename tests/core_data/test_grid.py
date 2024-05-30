@@ -1,11 +1,12 @@
 import unittest
+
 from core_data.cell import Cell
-from core_data.coordinate import Coordinate
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from core_data.grid.grid import Grid
-from core_data.grid.row import Row
-from puzzle_handler.solve.puzzle_solver import update_grid
+from core_data.coordinate import Coordinate
+from core_data.grid import Grid
+from core_data.row import Row
+from puzzle_handler.puzzle_solver.puzzle_solver import update_grid
 
 
 class TestGrid(unittest.TestCase):

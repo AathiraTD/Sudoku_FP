@@ -4,7 +4,7 @@ from typing import Tuple, Dict
 
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid
+from core_data.grid import Grid
 from user_interface.input.user_input_handler import prompt_for_file_details
 
 

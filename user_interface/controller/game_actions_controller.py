@@ -1,6 +1,6 @@
 from core_data.game_state import GameState
 from user_interface.display.menu_display import display_invalid_input, display_menu_with_title
-from user_interface.input.menu_options import get_game_actions
+from user_interface.input.menu_enums import get_menu_options, GameAction
 
 
 def game_actions(game_state: GameState) -> None:
@@ -10,7 +10,7 @@ def game_actions(game_state: GameState) -> None:
     Args:
         game_state (GameState): The current state of the game.
     """
-    actions = get_game_actions()
+    actions = get_menu_options(GameAction)
     game_actions_recursive(game_state, actions)
 
 
@@ -22,12 +22,16 @@ def game_actions_recursive(game_state: GameState, actions: dict) -> None:
         game_state (GameState): The current state of the game.
         actions (dict): Dictionary mapping choices to their handlers.
     """
+    # Display the game action menu
     display_menu_with_title("Choose a Game Action", actions)
+    # Prompt the user for their choice
     choice = prompt_action(len(actions))
 
-    game_state = handle_action(choice, game_state, actions)
-    if game_state is not None:  # Continue recursion only if not returning to main menu
-        game_actions_recursive(game_state, actions)
+    # Handle the chosen action and get the updated game state
+    new_game_state = handle_action(choice, game_state, actions)
+    # Continue recursion only if not returning to the main menu
+    if new_game_state is not None:
+        game_actions_recursive(new_game_state, actions)
 
 
 def handle_action(choice: int, game_state: GameState, actions: dict) -> GameState:
@@ -46,9 +50,11 @@ def handle_action(choice: int, game_state: GameState, actions: dict) -> GameStat
     if action:
         _, handler = action
         if handler:
+            # Execute the handler function and return the updated game state
             return handler(game_state)
         else:
             # Handle "Back to main menu"
+            print("Exiting to the main menu...")
             return None
     print("Invalid choice. Please enter a valid number.")
     return game_state

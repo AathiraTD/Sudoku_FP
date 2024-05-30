@@ -1,10 +1,9 @@
 from typing import Dict
 
 from core_data.coordinate import Coordinate
-from core_data.grid.grid import Grid
-from puzzle_handler.generate.remove_cell import remove_cells_recursive
-from puzzle_handler.solve.puzzle_solver import backtrack, count_solutions
-from puzzle_handler.techniques.apply_naked_singles import apply_naked_singles
+from core_data.grid import Grid
+from puzzle_handler.puzzle_generator.remove_cell import remove_cells_recursive
+from puzzle_handler.puzzle_solver.puzzle_solver import backtrack, count_solutions, apply_naked_singles
 from utils.grid_utils import remove_cells
 
 
@@ -42,7 +41,7 @@ def create_and_solve_grid(grid_size: int) -> Grid:
     grid = Grid.create(grid_size=grid_size)
     grid, success = backtrack(grid)
     if not success:
-        raise PuzzleGenerationError("Failed to generate a valid Sudoku puzzle using backtracking.")
+        raise PuzzleGenerationError("Failed to puzzle_generator a valid Sudoku puzzle using backtracking.")
     return grid
 
 

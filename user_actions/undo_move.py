@@ -1,7 +1,7 @@
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from puzzle_handler.solve.puzzle_solver import update_grid
+from puzzle_handler.puzzle_solver.puzzle_solver import update_grid
 from user_interface.display.display_grid import display_grid
 
 

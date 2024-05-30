@@ -1,7 +1,9 @@
 import pytest
+
 from core_data.cell import Cell, CellValue, CellState
+from core_data.column import Column
 from core_data.coordinate import Coordinate
-from core_data.grid.column import Column
+
 
 def test_column_creation_valid():
     cells = {

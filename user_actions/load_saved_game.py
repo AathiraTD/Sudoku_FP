@@ -5,36 +5,11 @@ from typing import Optional, List, Dict, Tuple
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid, Cell, Coordinate, Row
-from puzzle_handler.solve.puzzle_solver import count_solutions
+from core_data.grid import Grid, Cell, Coordinate, Row
+from puzzle_handler.puzzle_solver.puzzle_solver import count_solutions
 from user_interface.controller.game_actions_controller import game_actions
 from user_interface.display.display_grid import display_grid
 
-
-#
-# def prompt_for_load_location() -> str:
-#     """
-#     Prompt the user for the load location.
-#
-#     Returns:
-#         str: The directory path where saved games are located.
-#     """
-#     while True:
-#         print("Choose the load location:")
-#         print("1. Default location (current directory)")
-#         print("2. Custom location")
-#         location_choice = input("> ").strip()
-#
-#         if location_choice == "1":
-#             return os.getcwd()  # Return the current directory
-#         elif location_choice == "2":
-#             custom_location = input("Enter the custom directory path: ").strip()
-#             if os.path.isdir(custom_location):
-#                 return custom_location  # Return the custom directory if it exists
-#             else:
-#                 print("Invalid directory. Please try again.")
-#         else:
-#             print("Invalid choice. Please enter 1 or 2.")
 
 def prompt_for_load_location() -> str:
     """
