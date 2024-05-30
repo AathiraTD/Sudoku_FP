@@ -1,7 +1,7 @@
 import logging
 
 from config.config import load_config, get_config_path
-from user_interface.main_handler import menu_loop
+from user_interface.main_menu_handler import menu_loop
 
 # Configure logging to log to both console and file
 logging.basicConfig(

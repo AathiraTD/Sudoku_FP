@@ -7,10 +7,9 @@ from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
 from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import update_grid
-from user_interface.display.menu_display import (
-    display_invalid_input,
+from user_interface.display_utilities import display_invalid_input, display_move_prompt
+from user_interface.menu_display import (
     display_difficulty_options,
-    display_move_prompt,
     display_hint_options,
     display_save_location_prompt,
     display_post_solve_options
@@ -20,12 +19,14 @@ from user_interface.display.menu_display import (
 def get_menu_choice() -> int:
     return prompt_choice(1, 4)
 
+
 def prompt_choice(min_val: int, max_val: int) -> int:
     choice = validate_choice(input("> "), min_val, max_val)
     if choice is None:
         display_invalid_input(f"Invalid input. Please enter a number between {min_val} and {max_val}.")
         return prompt_choice(min_val, max_val)
     return choice
+
 
 def validate_choice(choice: str, min_val: int, max_val: int) -> int:
     try:
@@ -36,20 +37,24 @@ def validate_choice(choice: str, min_val: int, max_val: int) -> int:
         pass
     return None
 
+
 def get_difficulty_choice() -> str:
     display_difficulty_options()
     choice = prompt_choice(1, 3)
     return ["easy", "medium", "hard"][choice - 1]
 
+
 def get_user_move() -> str:
     display_move_prompt()
     return prompt_user_move()
+
 
 def prompt_user_move() -> str:
     user_input = input("> ").strip()
     if not validate_moves(user_input):
         return prompt_user_move()
     return user_input
+
 
 def validate_moves(user_input: str) -> bool:
     moves = user_input.split(",")
@@ -69,14 +74,17 @@ def validate_moves(user_input: str) -> bool:
             return False
     return True
 
+
 def get_post_solve_choice() -> int:
     display_post_solve_options()
     return prompt_choice(1, 2)
+
 
 def get_hint_choice() -> str:
     display_hint_options()
     choice = prompt_choice(1, 2)
     return 'random' if choice == 1 else 'specific'
+
 
 def prompt_for_file_details() -> Tuple[str, str]:
     """
@@ -96,6 +104,7 @@ def prompt_for_file_details() -> Tuple[str, str]:
     location_choice = prompt_choice(1, 2)
     directory = get_directory_choice(location_choice)
     return file_name, directory
+
 
 def get_directory_choice(location_choice: int) -> str:
     """

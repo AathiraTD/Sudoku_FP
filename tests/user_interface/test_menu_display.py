@@ -1,6 +1,4 @@
-import pytest
-
-from user_interface.display.menu_display import display_main_menu
+from user_interface.menu_display import display_main_menu
 
 
 def test_display_main_menu(capsys):

@@ -1,8 +1,6 @@
 from core_data.game_state import GameState
-from user_actions.make_a_move import make_a_move
-from user_actions.request_hint import request_hint
-from user_actions.save_game import save_game_to_file  # Import the save game function
-from user_actions.undo_move import undo_move
+from user_interface.display_utilities import display_invalid_input
+from user_interface.menu_options import get_game_actions
 
 
 def game_actions(game_state: GameState) -> None:
@@ -12,76 +10,75 @@ def game_actions(game_state: GameState) -> None:
     Args:
         game_state (GameState): The current state of the game.
     """
+    actions = get_game_actions()
+    game_actions_recursive(game_state, actions)
 
-    def display_menu() -> None:
-        """
-        Display the game actions menu.
-        """
-        print("\nChoose an action:")
-        print("1. Make a move")
-        print("2. Get a hint")
-        print("3. Undo last move")
-        # print("4. Redo last move")
-        print("4. Solve the puzzle")
-        print("5. Save the game")
-        print("6. Back to main menu")
 
-    def handle_action(choice: int, game_state: GameState) -> GameState:
-        """
-        Handle the user's action choice.
+def game_actions_recursive(game_state: GameState, actions: dict) -> None:
+    """
+    Recursively handle game actions.
 
-        Args:
-            choice (int): The user's action choice.
-            game_state (GameState): The current state of the game.
+    Args:
+        game_state (GameState): The current state of the game.
+        actions (dict): Dictionary mapping choices to their handlers.
+    """
+    display_game_actions(actions)
+    choice = prompt_action(len(actions))
 
-        Returns:
-            GameState: The updated state of the game.
-        """
-        if choice == 1:
-            game_state = make_a_move(game_state)  # Handle making a move
-        elif choice == 2:
-            game_state = request_hint(game_state)  # Handle requesting a hint
-        elif choice == 3:
-            game_state = undo_move(game_state)  # Handle undo last move
-        # elif choice == 4:
-        #     game_state = redo_move(game_state)  # Handle redo last move
-        elif choice == 4:
-            from user_actions.solve_puzzle import solve_puzzle  # Local import to avoid circular dependency
-            game_state = game_state.with_grid(solve_puzzle(game_state.grid))  # Handle solving the puzzle
-        elif choice == 5:
-            save_game_to_file(game_state)  # Handle saving the game
-        return game_state
+    game_state = handle_action(choice, game_state, actions)
+    if game_state is not None:  # Continue recursion only if not returning to main menu
+        game_actions_recursive(game_state, actions)
 
-    def prompt_action() -> int:
-        """
-        Recursively prompt the user for a valid action choice.
 
-        Returns:
-            int: The user's valid action choice.
-        """
-        try:
-            choice = int(input("> "))  # Get input from the user
-            if 1 <= choice <= 6:
-                return choice  # Return valid choice
-            else:
-                print("Invalid choice. Please enter a number between 1 and 7.")
-                return prompt_action()  # Recursive call for invalid input
-        except ValueError:
-            print("Invalid input. Please enter a number between 1 and 6.")
-            return prompt_action()  # Recursive call for non-integer input
+def display_game_actions(actions: dict) -> None:
+    """
+    Display the game actions with options.
 
-    def game_loop(game_state: GameState) -> None:
-        """
-        Recursively handle the game loop.
+    Args:
+        actions (dict): The game actions dictionary.
+    """
+    print("Choose a Game Action:")
+    for key, (description, _) in actions.items():
+        print(f"{key}. {description}")
 
-        Args:
-            game_state (GameState): The current state of the game.
-        """
-        display_menu()  # Display the game actions menu
-        choice = prompt_action()  # Get the user's action choice
-        if choice == 6:
-            return  # Exit the loop to return to the main menu
-        new_game_state = handle_action(choice, game_state)  # Handle the user's action choice
-        game_loop(new_game_state)  # Recursive call with the updated game state
 
-    game_loop(game_state)  # Initial call to start the game loop
+def prompt_action(num_options: int) -> str:
+    """
+    Prompt the user for a valid action choice.
+
+    Args:
+        num_options (int): The number of available options.
+
+    Returns:
+        str: The user's valid action choice.
+    """
+    choice = input("> ")
+    if choice.isdigit() and 1 <= int(choice) <= num_options:
+        return choice
+    else:
+        display_invalid_input(f"Invalid choice. Please enter a number between 1 and {num_options}.")
+        return prompt_action(num_options)
+
+
+def handle_action(choice: str, game_state: GameState, actions: dict) -> GameState:
+    """
+    Handle the user's action choice.
+
+    Args:
+        choice (str): The user's action choice.
+        game_state (GameState): The current state of the game.
+        actions (dict): Dictionary mapping choices to their handlers.
+
+    Returns:
+        GameState: The updated state of the game or None if returning to main menu.
+    """
+    action = actions.get(choice)
+    if action:
+        _, handler = action
+        if handler:
+            return handler(game_state)
+        else:
+            # Handle "Back to main menu"
+            return None
+    print("Invalid choice. Please enter a valid number.")
+    return game_state

@@ -3,7 +3,7 @@ from unittest.mock import patch
 from behave import when, then
 
 from features.steps.common_steps import capture_output
-from user_interface.display.menu_display import display_main_menu
+from user_interface.menu_display import display_main_menu
 
 
 # When step for user selecting the main menu option

@@ -67,21 +67,6 @@ def push_undo_recursively(game_state: GameState, moves: List[Tuple[Coordinate, C
     return push_undo_recursively(game_state, moves, grid, index + 1)
 
 
-# def has_empty_cells(grid: Grid) -> bool:
-#     def check_rows_recursively(rows: Tuple[Row, ...], row_index: int, col_index: int, grid_size: int) -> bool:
-#         if row_index >= len(rows):
-#             return False
-#         if col_index >= grid_size:
-#             return check_rows_recursively(rows, row_index + 1, 0, grid_size)
-#
-#         cell = grid[Coordinate(row_index, col_index, grid_size)]
-#         if cell.state == CellState.EMPTY:
-#             return True
-#
-#         return check_rows_recursively(rows, row_index, col_index + 1, grid_size)
-#
-#     return check_rows_recursively(grid.rows, 0, 0, grid.grid_size)
-
 def is_puzzle_complete(grid: Grid) -> bool:
     def check_cell(row: int, col: int) -> bool:
         if row >= grid.grid_size:

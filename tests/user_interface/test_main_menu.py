@@ -1,7 +1,4 @@
-import pytest
-
 from main import main
-from user_interface.display.menu_display import display_main_menu
 
 
 #test main
