@@ -1,46 +1,17 @@
 import logging
-import random
-from typing import Dict, List, Optional, Tuple, Callable, Any
+from functools import lru_cache
+from random import random
+from typing import Tuple, Optional, List, Callable, Any
 
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
 from core_data.grid import Grid
-from core_data.row import Row
-from utils.grid_utils import find_empty_cell
-
-# Custom cache dictionary to store the results of counted solutions
-count_solutions_cache: Dict[str, int] = {}
 
 
-def grid_to_string(grid: Grid) -> str:
-    """
-    Convert the grid to a string representation that can be used as a cache key.
-
-    Args:
-        grid (Grid): The Sudoku grid.
-
-    Returns:
-        str: The string representation of the grid.
-    """
-    return ','.join(f"{coord.row_index},{coord.col_index},{cell.value.value}" for row in grid.rows for coord, cell in
-                    row.cells.items())
-
-
+@lru_cache(None)
 def is_valid(grid: Grid, row: int, col: int, num: int) -> bool:
-    """
-    Check if placing a number in a cell is valid.
-
-    Args:
-        grid (Grid): The Sudoku grid.
-        row (int): The row index.
-        col (int): The column index.
-        num (int): The number to place in the cell.
-
-    Returns:
-        bool: True if the number can be placed, False otherwise.
-    """
     grid_size = grid.grid_size
     subgrid_size = int(grid_size ** 0.5)
 
@@ -61,54 +32,11 @@ def is_valid(grid: Grid, row: int, col: int, num: int) -> bool:
     return not in_row(row) and not in_col(col) and not in_subgrid(start_row, start_col)
 
 
-def apply_naked_singles(grid: Grid) -> Grid:
-    """
-    Apply the naked singles technique to the Sudoku grid.
-
-    Args:
-        grid (Grid): The Sudoku grid.
-
-    Returns:
-        Grid: The updated grid after applying the naked singles technique.
-    """
-    grid_size = grid.grid_size
-
-    def apply_to_cell(row: int, col: int, grid: Grid) -> Grid:
-        if row >= grid_size:
-            return grid  # Base case: No more rows to process
-
-        if col >= grid_size:
-            return apply_to_cell(row + 1, 0, grid)  # Move to the next row if column index exceeds grid size
-
-        cell = grid[row, col]
-        if cell and cell.value.value == 0:
-            possible_values = get_possible_values(grid, row, col)
-            if len(possible_values) == 1:
-                new_value = possible_values.pop()
-                coord = Coordinate(row, col, grid_size)
-                grid = update_grid(grid, coord, new_value, CellState.USER_FILLED)
-
-        return apply_to_cell(row, col + 1, grid)  # Recursively process the next cell
-
-    return apply_to_cell(0, 0, grid)  # Start the recursion from the first cell
-
-
-
+@lru_cache(None)
 def get_possible_values(grid: Grid, row: int, col: int) -> set:
-    """
-    Get possible values for a cell in the Sudoku grid.
-
-    Args:
-        grid (Grid): The Sudoku grid.
-        row (int): The row index.
-        col (int): The column index.
-
-    Returns:
-        set: A set of possible values for the cell.
-    """
     grid_size = grid.grid_size
     subgrid_size = int(grid_size ** 0.5)
-    possible_values = set(range(1, grid_size + 1))
+    possible_values = set(range(1, grid.grid_size + 1))
 
     def remove_used_values(values: set, r: int, c: int) -> set:
         value = grid[r, c].value.value
@@ -142,15 +70,51 @@ def get_possible_values(grid: Grid, row: int, col: int) -> set:
     return possible_values
 
 
+def find_empty_cell_with_fewest_options(grid: Grid) -> Optional[Tuple[int, int]]:
+    min_options = float('inf')
+    best_cell = None
+
+    def find_best_cell(row: int, col: int, min_options: int, best_cell: Optional[Tuple[int, int]]) -> Optional[
+        Tuple[int, int]]:
+        if row >= grid.grid_size:
+            return best_cell
+        if col >= grid.grid_size:
+            return find_best_cell(row + 1, 0, min_options, best_cell)
+
+        if grid[row, col].value.value == 0:
+            options = len(get_possible_values(grid, row, col))
+            if options < min_options:
+                min_options = options
+                best_cell = (row, col)
+
+        return find_best_cell(row, col + 1, min_options, best_cell)
+
+    return find_best_cell(0, 0, min_options, best_cell)
+
+
 def backtrack(grid: Grid) -> Tuple[Grid, bool]:
     logging.debug("Starting backtrack")
-    empty_cell = find_empty_cell(grid)
+
+    grid = apply_naked_singles(grid)
+
+    empty_cell = find_empty_cell_with_fewest_options(grid)
     if not empty_cell:
         logging.debug("No empty cells found, puzzle solved")
-        return grid, True  # Base case: No empty cell found, puzzle solved
+        return grid, True
 
     row, col = empty_cell
     logging.debug(f"Empty cell found at {row}, {col}")
+
+    def try_values_recursive(values: List[int], callback: Callable[[int, Any], Optional[Any]], context: Any) -> \
+            Optional[Any]:
+        if not values:
+            return None
+
+        result = callback(values[0], context)
+        if result:
+            return result
+
+        return try_values_recursive(values[1:], callback, context)
 
     random_values = list(range(1, grid.grid_size + 1))
     random.shuffle(random_values)
@@ -158,99 +122,35 @@ def backtrack(grid: Grid) -> Tuple[Grid, bool]:
     def backtrack_callback(value: int, context: Tuple[Grid, int, int]) -> Optional[Tuple[Grid, bool]]:
         grid, row, col = context
         if is_valid(grid, row, col, value):
-            new_grid = update_grid(grid, Coordinate(row, col, grid.grid_size), value, CellState.PRE_FILLED)
+            new_grid = grid.with_updated_cell(Coordinate(row, col, grid.grid_size),
+                                              Cell(CellValue(value, grid.grid_size), CellState.PRE_FILLED))
             solved_grid, success = backtrack(new_grid)
             if success:
-                return solved_grid, True  # Solution found
+                return solved_grid, True
         return None
 
     result = try_values_recursive(random_values, backtrack_callback, (grid, row, col))
-    if not result:
-        pass
     return result if result else (grid, False)
 
 
-def try_values_recursive(values: List[int], callback: Callable[[int, Any], Optional[Any]], context: Any) -> Optional[
-    Any]:
-    if not values:
-        return None  # Base case: No values left to try
+def apply_naked_singles(grid: Grid) -> Grid:
+    grid_size = grid.grid_size
 
-    result = callback(values[0], context)  # Apply the callback function to the current value
-    if result:
-        return result  # Return the result if the callback is successful
+    def apply_to_cell(row: int, col: int, grid: Grid) -> Grid:
+        if row >= grid_size:
+            return grid
 
-    return try_values_recursive(values[1:], callback, context)  # Recursive call to try the next value
+        if col >= grid_size:
+            return apply_to_cell(row + 1, 0, grid)
 
+        cell = grid[row, col]
+        if cell and cell.value.value == 0:
+            possible_values = get_possible_values(grid, row, col)
+            if len(possible_values) == 1:
+                new_value = possible_values.pop()
+                coord = Coordinate(row, col, grid_size)
+                grid = grid.with_updated_cell(coord, Cell(CellValue(new_value, grid_size), CellState.USER_FILLED))
 
-def check_unique_solvability(grid: Grid) -> bool:
-    """
-    Check if the Sudoku grid has a unique solution.
+        return apply_to_cell(row, col + 1, grid)
 
-    Args:
-        grid (Grid): The Sudoku grid.
-
-    Returns:
-        bool: True if the grid has a unique solution, False otherwise.
-    """
-    return count_solutions(grid, grid.grid_size) == 1
-
-
-def count_solutions(grid: Grid, grid_size: int, max_solutions: int = 2) -> int:
-    """
-    Count the number of valid solutions for the Sudoku grid.
-
-    Args:
-        grid (Grid): The Sudoku grid.
-        grid_size (int): The size of the grid.
-        max_solutions (int): The maximum number of solutions to count.
-
-    Returns:
-        int: The number of valid solutions found.
-    """
-    try:
-        empty_cell = find_empty_cell(grid)
-        if not empty_cell:
-            return 1  # Base case: no empty cells means the puzzle is solved
-
-        row, col = empty_cell
-        num_solutions = 0
-
-        def count_values(num: int) -> int:
-            nonlocal num_solutions
-            if num > grid_size:
-                return num_solutions
-            if is_valid(grid, row, col, num):
-                new_grid = update_grid(grid, Coordinate(row, col, grid_size), num, CellState.PRE_FILLED)
-                num_solutions += count_solutions(new_grid, grid_size, max_solutions)
-                if num_solutions >= max_solutions:
-                    return num_solutions
-            return count_values(num + 1)
-
-        num_solutions = count_values(1)
-        return num_solutions
-    except Exception as e:
-        logging.error(f"Error in count_solutions: {e}")
-        return 0
-
-
-def update_grid(grid: Grid, coordinate: Coordinate, value: Optional[int], state: CellState) -> object:
-    new_cells = {coord: cell for row in grid.rows for coord, cell in row.cells.items()}
-    new_cells[coordinate] = Cell(CellValue(value, grid.grid_size), state)
-    rows = tuple(
-        Row({coord: new_cells[coord] for coord in new_cells if coord.row_index == row_index}, row_index) for row_index
-        in range(grid.grid_size))
-    return Grid(rows=rows, grid_size=grid.grid_size)
-
-
-def upload_sudoku(grid: Grid) -> str:
-    """
-    Upload the Sudoku puzzle to an external solver or database.
-
-    Args:
-        grid (Grid): The Sudoku grid.
-
-    Returns:
-        str: The response from the solver or database.
-    """
-    # Placeholder function: replace with actual implementation
-    return "Uploaded Sudoku grid successfully"
+    return apply_to_cell(0, 0, grid)

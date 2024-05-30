@@ -4,64 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="Completed">
-      <change afterPath="$PROJECT_DIR$/core_data/column.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/row.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_data/subgrid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_interface/input/menu_enums.py" afterDir="false" />
+    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="Corrected Grid Class">
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/dancing_links.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/exact_cover.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/cell.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/game_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/game_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/column.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/row.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/subgrid.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/common_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/common_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/step_undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/step_undo_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/test_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/test_request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_request_hint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/generate_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/generate_puzzle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/generate/remove_cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/remove_cell.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/puzzle_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/solve/sudoku_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/sudoku_validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/apply_naked_singles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/get_column_possible_values.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/get_possible_values.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle_handler/techniques/get_subgrid_possible_values.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_column.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_game_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_game_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_row.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_row.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_make_a_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_request_hint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_save_game_to_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_save_game_to_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_start_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_undo_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_upload_sudoku.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_display_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_interface/test_display_grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/load_saved_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/load_saved_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/start_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/puzzle_solver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/controller/game_actions_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/controller/game_actions_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/controller/main_menu_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/controller/main_menu_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/display/display_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/display_grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/display/menu_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/menu_display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/input/menu_options.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/input/user_input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/input/user_input_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/grid_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grid_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/validation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validation_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +69,7 @@
     <setting file="file://$PROJECT_DIR$/features/steps/save_game_step.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -173,7 +122,7 @@
     "Python.generate_puzzle.executor": "Run",
     "Python.grid.executor": "Debug",
     "Python.helpers.executor": "Run",
-    "Python.main.executor": "Run",
+    "Python.main.executor": "Debug",
     "Python.row.executor": "Debug",
     "Python.step_start_a_new_game.executor": "Run",
     "Python.subgrid.executor": "Debug",
@@ -401,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717072932254</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Corrected Grid Class">
+      <option name="closed" value="true" />
+      <created>1717106247566</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717106247567</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -421,7 +378,8 @@
     <MESSAGE value="Final working Copy with distributable" />
     <MESSAGE value="Refactored UI" />
     <MESSAGE value="Completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed" />
+    <MESSAGE value="Corrected Grid Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected Grid Class" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -443,6 +401,11 @@
           <url>file://$PROJECT_DIR$/user_actions/make_a_move.py</url>
           <line>92</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/step_undo_move.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

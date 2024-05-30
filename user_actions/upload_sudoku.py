@@ -7,8 +7,7 @@ from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
 from core_data.grid import Grid
-from puzzle_handler.puzzle_solver.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions, \
-    update_grid
+from puzzle_handler.puzzle_solver.puzzle_solver import apply_naked_singles
 from user_interface.controller.game_actions_controller import game_actions
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_menu_with_title
