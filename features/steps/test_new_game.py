@@ -3,7 +3,7 @@ from io import StringIO
 
 from behave import given, when, then
 
-from puzzle_handler.generate.generate_puzzle import generate_puzzle
+from puzzle_handler.puzzle_generator.generate_puzzle import generate_puzzle
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_difficulty_options, display_invalid_input
 
@@ -48,7 +48,7 @@ def step_when_user_selects_difficulty_level(context):
 
 @then('the system initiates the Sudoku puzzle generation process for the selected difficulty level')
 def step_then_initiates_sudoku_generation(context):
-    assert context.grid is not None, "Failed to generate Sudoku puzzle"
+    assert context.grid is not None, "Failed to puzzle_generator Sudoku puzzle"
 
 @when('the user does not select a difficulty level or selects an invalid level')
 def step_when_user_does_not_select_valid_difficulty(context):
@@ -71,7 +71,7 @@ def step_given_initiated_sudoku_generation(context):
 
 @when('the system generates a Sudoku puzzle')
 def step_when_generates_sudoku_puzzle(context):
-    assert context.grid is not None, "Failed to generate Sudoku puzzle"
+    assert context.grid is not None, "Failed to puzzle_generator Sudoku puzzle"
     context.stdout = StringIO()
     sys.stdout = context.stdout
     display_grid(context.grid)

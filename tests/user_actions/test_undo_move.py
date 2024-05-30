@@ -1,14 +1,13 @@
-import pytest
 from unittest.mock import patch, MagicMock
-from user_actions.start_new_game import start_new_game
-from user_actions.make_a_move import make_a_move
-from user_actions.undo_move import undo_move
-from core_data.grid.grid import Grid
-from core_data.game_state import GameState
-from core_data.coordinate import Coordinate
+
 from core_data.cell import Cell
-from core_data.cell_value import CellValue
 from core_data.cell_state import CellState
+from core_data.cell_value import CellValue
+from core_data.coordinate import Coordinate
+from user_actions.make_a_move import make_a_move
+from user_actions.start_new_game import start_new_game
+from user_actions.undo_move import undo_move
+
 
 def test_start_new_game_and_undo_move(monkeypatch):
     def mock_input_start_new_game(prompt):

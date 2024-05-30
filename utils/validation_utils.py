@@ -1,10 +1,11 @@
 import os
 from types import MappingProxyType
-from typing import List, Callable, Tuple
+from typing import List, Callable
+
+from core_data.column import Column
 from core_data.coordinate import Coordinate
-from core_data.grid.column import Column
-from core_data.grid.row import Row
-from core_data.grid.subgrid import Subgrid
+from core_data.row import Row
+from core_data.subgrid import Subgrid
 
 
 def validate_grid(cells: MappingProxyType, grid_size: int) -> bool:

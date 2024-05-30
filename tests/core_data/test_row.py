@@ -1,7 +1,8 @@
 import pytest
+
 from core_data.cell import Cell, CellValue, CellState
 from core_data.coordinate import Coordinate
-from core_data.grid.row import Row
+from core_data.row import Row
 
 
 def test_row_creation_valid():

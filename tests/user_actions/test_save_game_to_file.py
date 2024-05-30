@@ -1,9 +1,10 @@
-import pytest
-import os
 import json
+import os
+
+from core_data.grid import Grid
+from puzzle_handler.puzzle_generator.generate_puzzle import generate_puzzle
 from user_actions.save_game import save_game_to_file
-from core_data.grid.grid import Grid
-from puzzle_handler.generate.generate_puzzle import generate_puzzle
+
 
 def test_save_game_to_file(monkeypatch, tmpdir):
     # Create a temporary directory to save the file

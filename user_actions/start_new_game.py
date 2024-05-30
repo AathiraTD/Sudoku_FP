@@ -1,5 +1,5 @@
 from core_data.game_state import GameState
-from puzzle_handler.generate.generate_puzzle import generate_puzzle
+from puzzle_handler.puzzle_generator.generate_puzzle import generate_puzzle
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_invalid_input
 from user_interface.input.user_input_handler import get_difficulty_choice

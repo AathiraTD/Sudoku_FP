@@ -1,21 +1,24 @@
 from colorama import Fore, Style
 
-from core_data.grid.grid import Grid
-from puzzle_handler.solve.puzzle_solver import backtrack, count_solutions
+from core_data.game_state import GameState
+from core_data.grid import Grid
+from puzzle_handler.puzzle_solver.puzzle_solver import backtrack, count_solutions
 from user_interface.display.display_grid import display_grid
 from user_interface.input.user_input_handler import get_post_solve_choice
 
 
-def solve_puzzle(grid: Grid) -> Grid:
+def solve_puzzle(game_state: GameState) -> Grid:
     """
     Solve the Sudoku puzzle using backtracking.
 
     Args:
-        grid (Grid): The Sudoku grid to solve.
+        grid (Grid): The Sudoku grid to puzzle_solver.
 
     Returns:
         Grid: The solved Sudoku grid.
+        :param game_state:
     """
+    grid = game_state.grid
     grid_size = grid.grid_size
     num_solutions = count_solutions(grid, grid_size)
 
@@ -37,7 +40,7 @@ def solve_puzzle(grid: Grid) -> Grid:
                 # Implement returning to main menu logic here
             return solved_grid
         else:
-            print("Failed to solve the puzzle")
+            print("Failed to puzzle_solver the puzzle")
             return grid
     else:
         print(f"The puzzle has {num_solutions} solutions. It must have a unique solution to be solved. Please recheck "

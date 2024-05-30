@@ -3,9 +3,9 @@ from typing import Optional, Tuple
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid
-from puzzle_handler.solve.puzzle_solver import count_solutions, is_valid, update_grid
-from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
+from core_data.grid import Grid
+from puzzle_handler.puzzle_solver.puzzle_solver import count_solutions, is_valid, update_grid
+from puzzle_handler.puzzle_solver.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid
 from user_interface.input.user_input_handler import get_hint_choice
 from utils.grid_utils import find_random_empty_cell, try_values_recursive, label_to_index
@@ -105,7 +105,7 @@ def apply_hint(game_state: GameState, row: int, col: int) -> GameState:
         display_grid(new_game_state.grid)
         return new_game_state
     except ValueError as e:
-        print(f"System failed to generate hint. Please check your previous moves. Error: {e}")
+        print(f"System failed to puzzle_generator hint. Please check your previous moves. Error: {e}")
         return game_state
 
 

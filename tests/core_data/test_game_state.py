@@ -1,8 +1,7 @@
-import pytest
 from core_data.cell import Cell, CellValue, CellState
 from core_data.coordinate import Coordinate
-from core_data.grid.grid import Grid
 from core_data.game_state import GameState
+from core_data.grid import Grid
 
 
 def test_game_state_creation():

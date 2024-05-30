@@ -1,7 +1,8 @@
-import pytest
-from user_actions.start_new_game import start_new_game
-from core_data.grid.grid import Grid
 from unittest.mock import patch
+
+from core_data.grid import Grid
+from user_actions.start_new_game import start_new_game
+
 
 def test_start_new_game_easy(monkeypatch):
     def mock_input(prompt):
@@ -24,7 +25,7 @@ def test_start_new_game_easy(monkeypatch):
     }
 
     monkeypatch.setattr('builtins.input', mock_input)
-    monkeypatch.setattr('puzzle_handler.generate.generate_puzzle', mock_generate_puzzle)
+    monkeypatch.setattr('puzzle_handler.puzzle_generator.generate_puzzle', mock_generate_puzzle)
 
     # Mock the game_actions function to prevent entering the game loop
     with patch('user_interface.game_actions.game_actions') as mock_game_actions:
@@ -52,7 +53,7 @@ def test_start_new_game_medium(monkeypatch):
     }
 
     monkeypatch.setattr('builtins.input', mock_input)
-    monkeypatch.setattr('puzzle_handler.generate.generate_puzzle', mock_generate_puzzle)
+    monkeypatch.setattr('puzzle_handler.puzzle_generator.generate_puzzle', mock_generate_puzzle)
 
     # Mock the game_actions function to prevent entering the game loop
     with patch('user_interface.game_actions.game_actions') as mock_game_actions:

@@ -3,7 +3,7 @@ import unittest
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from core_data.grid.subgrid import Subgrid
+from core_data.subgrid import Subgrid
 
 
 class TestSubgrid(unittest.TestCase):

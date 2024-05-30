@@ -6,13 +6,13 @@ from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from core_data.grid.grid import Grid
-from puzzle_handler.solve.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions, \
+from core_data.grid import Grid
+from puzzle_handler.puzzle_solver.puzzle_solver import apply_naked_singles, check_unique_solvability, count_solutions, \
     update_grid
 from user_interface.controller.game_actions_controller import game_actions
 from user_interface.display.display_grid import display_grid
 from user_interface.display.menu_display import display_menu_with_title
-from user_interface.input.menu_options import get_main_menu_options
+from user_interface.input.menu_enums import MainMenuOption, get_menu_options
 from user_interface.input.user_input_handler import get_user_move
 from utils.input_parsing import parse_user_input
 
@@ -92,7 +92,7 @@ def input_and_validate(config: dict, grid: Grid) -> Optional[Grid]:
     user_input = get_user_move()  # Get user input moves
 
     if user_input.lower() == 'menu':
-        display_menu_with_title("Main Menu", get_main_menu_options())  # Display the main menu
+        display_menu_with_title("Main Menu", get_menu_options(MainMenuOption))  # Display the main menu
         return None
 
     try:
