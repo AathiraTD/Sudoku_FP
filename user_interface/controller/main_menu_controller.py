@@ -1,7 +1,7 @@
-from user_interface.display_manager import display_main_menu
-from user_interface.display_utilities import clear_screen
-from user_interface.menu_options import get_menu_options
-from user_interface.user_input_handler import get_menu_choice
+from user_interface.display.display_utilities import clear_screen
+from user_interface.display.menu_display import display_invalid_input, display_menu_with_title
+from user_interface.input.menu_options import get_main_menu_options
+from user_interface.input.user_input_handler import get_menu_choice
 
 
 def handle_menu_choice(config: dict, choice: int, menu_options: dict) -> bool:
@@ -10,14 +10,13 @@ def handle_menu_choice(config: dict, choice: int, menu_options: dict) -> bool:
 
     Args:
         config (dict): Configuration settings.
-        choice (str): The user's choice from the menu.
+        choice (int): The user's choice from the menu.
         menu_options (dict): Menu options with actions.
 
     Returns:
         bool: True to continue the menu loop, False to exit.
     """
     clear_screen()
-    display_main_menu()
     action = menu_options.get(choice)
     if action:
         _, handler = action
@@ -27,7 +26,7 @@ def handle_menu_choice(config: dict, choice: int, menu_options: dict) -> bool:
         else:
             print("Exiting the game...")  # Exit the game
             return False
-    print("Invalid choice. Please enter a valid number.")
+    display_invalid_input("Invalid choice. Please enter a valid number.")
     return True
 
 
@@ -38,11 +37,11 @@ def menu_loop(config: dict) -> None:
     Args:
         config (dict): Configuration settings.
     """
-    menu_options = get_menu_options()  # Get menu options once
+    menu_options = get_main_menu_options()  # Get menu options once
 
     def menu_loop_recursive():
         clear_screen()
-        display_main_menu()  # Display the main menu
+        display_menu_with_title("Main Menu", menu_options)  # Display the main menu
         menu_choice = get_menu_choice()  # Get the user's menu choice
         if handle_menu_choice(config, menu_choice, menu_options):
             menu_loop_recursive()  # Continue the loop recursively

@@ -5,7 +5,7 @@ from behave import given, when, then
 
 from puzzle_handler.generate.generate_puzzle import generate_puzzle
 from user_interface.display.display_grid import display_grid
-from user_interface.menu_display import display_difficulty_options, display_invalid_input
+from user_interface.display.menu_display import display_difficulty_options, display_invalid_input
 
 
 @given('the user has been prompted to select a difficulty level')

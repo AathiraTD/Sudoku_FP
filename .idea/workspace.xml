@@ -4,29 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user_interface/display_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_interface/display_utilities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_interface/main_menu_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_interface/menu_options.py" afterDir="false" />
+    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="Refactored UI">
+      <change afterPath="$PROJECT_DIR$/user_interface/controller/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_interface/input/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BDD.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/grid/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid/grid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/steps/common_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/common_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/steps/test_main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_main_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/steps/test_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/test_new_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_interface/test_main_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/user_interface/test_menu_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_interface/test_menu_display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/load_saved_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/load_saved_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/save_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/save_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/start_new_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/display/menu_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/menu_display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/game_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/game_actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/main_handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface/user_input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/user_input_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/display_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/display_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/display_utilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/game_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/controller/game_actions_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/main_menu_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/controller/main_menu_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/menu_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/display/menu_display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/menu_options.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/input/menu_options.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/user_input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/input/user_input_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Hioerarchical-Strcture" />
+        <entry key="$PROJECT_DIR$" value="Implementing-BDD" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,14 +136,14 @@
     "Python.generate_puzzle.executor": "Run",
     "Python.grid.executor": "Debug",
     "Python.helpers.executor": "Run",
-    "Python.main.executor": "Debug",
+    "Python.main.executor": "Run",
     "Python.row.executor": "Debug",
     "Python.step_start_a_new_game.executor": "Run",
     "Python.subgrid.executor": "Debug",
     "Python.upload_sudoku.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ToolWindowRun.ShowToolbar": "false",
-    "git-widget-placeholder": "Implementing-BDD",
+    "git-widget-placeholder": "Refactored-UI",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/CLI_Sudoku_FP",
     "run.code.analysis.last.selected.profile": "aDefault",
@@ -172,11 +173,11 @@
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\user_actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\input" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\display" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features\steps" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\gherkin_spec" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP" />
     </key>
   </component>
   <component name="RunManager">
@@ -347,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716560064601</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refactored UI">
+      <option name="closed" value="true" />
+      <created>1717065792381</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717065792382</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -365,7 +374,8 @@
     <MESSAGE value="Moving" />
     <MESSAGE value="BDD 4 cases" />
     <MESSAGE value="Final working Copy with distributable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final working Copy with distributable" />
+    <MESSAGE value="Refactored UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored UI" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

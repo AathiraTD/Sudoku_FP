@@ -5,7 +5,7 @@ from behave import given, when, then
 
 from core_data.game_state import GameState
 from puzzle_handler.generate.generate_puzzle import generate_puzzle
-from user_interface.menu_display import display_main_menu, display_invalid_input
+from user_interface.display.menu_display import display_main_menu, display_invalid_input
 
 
 # Helper to capture output

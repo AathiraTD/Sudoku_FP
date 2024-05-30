@@ -1,0 +1,435 @@
+2024-05-30 12:30:30,927 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,927 - root - DEBUG - Empty cell found at 0, 0
+2024-05-30 12:30:30,928 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,929 - root - DEBUG - Empty cell found at 0, 1
+2024-05-30 12:30:30,929 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,930 - root - DEBUG - Empty cell found at 0, 2
+2024-05-30 12:30:30,930 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,930 - root - DEBUG - Empty cell found at 0, 3
+2024-05-30 12:30:30,931 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,932 - root - DEBUG - Empty cell found at 0, 4
+2024-05-30 12:30:30,932 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,933 - root - DEBUG - Empty cell found at 0, 5
+2024-05-30 12:30:30,934 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,934 - root - DEBUG - Empty cell found at 0, 6
+2024-05-30 12:30:30,935 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,935 - root - DEBUG - Empty cell found at 0, 7
+2024-05-30 12:30:30,936 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,937 - root - DEBUG - Empty cell found at 0, 8
+2024-05-30 12:30:30,937 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,938 - root - DEBUG - Empty cell found at 1, 0
+2024-05-30 12:30:30,938 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,938 - root - DEBUG - Empty cell found at 1, 1
+2024-05-30 12:30:30,939 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,939 - root - DEBUG - Empty cell found at 1, 2
+2024-05-30 12:30:30,939 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,939 - root - DEBUG - Empty cell found at 1, 3
+2024-05-30 12:30:30,939 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,939 - root - DEBUG - Empty cell found at 1, 4
+2024-05-30 12:30:30,940 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,940 - root - DEBUG - Empty cell found at 1, 5
+2024-05-30 12:30:30,940 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,940 - root - DEBUG - Empty cell found at 1, 6
+2024-05-30 12:30:30,940 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,940 - root - DEBUG - Empty cell found at 1, 7
+2024-05-30 12:30:30,941 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,941 - root - DEBUG - Empty cell found at 1, 8
+2024-05-30 12:30:30,941 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,942 - root - DEBUG - Empty cell found at 2, 0
+2024-05-30 12:30:30,942 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,942 - root - DEBUG - Empty cell found at 2, 1
+2024-05-30 12:30:30,943 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,943 - root - DEBUG - Empty cell found at 2, 2
+2024-05-30 12:30:30,943 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,943 - root - DEBUG - Empty cell found at 2, 3
+2024-05-30 12:30:30,944 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,944 - root - DEBUG - Empty cell found at 2, 4
+2024-05-30 12:30:30,944 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,944 - root - DEBUG - Empty cell found at 2, 5
+2024-05-30 12:30:30,945 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,945 - root - DEBUG - Empty cell found at 2, 6
+2024-05-30 12:30:30,945 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,945 - root - DEBUG - Empty cell found at 2, 7
+2024-05-30 12:30:30,945 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,946 - root - DEBUG - Empty cell found at 2, 8
+2024-05-30 12:30:30,946 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,946 - root - DEBUG - Empty cell found at 3, 0
+2024-05-30 12:30:30,946 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,946 - root - DEBUG - Empty cell found at 3, 1
+2024-05-30 12:30:30,947 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,947 - root - DEBUG - Empty cell found at 3, 2
+2024-05-30 12:30:30,948 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,948 - root - DEBUG - Empty cell found at 3, 3
+2024-05-30 12:30:30,948 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,948 - root - DEBUG - Empty cell found at 3, 4
+2024-05-30 12:30:30,948 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,949 - root - DEBUG - Empty cell found at 3, 5
+2024-05-30 12:30:30,949 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,949 - root - DEBUG - Empty cell found at 3, 6
+2024-05-30 12:30:30,949 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,949 - root - DEBUG - Empty cell found at 3, 7
+2024-05-30 12:30:30,950 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,950 - root - DEBUG - Empty cell found at 3, 8
+2024-05-30 12:30:30,950 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,950 - root - DEBUG - Empty cell found at 4, 0
+2024-05-30 12:30:30,951 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,951 - root - DEBUG - Empty cell found at 4, 1
+2024-05-30 12:30:30,951 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,951 - root - DEBUG - Empty cell found at 4, 2
+2024-05-30 12:30:30,952 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,952 - root - DEBUG - Empty cell found at 4, 3
+2024-05-30 12:30:30,952 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,952 - root - DEBUG - Empty cell found at 4, 4
+2024-05-30 12:30:30,953 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,953 - root - DEBUG - Empty cell found at 4, 5
+2024-05-30 12:30:30,953 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,953 - root - DEBUG - Empty cell found at 4, 6
+2024-05-30 12:30:30,954 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,954 - root - DEBUG - Empty cell found at 4, 7
+2024-05-30 12:30:30,954 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,954 - root - DEBUG - Empty cell found at 4, 8
+2024-05-30 12:30:30,955 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,955 - root - DEBUG - Empty cell found at 4, 6
+2024-05-30 12:30:30,955 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,955 - root - DEBUG - Empty cell found at 4, 7
+2024-05-30 12:30:30,956 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,956 - root - DEBUG - Empty cell found at 4, 8
+2024-05-30 12:30:30,956 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,956 - root - DEBUG - Empty cell found at 4, 8
+2024-05-30 12:30:30,957 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,957 - root - DEBUG - Empty cell found at 5, 0
+2024-05-30 12:30:30,957 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,957 - root - DEBUG - Empty cell found at 5, 1
+2024-05-30 12:30:30,957 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,958 - root - DEBUG - Empty cell found at 5, 2
+2024-05-30 12:30:30,958 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,958 - root - DEBUG - Empty cell found at 5, 2
+2024-05-30 12:30:30,959 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,959 - root - DEBUG - Empty cell found at 5, 3
+2024-05-30 12:30:30,959 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,959 - root - DEBUG - Empty cell found at 5, 4
+2024-05-30 12:30:30,960 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,960 - root - DEBUG - Empty cell found at 5, 5
+2024-05-30 12:30:30,961 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,961 - root - DEBUG - Empty cell found at 5, 6
+2024-05-30 12:30:30,961 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,961 - root - DEBUG - Empty cell found at 5, 7
+2024-05-30 12:30:30,962 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,962 - root - DEBUG - Empty cell found at 5, 7
+2024-05-30 12:30:30,962 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,962 - root - DEBUG - Empty cell found at 5, 8
+2024-05-30 12:30:30,963 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,963 - root - DEBUG - Empty cell found at 6, 0
+2024-05-30 12:30:30,964 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,964 - root - DEBUG - Empty cell found at 6, 1
+2024-05-30 12:30:30,965 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,965 - root - DEBUG - Empty cell found at 6, 2
+2024-05-30 12:30:30,965 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,965 - root - DEBUG - Empty cell found at 6, 3
+2024-05-30 12:30:30,965 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,966 - root - DEBUG - Empty cell found at 6, 4
+2024-05-30 12:30:30,966 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,966 - root - DEBUG - Empty cell found at 6, 5
+2024-05-30 12:30:30,967 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,967 - root - DEBUG - Empty cell found at 6, 6
+2024-05-30 12:30:30,967 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,967 - root - DEBUG - Empty cell found at 6, 7
+2024-05-30 12:30:30,967 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,968 - root - DEBUG - Empty cell found at 6, 8
+2024-05-30 12:30:30,968 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,968 - root - DEBUG - Empty cell found at 6, 8
+2024-05-30 12:30:30,969 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,969 - root - DEBUG - Empty cell found at 6, 5
+2024-05-30 12:30:30,969 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,969 - root - DEBUG - Empty cell found at 6, 6
+2024-05-30 12:30:30,970 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,970 - root - DEBUG - Empty cell found at 6, 7
+2024-05-30 12:30:30,970 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,970 - root - DEBUG - Empty cell found at 6, 8
+2024-05-30 12:30:30,971 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,971 - root - DEBUG - Empty cell found at 7, 0
+2024-05-30 12:30:30,971 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,971 - root - DEBUG - Empty cell found at 7, 1
+2024-05-30 12:30:30,972 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,972 - root - DEBUG - Empty cell found at 7, 2
+2024-05-30 12:30:30,972 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,972 - root - DEBUG - Empty cell found at 7, 3
+2024-05-30 12:30:30,973 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,973 - root - DEBUG - Empty cell found at 7, 3
+2024-05-30 12:30:30,974 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,974 - root - DEBUG - Empty cell found at 7, 4
+2024-05-30 12:30:30,974 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,974 - root - DEBUG - Empty cell found at 7, 5
+2024-05-30 12:30:30,975 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,975 - root - DEBUG - Empty cell found at 7, 6
+2024-05-30 12:30:30,975 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,976 - root - DEBUG - Empty cell found at 7, 7
+2024-05-30 12:30:30,976 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,976 - root - DEBUG - Empty cell found at 7, 8
+2024-05-30 12:30:30,977 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,977 - root - DEBUG - Empty cell found at 8, 0
+2024-05-30 12:30:30,979 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,980 - root - DEBUG - Empty cell found at 8, 1
+2024-05-30 12:30:30,980 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,980 - root - DEBUG - Empty cell found at 8, 2
+2024-05-30 12:30:30,981 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,981 - root - DEBUG - Empty cell found at 8, 3
+2024-05-30 12:30:30,981 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,981 - root - DEBUG - Empty cell found at 8, 4
+2024-05-30 12:30:30,982 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,982 - root - DEBUG - Empty cell found at 8, 5
+2024-05-30 12:30:30,983 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,983 - root - DEBUG - Empty cell found at 8, 6
+2024-05-30 12:30:30,983 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,984 - root - DEBUG - Empty cell found at 8, 7
+2024-05-30 12:30:30,984 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,984 - root - DEBUG - Empty cell found at 8, 8
+2024-05-30 12:30:30,985 - root - DEBUG - Starting backtrack
+2024-05-30 12:30:30,985 - root - DEBUG - No empty cells found, puzzle solved
+2024-05-30 12:30:31,136 - root - ERROR - An error occurred
+Traceback (most recent call last):
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\main.py", line 24, in main
+    menu_loop(config)  # Initial call to start the menu loop
+    ^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\main_menu_controller.py", line 49, in menu_loop
+    menu_loop_recursive()  # Start the recursive loop
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\main_menu_controller.py", line 46, in menu_loop_recursive
+    if handle_menu_choice(config, menu_choice, menu_options):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\main_menu_controller.py", line 24, in handle_menu_choice
+    handler(config)
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions\start_new_game.py", line 19, in start_new_game
+    prompt_for_game_actions(game_state)
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions\start_new_game.py", line 44, in prompt_for_game_actions
+    game_actions(game_state)
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\game_actions_controller.py", line 15, in game_actions
+    game_actions_recursive(game_state, actions)
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\game_actions_controller.py", line 27, in game_actions_recursive
+    choice = prompt_choice(len(actions))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: prompt_choice() missing 1 required positional argument: 'max_val'
+2024-05-30 12:35:25,654 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,655 - root - DEBUG - Empty cell found at 0, 0
+2024-05-30 12:35:25,656 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,656 - root - DEBUG - Empty cell found at 0, 1
+2024-05-30 12:35:25,657 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,657 - root - DEBUG - Empty cell found at 0, 2
+2024-05-30 12:35:25,657 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,657 - root - DEBUG - Empty cell found at 0, 3
+2024-05-30 12:35:25,658 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,658 - root - DEBUG - Empty cell found at 0, 4
+2024-05-30 12:35:25,658 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,658 - root - DEBUG - Empty cell found at 0, 5
+2024-05-30 12:35:25,659 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,659 - root - DEBUG - Empty cell found at 0, 6
+2024-05-30 12:35:25,659 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,659 - root - DEBUG - Empty cell found at 0, 7
+2024-05-30 12:35:25,660 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,660 - root - DEBUG - Empty cell found at 0, 8
+2024-05-30 12:35:25,660 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,660 - root - DEBUG - Empty cell found at 1, 0
+2024-05-30 12:35:25,661 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,661 - root - DEBUG - Empty cell found at 1, 1
+2024-05-30 12:35:25,661 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,662 - root - DEBUG - Empty cell found at 1, 2
+2024-05-30 12:35:25,662 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,663 - root - DEBUG - Empty cell found at 1, 3
+2024-05-30 12:35:25,663 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,663 - root - DEBUG - Empty cell found at 1, 4
+2024-05-30 12:35:25,664 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,664 - root - DEBUG - Empty cell found at 1, 5
+2024-05-30 12:35:25,664 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,664 - root - DEBUG - Empty cell found at 1, 6
+2024-05-30 12:35:25,665 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,665 - root - DEBUG - Empty cell found at 1, 7
+2024-05-30 12:35:25,665 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,665 - root - DEBUG - Empty cell found at 1, 8
+2024-05-30 12:35:25,666 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,666 - root - DEBUG - Empty cell found at 1, 7
+2024-05-30 12:35:25,667 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,667 - root - DEBUG - Empty cell found at 1, 8
+2024-05-30 12:35:25,668 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,668 - root - DEBUG - Empty cell found at 1, 6
+2024-05-30 12:35:25,668 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,668 - root - DEBUG - Empty cell found at 1, 7
+2024-05-30 12:35:25,669 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,669 - root - DEBUG - Empty cell found at 1, 8
+2024-05-30 12:35:25,669 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,669 - root - DEBUG - Empty cell found at 2, 0
+2024-05-30 12:35:25,670 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,670 - root - DEBUG - Empty cell found at 2, 1
+2024-05-30 12:35:25,670 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,670 - root - DEBUG - Empty cell found at 2, 2
+2024-05-30 12:35:25,670 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,671 - root - DEBUG - Empty cell found at 2, 3
+2024-05-30 12:35:25,671 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,671 - root - DEBUG - Empty cell found at 2, 4
+2024-05-30 12:35:25,671 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,671 - root - DEBUG - Empty cell found at 2, 5
+2024-05-30 12:35:25,672 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,672 - root - DEBUG - Empty cell found at 2, 6
+2024-05-30 12:35:25,672 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,672 - root - DEBUG - Empty cell found at 2, 7
+2024-05-30 12:35:25,673 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,673 - root - DEBUG - Empty cell found at 2, 8
+2024-05-30 12:35:25,674 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,674 - root - DEBUG - Empty cell found at 3, 0
+2024-05-30 12:35:25,674 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,674 - root - DEBUG - Empty cell found at 3, 1
+2024-05-30 12:35:25,675 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,675 - root - DEBUG - Empty cell found at 3, 2
+2024-05-30 12:35:25,675 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,675 - root - DEBUG - Empty cell found at 3, 3
+2024-05-30 12:35:25,675 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,676 - root - DEBUG - Empty cell found at 3, 4
+2024-05-30 12:35:25,676 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,676 - root - DEBUG - Empty cell found at 3, 5
+2024-05-30 12:35:25,676 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,676 - root - DEBUG - Empty cell found at 3, 6
+2024-05-30 12:35:25,677 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,677 - root - DEBUG - Empty cell found at 3, 7
+2024-05-30 12:35:25,677 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,677 - root - DEBUG - Empty cell found at 3, 8
+2024-05-30 12:35:25,678 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,678 - root - DEBUG - Empty cell found at 3, 8
+2024-05-30 12:35:25,678 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,679 - root - DEBUG - Empty cell found at 4, 0
+2024-05-30 12:35:25,679 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,680 - root - DEBUG - Empty cell found at 4, 1
+2024-05-30 12:35:25,681 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,681 - root - DEBUG - Empty cell found at 4, 2
+2024-05-30 12:35:25,681 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,681 - root - DEBUG - Empty cell found at 4, 3
+2024-05-30 12:35:25,682 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,682 - root - DEBUG - Empty cell found at 4, 4
+2024-05-30 12:35:25,682 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,682 - root - DEBUG - Empty cell found at 4, 5
+2024-05-30 12:35:25,683 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,683 - root - DEBUG - Empty cell found at 4, 6
+2024-05-30 12:35:25,683 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,683 - root - DEBUG - Empty cell found at 4, 7
+2024-05-30 12:35:25,684 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,684 - root - DEBUG - Empty cell found at 4, 8
+2024-05-30 12:35:25,684 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,684 - root - DEBUG - Empty cell found at 5, 0
+2024-05-30 12:35:25,685 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,685 - root - DEBUG - Empty cell found at 5, 1
+2024-05-30 12:35:25,685 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,685 - root - DEBUG - Empty cell found at 5, 2
+2024-05-30 12:35:25,686 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,686 - root - DEBUG - Empty cell found at 5, 3
+2024-05-30 12:35:25,686 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,687 - root - DEBUG - Empty cell found at 5, 4
+2024-05-30 12:35:25,687 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,687 - root - DEBUG - Empty cell found at 5, 5
+2024-05-30 12:35:25,687 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,687 - root - DEBUG - Empty cell found at 5, 6
+2024-05-30 12:35:25,688 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,689 - root - DEBUG - Empty cell found at 5, 7
+2024-05-30 12:35:25,689 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,689 - root - DEBUG - Empty cell found at 5, 8
+2024-05-30 12:35:25,692 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,692 - root - DEBUG - Empty cell found at 5, 8
+2024-05-30 12:35:25,693 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,693 - root - DEBUG - Empty cell found at 6, 0
+2024-05-30 12:35:25,693 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,693 - root - DEBUG - Empty cell found at 6, 1
+2024-05-30 12:35:25,694 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,694 - root - DEBUG - Empty cell found at 6, 2
+2024-05-30 12:35:25,694 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,694 - root - DEBUG - Empty cell found at 6, 3
+2024-05-30 12:35:25,695 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,695 - root - DEBUG - Empty cell found at 6, 4
+2024-05-30 12:35:25,695 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,695 - root - DEBUG - Empty cell found at 6, 5
+2024-05-30 12:35:25,696 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,696 - root - DEBUG - Empty cell found at 6, 6
+2024-05-30 12:35:25,696 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,697 - root - DEBUG - Empty cell found at 6, 7
+2024-05-30 12:35:25,697 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,697 - root - DEBUG - Empty cell found at 6, 8
+2024-05-30 12:35:25,697 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,698 - root - DEBUG - Empty cell found at 7, 0
+2024-05-30 12:35:25,698 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,698 - root - DEBUG - Empty cell found at 7, 1
+2024-05-30 12:35:25,698 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,699 - root - DEBUG - Empty cell found at 7, 2
+2024-05-30 12:35:25,699 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,699 - root - DEBUG - Empty cell found at 7, 3
+2024-05-30 12:35:25,700 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,700 - root - DEBUG - Empty cell found at 7, 4
+2024-05-30 12:35:25,701 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,701 - root - DEBUG - Empty cell found at 7, 4
+2024-05-30 12:35:25,702 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,702 - root - DEBUG - Empty cell found at 7, 3
+2024-05-30 12:35:25,702 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,703 - root - DEBUG - Empty cell found at 7, 4
+2024-05-30 12:35:25,703 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,704 - root - DEBUG - Empty cell found at 7, 5
+2024-05-30 12:35:25,704 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,705 - root - DEBUG - Empty cell found at 7, 6
+2024-05-30 12:35:25,705 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,705 - root - DEBUG - Empty cell found at 7, 6
+2024-05-30 12:35:25,705 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,706 - root - DEBUG - Empty cell found at 7, 7
+2024-05-30 12:35:25,706 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,707 - root - DEBUG - Empty cell found at 7, 8
+2024-05-30 12:35:25,707 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,708 - root - DEBUG - Empty cell found at 7, 4
+2024-05-30 12:35:25,708 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,708 - root - DEBUG - Empty cell found at 7, 5
+2024-05-30 12:35:25,709 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,709 - root - DEBUG - Empty cell found at 7, 6
+2024-05-30 12:35:25,709 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,709 - root - DEBUG - Empty cell found at 7, 7
+2024-05-30 12:35:25,710 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,710 - root - DEBUG - Empty cell found at 7, 8
+2024-05-30 12:35:25,710 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,710 - root - DEBUG - Empty cell found at 8, 0
+2024-05-30 12:35:25,711 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,711 - root - DEBUG - Empty cell found at 8, 1
+2024-05-30 12:35:25,711 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,711 - root - DEBUG - Empty cell found at 8, 2
+2024-05-30 12:35:25,712 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,713 - root - DEBUG - Empty cell found at 8, 3
+2024-05-30 12:35:25,713 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,713 - root - DEBUG - Empty cell found at 8, 4
+2024-05-30 12:35:25,714 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,714 - root - DEBUG - Empty cell found at 8, 5
+2024-05-30 12:35:25,714 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,714 - root - DEBUG - Empty cell found at 8, 6
+2024-05-30 12:35:25,715 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,715 - root - DEBUG - Empty cell found at 8, 7
+2024-05-30 12:35:25,715 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,716 - root - DEBUG - Empty cell found at 8, 8
+2024-05-30 12:35:25,716 - root - DEBUG - Starting backtrack
+2024-05-30 12:35:25,716 - root - DEBUG - No empty cells found, puzzle solved
+2024-05-30 13:12:06,915 - root - ERROR - An error occurred
+Traceback (most recent call last):
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\main.py", line 24, in main
+    menu_loop(config)  # Initial call to start the menu loop
+    ^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\main_menu_controller.py", line 40, in menu_loop
+    menu_options = get_main_menu_options()  # Get menu options once
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\input\menu_options.py", line 9, in get_main_menu_options
+    from user_actions.upload_sudoku import upload_sudoku
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions\upload_sudoku.py", line 13, in <module>
+    from user_interface.controller.game_actions_controller import game_actions
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\game_actions_controller.py", line 2, in <module>
+    from user_interface.display.menu_display import display_menu, display_invalid_input
+ImportError: cannot import name 'display_menu' from 'user_interface.display.menu_display' (D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\display\menu_display.py)
+2024-05-30 13:14:17,528 - root - ERROR - An error occurred
+Traceback (most recent call last):
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\main.py", line 24, in main
+    menu_loop(config)  # Initial call to start the menu loop
+    ^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller\main_menu_controller.py", line 40, in menu_loop
+    menu_options = get_main_menu_options()  # Get menu options once
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\input\menu_options.py", line 9, in get_main_menu_options
+    from user_actions.upload_sudoku import upload_sudoku
+  File "D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_actions\upload_sudoku.py", line 14, in <module>
+    from user_interface.display.menu_display import display_main_menu
+ImportError: cannot import name 'display_main_menu' from 'user_interface.display.menu_display' (D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\display\menu_display.py)

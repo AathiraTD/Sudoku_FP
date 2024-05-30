@@ -10,7 +10,7 @@ from features.steps.make_a_move_steps import convert_parsed_moves, apply_and_rep
 from puzzle_handler.solve.puzzle_solver import is_valid
 from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid, display_messages
-from user_interface.user_input_handler import get_user_move
+from user_interface.input.user_input_handler import get_user_move
 from utils.input_parsing import parse_user_input
 
 

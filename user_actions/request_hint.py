@@ -7,7 +7,7 @@ from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import count_solutions, is_valid, update_grid
 from puzzle_handler.solve.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid
-from user_interface.user_input_handler import get_hint_choice
+from user_interface.input.user_input_handler import get_hint_choice
 from utils.grid_utils import find_random_empty_cell, try_values_recursive, label_to_index
 
 

@@ -1,26 +1,37 @@
+# user_interface/input/user_input_handler.py
+
 import os
-from typing import Tuple, List, Optional
 
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from core_data.coordinate import Coordinate
-from core_data.grid.grid import Grid
 from puzzle_handler.solve.puzzle_solver import update_grid
-from user_interface.display_utilities import display_invalid_input, display_move_prompt
-from user_interface.menu_display import (
-    display_difficulty_options,
-    display_hint_options,
-    display_save_location_prompt,
-    display_post_solve_options
-)
+from user_interface.display.menu_display import display_invalid_input, display_move_prompt, display_menu_with_title
+from user_interface.input.menu_options import get_difficulty_options, get_post_solve_options, get_hint_options, \
+    get_save_location_options
 
 
 def get_menu_choice() -> int:
+    """
+    Get the user's menu choice.
+
+    Returns:
+        int: The user's menu choice.
+    """
     return prompt_choice(1, 4)
 
 
 def prompt_choice(min_val: int, max_val: int) -> int:
+    """
+    Prompt the user for a valid choice.
+
+    Args:
+        min_val (int): Minimum valid value.
+        max_val (int): Maximum valid value.
+
+    Returns:
+        int: The user's choice.
+    """
     choice = validate_choice(input("> "), min_val, max_val)
     if choice is None:
         display_invalid_input(f"Invalid input. Please enter a number between {min_val} and {max_val}.")
@@ -28,7 +39,18 @@ def prompt_choice(min_val: int, max_val: int) -> int:
     return choice
 
 
-def validate_choice(choice: str, min_val: int, max_val: int) -> int:
+def validate_choice(choice: str, min_val: int, max_val: int) -> int | None:
+    """
+    Validate the user's choice.
+
+    Args:
+        choice (str): The user's choice as a string.
+        min_val (int): Minimum valid value.
+        max_val (int): Maximum valid value.
+
+    Returns:
+        int: The validated choice, or None if invalid.
+    """
     try:
         choice = int(choice)
         if min_val <= choice <= max_val:
@@ -39,17 +61,35 @@ def validate_choice(choice: str, min_val: int, max_val: int) -> int:
 
 
 def get_difficulty_choice() -> str:
-    display_difficulty_options()
+    """
+    Get the user's choice of difficulty level.
+
+    Returns:
+        str: The chosen difficulty level.
+    """
+    display_menu_with_title("Choose difficulty level:", get_difficulty_options())
     choice = prompt_choice(1, 3)
     return ["easy", "medium", "hard"][choice - 1]
 
 
 def get_user_move() -> str:
+    """
+    Get the user's move input.
+
+    Returns:
+        str: The user's move input.
+    """
     display_move_prompt()
     return prompt_user_move()
 
 
 def prompt_user_move() -> str:
+    """
+    Prompt the user for their move input.
+
+    Returns:
+        str: The user's move input.
+    """
     user_input = input("> ").strip()
     if not validate_moves(user_input):
         return prompt_user_move()
@@ -57,6 +97,15 @@ def prompt_user_move() -> str:
 
 
 def validate_moves(user_input: str) -> bool:
+    """
+    Validate the user's move input.
+
+    Args:
+        user_input (str): The user's move input as a string.
+
+    Returns:
+        bool: True if valid, False otherwise.
+    """
     moves = user_input.split(",")
     for move in moves:
         move = move.strip()
@@ -76,22 +125,34 @@ def validate_moves(user_input: str) -> bool:
 
 
 def get_post_solve_choice() -> int:
-    display_post_solve_options()
+    """
+    Get the user's post-solve choice.
+
+    Returns:
+        int: The user's post-solve choice.
+    """
+    display_menu_with_title("Please Select an Option", get_post_solve_options())
     return prompt_choice(1, 2)
 
 
 def get_hint_choice() -> str:
-    display_hint_options()
+    """
+    Get the user's hint choice.
+
+    Returns:
+        str: The user's hint choice.
+    """
+    display_menu_with_title("Choose an option for hint:", get_hint_options())
     choice = prompt_choice(1, 2)
     return 'random' if choice == 1 else 'specific'
 
 
-def prompt_for_file_details() -> Tuple[str, str]:
+def prompt_for_file_details() -> tuple:
     """
-    Prompt the user for the file name and directory details.
+    Prompt the user for file name and directory details.
 
     Returns:
-        Tuple[str, str]: The file name and directory.
+        tuple: The file name and directory.
     """
     file_name = input("Enter the file name (without extension): ").strip()
     if not file_name:
@@ -100,7 +161,7 @@ def prompt_for_file_details() -> Tuple[str, str]:
     if not file_name.endswith(".json"):
         file_name += ".json"
 
-    display_save_location_prompt()
+    display_menu_with_title("Choose the save location:", get_save_location_options())
     location_choice = prompt_choice(1, 2)
     directory = get_directory_choice(location_choice)
     return file_name, directory
@@ -123,29 +184,29 @@ def get_directory_choice(location_choice: int) -> str:
         if os.path.isdir(directory):
             return directory
         else:
-            print("Invalid directory. Saving to the default location instead.")
+            display_invalid_input("Invalid directory. Saving to the default location instead.")
             return os.getcwd()
 
 
-def input_sudoku_values_recursively(grid: Grid, user_moves: List[Tuple[Coordinate, int]], index: int = 0) -> Optional[
-    Grid]:
+def input_sudoku_values_recursively(grid, user_moves, index: int = 0):
     """
     Recursively input values into the Sudoku grid.
 
     Args:
-        grid (Grid): The Sudoku grid.
-        user_moves (List[Tuple[Coordinate, int]]): The list of user moves.
-        index (int): The current index of the move being processed.
+        grid: The Sudoku grid.
+        user_moves: The list of user moves.
+        index: The current index of the move being processed.
 
     Returns:
-        Optional[Grid]: The updated Sudoku grid, or None if any move is invalid.
+        The updated Sudoku grid, or None if any move is invalid.
     """
     if index >= len(user_moves):
         return grid
 
     coord, value = user_moves[index]
     if not (1 <= value <= grid.grid_size):
-        print(f"Error: Invalid value {value} for cell {coord}. Value must be between 1 and {grid.grid_size}.")
+        display_invalid_input(
+            f"Error: Invalid value {value} for cell {coord}. Value must be between 1 and {grid.grid_size}.")
         return None
 
     cell_value = CellValue(value, grid.grid_size)
