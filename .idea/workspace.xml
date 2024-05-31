@@ -4,13 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="Corrected Grid Class">
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/dancing_links.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/exact_cover.py" afterDir="false" />
+    <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cython.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/environment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/main_menu.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/steps/main_menu_steps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gherkin_spec/make_move.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gherkin_spec/request_hint.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/build/temp.win-amd64-cpython-311/Release/sudoku_solver.cp311-win_amd64.exp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/build/temp.win-amd64-cpython-311/Release/sudoku_solver.cp311-win_amd64.lib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/build/temp.win-amd64-cpython-311/Release/sudoku_solver.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/sudoku_solver.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/sudoku_solver.pyx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/config/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/config/dummy_path.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/core_data/test_cell_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_backtracking.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/column.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_data/subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/subgrid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/make_move.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/request_hint.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/resume_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/resume_sudoku.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/save_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/save_game.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/common_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/common_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/load_save_game_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/load_save_game_step.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/make_a_move_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/save_game_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/save_game_step.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/step_undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/step_undo_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/test_main_menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/test_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/test_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/test_request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/test_request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/test_main_menu.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/test_new_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/test_new_game.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/undo_redo_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/undo_redo_move.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/upload_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/upload_sudoku.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/puzzle_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/config/test_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/config/test_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_cell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_cell_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_cell_value.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_coordinate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_row.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_start_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_display_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_interface/test_display_grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_main_menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_menu_display.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/controller/main_menu_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/controller/main_menu_controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +148,9 @@
     "Python tests.Python tests in grid.py.executor": "Debug",
     "Python tests.Python tests in row.py.executor": "Debug",
     "Python tests.Python tests in subgrid.py.executor": "Debug",
+    "Python tests.Python tests in test_backtracking.py.executor": "Run",
     "Python tests.Python tests in test_cell.py.executor": "Run",
+    "Python tests.Python tests in test_cell_state.py.executor": "Run",
     "Python tests.Python tests in test_cell_value.py.executor": "Run",
     "Python tests.Python tests in test_column.py.executor": "Run",
     "Python tests.Python tests in test_config.py.executor": "Run",
@@ -115,9 +166,10 @@
     "Python tests.Python tests in test_row.py.executor": "Run",
     "Python tests.Python tests in test_save_game_to_file.py.executor": "Run",
     "Python tests.Python tests in test_start_new_game.py.executor": "Run",
-    "Python tests.Python tests in test_subgrid.py.executor": "Debug",
+    "Python tests.Python tests in test_subgrid.py.executor": "Run",
     "Python tests.Python tests in test_undo_move.py.executor": "Run",
     "Python tests.Python tests in test_upload_sudoku.py.executor": "Run",
+    "Python.cell_value.executor": "Run",
     "Python.coordinate.executor": "Run",
     "Python.generate_puzzle.executor": "Run",
     "Python.grid.executor": "Debug",
@@ -125,13 +177,13 @@
     "Python.main.executor": "Debug",
     "Python.row.executor": "Debug",
     "Python.step_start_a_new_game.executor": "Run",
-    "Python.subgrid.executor": "Debug",
+    "Python.subgrid.executor": "Run",
     "Python.upload_sudoku.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ToolWindowRun.ShowToolbar": "false",
     "git-widget-placeholder": "Refactored-UI",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP/core_data",
+    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP/tests/config",
     "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "preferences.general"
   }
@@ -155,15 +207,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\config" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\tests\user_actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\gherkin_spec" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\features" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\puzzle_handler\puzzle_solver" />
+      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP" />
       <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\core_data" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\input" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\controller" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface\display" />
-      <recent name="D:\Athu\Declarative Programming\Final Project\Sudoku_FP\user_interface" />
     </key>
   </component>
   <component name="RunManager">
@@ -388,24 +441,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/core_data/test_game_state.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/user_actions/make_a_move.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/user_actions/make_a_move.py</url>
-          <line>92</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/features/steps/step_undo_move.py</url>
+          <url>file://$PROJECT_DIR$/gherkin_spec/step_undo_move.py</url>
           <line>32</line>
           <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/puzzle_handler/puzzle_generator/remove_cell.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

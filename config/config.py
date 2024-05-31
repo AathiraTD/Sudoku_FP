@@ -1,7 +1,7 @@
-import yaml
-from typing import Dict
-from types import MappingProxyType
 import os
+from typing import Dict
+
+import yaml
 
 
 def load_config(file_path: str) -> Dict:

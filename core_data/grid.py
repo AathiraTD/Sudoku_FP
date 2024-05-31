@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from typing import Tuple, Dict, Optional, Union
 
+import numpy as np
+
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
@@ -130,6 +132,14 @@ class Grid:
             return False, message
 
         return True, "Grid is valid."
+
+    def to_numpy(self) -> np.ndarray:
+        """Convert the Grid to a numpy ndarray."""
+        grid_array = np.zeros((self.grid_size, self.grid_size), dtype=int)
+        for row in self.rows:
+            for coord, cell in row.cells.items():
+                grid_array[coord.row_index, coord.col_index] = cell.value.value if cell.value.value is not None else 0
+        return grid_array
 
 
 # Example Usage

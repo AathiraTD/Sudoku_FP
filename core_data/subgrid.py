@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Dict, Tuple, Optional, Set, List
+from typing import Optional, Dict, List, Tuple, Set
 
 from core_data.cell import Cell
 from core_data.cell_state import CellState
@@ -9,7 +9,6 @@ from core_data.coordinate import Coordinate
 
 @dataclass(frozen=True)
 class Subgrid:
-    """Represents a Sudoku subgrid with immutable cells and subgrid size."""
     cells: Dict[Coordinate, Cell]
     subgrid_size: int
 
@@ -78,24 +77,3 @@ class Subgrid:
             init_cells(0, 0)
 
         return cls(cells, subgrid_size)
-
-
-def test_subgrid():
-    max_value = 9
-    cells = {
-        Coordinate(0, 0, max_value): Cell(CellValue(1, max_value), CellState.PRE_FILLED),
-        Coordinate(0, 1, max_value): Cell(CellValue(2, max_value), CellState.PRE_FILLED),
-        Coordinate(0, 2, max_value): Cell(CellValue(None, max_value), CellState.EMPTY),
-        Coordinate(1, 0, max_value): Cell(CellValue(3, max_value), CellState.PRE_FILLED),
-        Coordinate(1, 1, max_value): Cell(CellValue(4, max_value), CellState.PRE_FILLED),
-        Coordinate(1, 2, max_value): Cell(CellValue(5, max_value), CellState.PRE_FILLED),
-        Coordinate(2, 0, max_value): Cell(CellValue(6, max_value), CellState.PRE_FILLED),
-        Coordinate(2, 1, max_value): Cell(CellValue(7, max_value), CellState.PRE_FILLED),
-        Coordinate(2, 2, max_value): Cell(CellValue(8, max_value), CellState.PRE_FILLED),
-    }
-    subgrid = Subgrid.create(subgrid_size=3, cells=cells)
-    print("Subgrid created successfully.")
-
-
-if __name__ == "__main__":
-    test_subgrid()

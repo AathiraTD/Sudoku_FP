@@ -13,26 +13,25 @@ from core_data.row import Row
 from utils.grid_utils import find_empty_cell
 
 
-# def is_valid(grid: Grid, row: int, col: int, num: int) -> bool:
+# def is_valid_sudoku(grid: Grid, row: int, col: int, num: int) -> bool:
 #     grid_size = grid.grid_size
 #     subgrid_size = int(grid_size ** 0.5)
-#
+# 
 #     def in_row(r: int) -> bool:
 #         return any(grid[r, c].value.value == num for c in range(grid_size))
-#
+# 
 #     def in_col(c: int) -> bool:
 #         return any(grid[r, c].value.value == num for r in range(grid_size))
-#
+# 
 #     def in_subgrid(start_row: int, start_col: int) -> bool:
 #         return any(
 #             grid[r, c].value.value == num
 #             for r in range(start_row, start_row + subgrid_size)
 #             for c in range(start_col, start_col + subgrid_size)
 #         )
-#
+# 
 #     start_row, start_col = (row // subgrid_size) * subgrid_size, (col // subgrid_size) * subgrid_size
 #     return not in_row(row) and not in_col(col) and not in_subgrid(start_row, start_col)
-
 
 def get_possible_values(grid: Grid, row: int, col: int) -> set:
     grid_size = grid.grid_size
@@ -115,7 +114,7 @@ def backtrack(grid: Grid) -> Tuple[Grid, bool]:
     sorted_values = sort_values_by_constraints(grid, row, col, random_values)
 
     def try_values_recursive(values: List[int], callback: Callable[[int, Any], Optional[Any]], context: Any) -> \
-            Optional[Any]:
+    Optional[Any]:
         if not values:
             return None
 
@@ -249,8 +248,8 @@ def count_solutions(grid: Grid, grid_size: int, max_solutions: int = 2) -> int:
             nonlocal num_solutions
             if num > grid_size:
                 return num_solutions
-            numpy_grid = grid.to_numpy()  # Convert Grid to numpy array
-            if is_valid(numpy_grid, row, col, num, grid.grid_size):
+            # numpy_grid = grid.to_numpy()  # Convert Grid to numpy array
+            if is_valid_sudoku(grid, row, col, num):
                 new_grid = update_grid(grid, Coordinate(row, col, grid_size), num, CellState.PRE_FILLED)
                 num_solutions += count_solutions(new_grid, grid_size, max_solutions)
                 if num_solutions >= max_solutions:
@@ -271,3 +270,16 @@ def update_grid(grid: Grid, coordinate: Coordinate, value: Optional[int], state:
         Row({coord: new_cells[coord] for coord in new_cells if coord.row_index == row_index}, row_index) for row_index
         in range(grid.grid_size))
     return Grid(rows=rows, grid_size=grid.grid_size)
+
+
+What
+happpned?
+
+What
+I
+did?
+
+What
+are
+doing
+for current scenario

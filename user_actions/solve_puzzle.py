@@ -3,6 +3,8 @@ from colorama import Fore, Style
 from core_data.game_state import GameState
 from core_data.grid import Grid
 from puzzle_handler.puzzle_solver.puzzle_solver import backtrack, count_solutions
+from user_actions.start_new_game import start_new_game
+from user_interface.controller.main_menu_controller import menu_loop
 from user_interface.display.display_grid import display_grid
 from user_interface.input.user_input_handler import get_post_solve_choice
 
@@ -35,9 +37,11 @@ def solve_puzzle(game_state: GameState) -> Grid:
             if choice == 1:
                 print("Starting a new game...")
                 # Implement starting a new game logic here
+                start_new_game(game_state.config)
             elif choice == 2:
                 print("Returning to main menu...")
-                # Implement returning to main menu logic here
+                # returning to main menu
+                menu_loop(game_state.config)
             return solved_grid
         else:
             print("Failed to puzzle_solver the puzzle")

@@ -1,75 +1,99 @@
-import pytest
+import unittest
 
-from core_data.cell import Cell, CellValue, CellState
+from core_data.cell import Cell
+from core_data.cell_state import CellState
+from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
 from core_data.row import Row
 
 
-def test_row_creation_valid():
-    # Create a set of valid cells for a row
-    cells = {
-        Coordinate(0, 0, 9): Cell(CellValue(1, 9), CellState.USER_FILLED),
-        Coordinate(0, 1, 9): Cell(CellValue(2, 9), CellState.USER_FILLED),
-        Coordinate(0, 2, 9): Cell(CellValue(3, 9), CellState.USER_FILLED)
-    }
-    # Create a Row instance
-    row = Row(cells, 0)
-    assert row is not None
-    assert row.row_index == 0
-    assert len(row.cells) == 3
+class TestRow(unittest.TestCase):
+
+    def setUp(self):
+        # Setting up valid CellValue, CellState, and Coordinate instances for reuse in tests
+        self.cell_value_1 = CellValue(1, 9)
+        self.cell_value_2 = CellValue(2, 9)
+        self.cell_value_none = CellValue(None, 9)
+
+        self.cell_prefilled_1 = Cell(self.cell_value_1, CellState.PRE_FILLED)
+        self.cell_prefilled_2 = Cell(self.cell_value_2, CellState.PRE_FILLED)
+        self.cell_user_filled = Cell(self.cell_value_none, CellState.USER_FILLED)
+        self.cell_hint = Cell(self.cell_value_1, CellState.HINT)
+
+        self.coord_1_0 = Coordinate(1, 0, 9)
+        self.coord_1_1 = Coordinate(1, 1, 9)
+        self.coord_1_2 = Coordinate(1, 2, 9)
+
+        self.cells = {
+            self.coord_1_0: self.cell_prefilled_1,
+            self.coord_1_1: self.cell_prefilled_2,
+            self.coord_1_2: self.cell_user_filled,
+        }
+
+    def test_valid_row_creation(self):
+        # Test creating a valid Row instance
+        row = Row.create(self.cells, 1)
+        self.assertIsInstance(row, Row)
+        self.assertEqual(row.row_index, 1)
+        self.assertEqual(row.cells[self.coord_1_0], self.cell_prefilled_1)
+        self.assertEqual(row.cells[self.coord_1_1], self.cell_prefilled_2)
+        self.assertEqual(row.cells[self.coord_1_2], self.cell_user_filled)
+
+    def test_invalid_coordinate_in_row(self):
+        # Test creating a Row with a coordinate not in the specified row
+        invalid_coord = Coordinate(2, 0, 9)
+        invalid_cells = {
+            invalid_coord: self.cell_prefilled_1,
+            self.coord_1_1: self.cell_prefilled_2,
+            self.coord_1_2: self.cell_user_filled,
+        }
+        with self.assertRaises(ValueError) as context:
+            Row.create(invalid_cells, 1)
+        self.assertIn("Coordinate Coordinate(row_index=2, col_index=0, grid_size=9) is not in the specified row 1.",
+                      str(context.exception))
+
+    def test_duplicate_prefilled_value(self):
+        # Test creating a Row with duplicate values in PRE_FILLED cells
+        duplicate_cells = {
+            self.coord_1_0: self.cell_prefilled_1,
+            self.coord_1_1: self.cell_prefilled_1,  # Duplicate value
+            self.coord_1_2: self.cell_user_filled,
+        }
+        with self.assertRaises(ValueError) as context:
+            Row.create(duplicate_cells, 1)
+        self.assertIn("Duplicate value 1 found in the row.", str(context.exception))
+
+    def test_duplicate_hint_value(self):
+        # Test creating a Row with duplicate values in HINT cells
+        duplicate_hint_cells = {
+            self.coord_1_0: self.cell_prefilled_1,
+            self.coord_1_1: self.cell_hint,  # Duplicate value as hint
+            self.coord_1_2: self.cell_user_filled,
+        }
+        with self.assertRaises(ValueError) as context:
+            Row.create(duplicate_hint_cells, 1)
+        self.assertIn("Duplicate value 1 found in the row.", str(context.exception))
+
+    def test_getitem(self):
+        # Test the __getitem__ method
+        row = Row.create(self.cells, 1)
+        self.assertEqual(row[0], self.cell_prefilled_1)
+        self.assertEqual(row[1], self.cell_prefilled_2)
+        self.assertEqual(row[2], self.cell_user_filled)
+        with self.assertRaises(IndexError):
+            _ = row[3]  # Index out of range
+
+    def test_with_updated_cell(self):
+        # Test the with_updated_cell method
+        row = Row.create(self.cells, 1)
+        new_cell = Cell(self.cell_value_2, CellState.USER_FILLED)
+        new_coord = Coordinate(1, 1, 9)
+        updated_row = row.with_updated_cell(new_coord, new_cell)
+        self.assertIsInstance(updated_row, Row)
+        self.assertEqual(updated_row.row_index, 1)
+        self.assertEqual(updated_row.cells[new_coord], new_cell)
+        self.assertNotEqual(row.cells[new_coord], new_cell)  # Ensure the original row is unchanged
 
 
-def test_row_creation_invalid():
-    # Create a set of invalid cells for a row (cells in different rows)
-    cells = {
-        Coordinate(0, 0, 9): Cell(CellValue(1, 9), CellState.USER_FILLED),
-        Coordinate(1, 1, 9): Cell(CellValue(2, 9), CellState.USER_FILLED)  # Invalid: different row
-    }
-    # Assert that creating a Row with invalid cells raises a ValueError
-    with pytest.raises(ValueError):
-        Row(cells, 0)
-
-
-def test_row_get_cell():
-    # Create a set of valid cells for a row
-    cells = {
-        Coordinate(0, 0, 9): Cell(CellValue(1, 9), CellState.USER_FILLED),
-        Coordinate(0, 1, 9): Cell(CellValue(2, 9), CellState.USER_FILLED)
-    }
-    row = Row(cells, 0)
-    assert row is not None
-    cell = row.get_cell(Coordinate(0, 1, 9))
-    # Assert that the cell's value is correct
-    assert cell.value.value == 2
-
-
-def test_row_get_cell_invalid():
-    # Create a set of valid cells for a row
-    cells = {
-        Coordinate(0, 0, 9): Cell(CellValue(1, 9), CellState.USER_FILLED),
-        Coordinate(0, 1, 9): Cell(CellValue(2, 9), CellState.USER_FILLED)
-    }
-    row = Row(cells, 0)
-    assert row is not None
-    # Assert that accessing an invalid cell coordinate raises an IndexError
-    with pytest.raises(IndexError):
-        row.get_cell(Coordinate(1, 1, 9))
-
-
-def test_row_getitem():
-    # Create a set of valid cells for a row
-    cells = {
-        Coordinate(0, 0, 9): Cell(CellValue(1, 9), CellState.USER_FILLED),
-        Coordinate(0, 1, 9): Cell(CellValue(2, 9), CellState.USER_FILLED),
-        Coordinate(0, 2, 9): Cell(CellValue(3, 9), CellState.USER_FILLED),
-        Coordinate(0, 3, 9): Cell(CellValue(4, 9), CellState.USER_FILLED),
-        Coordinate(0, 4, 9): Cell(CellValue(5, 9), CellState.USER_FILLED),
-        Coordinate(0, 5, 9): Cell(CellValue(6, 9), CellState.USER_FILLED),
-        Coordinate(0, 6, 9): Cell(CellValue(7, 9), CellState.USER_FILLED),
-        Coordinate(0, 7, 9): Cell(CellValue(8, 9), CellState.USER_FILLED),
-        Coordinate(0, 8, 9): Cell(CellValue(9, 9), CellState.USER_FILLED),
-    }
-    row = Row(cells, 0)
-    assert row is not None
-    # Assert that accessing a cell using its column index returns the correct value
-    assert row[1].value.value == 2
+if __name__ == '__main__':
+    unittest.main()

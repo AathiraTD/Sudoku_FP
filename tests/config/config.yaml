@@ -1,0 +1,53 @@
+# config.yaml
+
+# General settings
+default_size: 9         # Default size of the Sudoku grid
+max_size: 16            # Maximum size of the Sudoku grid
+subgrid_size: 3         # Size of subgrids for a 9x9 grid
+grid_size: 9            # Size of grids for the sudoku
+hint_limit: 3           # Maximum number of hints allowed per puzzle
+
+# Cell value settings
+min_value: 1
+max_value: 9
+
+# Difficulty settings
+difficulty_levels:
+  easy:
+    prefilled_cells: 36 # Number of cells prefilled for easy difficulty
+  medium:
+    prefilled_cells: 30 # Number of cells prefilled for medium difficulty
+  hard:
+    prefilled_cells: 24 # Number of cells prefilled for hard difficulty
+
+# Timer settings
+timer:
+  initial_time: 0       # Initial time in seconds
+  countdown: false      # Whether to use a countdown timer
+
+# Score settings
+score:
+  base_score: 100       # Base score for each puzzle
+  time_penalty: 10      # Penalty for each second over a target time
+  hint_penalty: 20      # Penalty for using a hint
+
+# Persistence settings
+persistence:
+  save_file: "saved_game.json" # File to save the game state
+
+# Display settings
+display:
+  show_grid: true       # Whether to show the grid
+  show_hints: true      # Whether to show hints on the grid
+
+# Logging settings
+logging:
+  level: "INFO"         # Logging level (DEBUG, INFO, WARNING, ERROR)
+  log_file: "game_log.txt" # File to log game activities
+
+# Color Settings
+color:
+  FIXED: "\033[94m"        # Blue
+  MUTABLE: "\033[0m"       # Default (no color)
+  HINT: "\033[92m"         # Green
+  USER_FILLED: "\033[93m"  # Yellow

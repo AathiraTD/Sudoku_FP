@@ -61,8 +61,8 @@ class Row:
         return validate_cells(cells_items, 0, values_seen)
 
     def __getitem__(self, col_index: int) -> Cell:
-        coord = Coordinate(self.row_index, col_index, len(self.cells))
-        if coord not in self.cells:
+        coord = next((c for c in self.cells if c.col_index == col_index), None)
+        if coord is None:
             raise IndexError("Column index out of range.")
         return self.cells[coord]
 
