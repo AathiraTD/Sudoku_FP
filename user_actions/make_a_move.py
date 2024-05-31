@@ -6,7 +6,7 @@ from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
 from core_data.grid import Grid
-from features.steps.make_a_move_steps import convert_parsed_moves, apply_and_report_moves, validate_user_input
+from gherkin_spec.make_a_move_steps import convert_parsed_moves, apply_and_report_moves, validate_user_input
 from puzzle_handler.puzzle_solver.puzzle_solver import is_valid
 from puzzle_handler.puzzle_solver.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid, display_messages
@@ -40,13 +40,15 @@ def make_a_move(game_state: GameState) -> Optional[GameState]:
             game_state = check_and_handle_completion(game_state)
 
     except ValueError as e:
-        print(f"Error: {e}")
+        error_message = f"Error: {e}"
+        display_messages([error_message])
         logging.error(f"ValueError: {e}")
-        return None
+        return game_state
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        error_message = f"An unexpected error occurred: {e}"
+        display_messages([error_message])
         logging.error(f"Unexpected error: {e}", exc_info=True)
-        return None
+        return game_state
 
     return game_state
 

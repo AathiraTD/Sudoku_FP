@@ -1,61 +1,51 @@
-from unittest.mock import patch
+import unittest
+from unittest.mock import patch, MagicMock
 
-from core_data.grid import Grid
 from user_actions.start_new_game import start_new_game
 
 
-def test_start_new_game_easy(monkeypatch):
-    def mock_input(prompt):
-        return "1"  # Simulate choosing "Easy" difficulty
+class TestStartNewGame(unittest.TestCase):
+    def setUp(self):
+        # Configuration settings
+        self.config = {'grid_size': 9}
 
-    def mock_generate_puzzle(config, difficulty):
-        cells = {}
-        grid = Grid.create(grid_size=config['grid_size'])
-        assert difficulty == 'easy'  # Ensure the difficulty is 'easy'
-        return grid
+    @patch('start_new_game_module.get_difficulty_choice')
+    @patch('start_new_game_module.display_invalid_input')
+    def test_invalid_difficulty_input(self, mock_display_invalid_input, mock_get_difficulty_choice):
+        # Simulate invalid difficulty input
+        mock_get_difficulty_choice.return_value = 'invalid'
 
-    config = {
-        'hint_limit': 3,
-        'grid_size': 9,
-        'difficulty_levels': {
-            'easy': {'prefilled_cells': 36},
-            'medium': {'prefilled_cells': 30},
-            'hard': {'prefilled_cells': 24},
-        }
-    }
+        # Run the start_new_game function
+        start_new_game(self.config)
 
-    monkeypatch.setattr('builtins.input', mock_input)
-    monkeypatch.setattr('puzzle_handler.puzzle_generator.generate_puzzle', mock_generate_puzzle)
+        # Assert invalid input message is displayed
+        mock_display_invalid_input.assert_called_once_with("Invalid input. Please enter a number between 1 and 3.")
 
-    # Mock the game_actions function to prevent entering the game loop
-    with patch('user_interface.game_actions.game_actions') as mock_game_actions:
-        start_new_game(config)
-        mock_game_actions.assert_called_once()
+    @patch('start_new_game_module.get_difficulty_choice')
+    @patch('start_new_game_module.generate_puzzle')
+    @patch('start_new_game_module.initialize_game_state')
+    @patch('start_new_game_module.display_grid')
+    @patch('start_new_game_module.prompt_for_game_actions')
+    def test_start_new_game(self, mock_prompt_for_game_actions, mock_display_grid, mock_initialize_game_state,
+                            mock_generate_puzzle, mock_get_difficulty_choice):
+        # Simulate valid difficulty input
+        mock_get_difficulty_choice.return_value = 'easy'
 
-def test_start_new_game_medium(monkeypatch):
-    def mock_input(prompt):
-        return "2"  # Simulate choosing "Medium" difficulty
+        # Mocking the return values for generate_puzzle and initialize_game_state
+        mock_grid = MagicMock()
+        mock_game_state = MagicMock()
+        mock_generate_puzzle.return_value = mock_grid
+        mock_initialize_game_state.return_value = mock_game_state
 
-    def mock_generate_puzzle(config, difficulty):
-        cells = {}
-        grid = Grid.create(grid_size=config['grid_size'])
-        assert difficulty == 'medium'  # Ensure the difficulty is 'medium'
-        return grid
+        # Run the start_new_game function
+        start_new_game(self.config)
 
-    config = {
-        'hint_limit': 3,
-        'grid_size': 9,
-        'difficulty_levels': {
-            'easy': {'prefilled_cells': 36},
-            'medium': {'prefilled_cells': 30},
-            'hard': {'prefilled_cells': 24},
-        }
-    }
+        # Assert the functions are called with expected arguments
+        mock_generate_puzzle.assert_called_once_with(self.config, 'easy')
+        mock_initialize_game_state.assert_called_once_with(mock_grid, self.config)
+        mock_display_grid.assert_called_once_with(mock_game_state.grid)
+        mock_prompt_for_game_actions.assert_called_once_with(mock_game_state)
 
-    monkeypatch.setattr('builtins.input', mock_input)
-    monkeypatch.setattr('puzzle_handler.puzzle_generator.generate_puzzle', mock_generate_puzzle)
 
-    # Mock the game_actions function to prevent entering the game loop
-    with patch('user_interface.game_actions.game_actions') as mock_game_actions:
-        start_new_game(config)
-        mock_game_actions.assert_called_once()
+if __name__ == "__main__":
+    unittest.main()

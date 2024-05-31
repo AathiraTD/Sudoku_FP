@@ -1,26 +1,47 @@
-from types import MappingProxyType
+import unittest
+from unittest.mock import patch, mock_open
 
-import pytest
-from config.config import load_config, get_config_path
-
-
-def test_load_config_valid():
-    # Assuming you have a valid config file at this path
-    config_path = get_config_path()
-    config = load_config(config_path)
-    assert isinstance(config, MappingProxyType), "Config should be an immutable dictionary"
+from config.config import load_config
 
 
-def test_load_config_invalid_path():
-    with pytest.raises(FileNotFoundError):
-        load_config('invalid/path/to/config.yaml')
+class TestConfigFunctions(unittest.TestCase):
+
+    @patch('builtins.open', new_callable=mock_open, read_data="key: value")
+    def test_load_config_success(self, mock_file):
+        """
+        Test loading configuration successfully.
+        Mocks opening a YAML file with valid content and checks if the
+        load_config function returns the correct dictionary.
+        """
+        file_path = 'config.yaml'
+        expected_result = {'key': 'value'}
+        result = load_config(file_path)
+        self.assertEqual(result, expected_result)
+
+    @patch('builtins.open', new_callable=mock_open)
+    def test_load_config_file_not_found(self, mock_file):
+        """
+        Test handling file not found error.
+        Mocks the scenario where the file does not exist and ensures
+        that load_config raises a FileNotFoundError.
+        """
+        mock_file.side_effect = FileNotFoundError
+        file_path = 'config.yaml'
+        with self.assertRaises(FileNotFoundError):
+            load_config(file_path)
+
+    @patch('builtins.open', new_callable=mock_open, read_data="key: : value")
+    def test_load_config_yaml_error(self, mock_file):
+        """
+        Test handling YAML parsing error.
+        Mocks opening a YAML file with invalid content and checks if the
+        load_config function raises a ValueError.
+        """
+        file_path = 'config.yaml'
+        with self.assertRaises(ValueError) as context:
+            load_config(file_path)
+        self.assertIn("Error parsing configuration file", str(context.exception))
 
 
-def test_load_config_invalid_format():
-    # Create a temporary invalid config file for testing
-    invalid_config_path = 'invalid_config.yaml'
-    with open(invalid_config_path, 'w') as f:
-        f.write("invalid_yaml: [this, is, not, valid, yaml")
-
-    with pytest.raises(ValueError):
-        load_config(invalid_config_path)
+if __name__ == '__main__':
+    unittest.main()

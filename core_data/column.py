@@ -64,10 +64,11 @@ class Column:
         return validate_cells(cells_items, 0, values_seen)
 
     def __getitem__(self, row_index: int) -> Cell:
-        coord = Coordinate(row_index, self.column_index, len(self.cells))
-        if coord not in self.cells:
-            raise IndexError("Row index out of range.")
-        return self.cells[coord]
+        # Access cell by row_index
+        for coord in self.cells:
+            if coord.row_index == row_index and coord.col_index == self.column_index:
+                return self.cells[coord]
+        raise IndexError("Row index out of range.")
 
     @classmethod
     def create(cls, cells: Dict[Coordinate, Cell], column_index: int) -> 'Column':
