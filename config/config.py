@@ -28,4 +28,5 @@ def load_config(file_path: str) -> Dict:
 
 def get_config_path() -> str:
     base_path = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(base_path, 'config.yaml')
+    root_path = os.path.dirname(base_path)
+    return os.path.join(root_path, 'config', 'config.yaml')

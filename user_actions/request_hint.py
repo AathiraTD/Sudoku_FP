@@ -3,8 +3,8 @@ from typing import Optional, Tuple
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
 from core_data.game_state import GameState
-from core_data.grid import Grid
-from puzzle_handler.puzzle_solver.puzzle_solver import count_solutions, is_valid, update_grid
+from core_data.grid import Grid, update_grid
+from puzzle_handler.puzzle_solver.puzzle_solver import count_solutions, is_valid
 from puzzle_handler.puzzle_solver.sudoku_validation import has_empty_cells, check_and_handle_completion
 from user_interface.display.display_grid import display_grid
 from user_interface.input.user_input_handler import get_hint_choice

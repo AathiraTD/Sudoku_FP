@@ -69,7 +69,6 @@ def handle_menu_choice(config: dict, choice: int, menu_options: dict) -> bool:
 
 def menu_loop(config: dict) -> None:
     logging.info("Entering menu loop")
-    print("Entering menu loop")
 
     menu_options = get_menu_options(MainMenuOption)  # Get menu options once
 

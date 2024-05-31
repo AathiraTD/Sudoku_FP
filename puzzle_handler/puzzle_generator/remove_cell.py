@@ -3,8 +3,8 @@ from typing import Set, Dict, Callable, Tuple
 
 from core_data.cell_state import CellState
 from core_data.coordinate import Coordinate
-from core_data.grid import Grid
-from puzzle_handler.puzzle_solver.puzzle_solver import count_solutions, update_grid
+from core_data.grid import Grid, update_grid
+from puzzle_handler.puzzle_solver.puzzle_solver import count_solutions
 
 
 def memoize(func: Callable) -> Callable:
