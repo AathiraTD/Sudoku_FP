@@ -1,37 +1,37 @@
 import logging
 from typing import Tuple, Optional, List, Callable, Any
 
-from puzzle_handler.puzzle_solver.sudoku_solver import is_valid
-
 # Import the compiled Cython function
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
 from core_data.coordinate import Coordinate
-from core_data.grid import Grid
-from core_data.row import Row
+from core_data.grid import Grid, update_grid
 from utils.grid_utils import find_empty_cell
 
 
-# def is_valid(grid: Grid, row: int, col: int, num: int) -> bool:
-#     grid_size = grid.grid_size
-#     subgrid_size = int(grid_size ** 0.5)
-#
-#     def in_row(r: int) -> bool:
-#         return any(grid[r, c].value.value == num for c in range(grid_size))
-#
-#     def in_col(c: int) -> bool:
-#         return any(grid[r, c].value.value == num for r in range(grid_size))
-#
-#     def in_subgrid(start_row: int, start_col: int) -> bool:
-#         return any(
-#             grid[r, c].value.value == num
-#             for r in range(start_row, start_row + subgrid_size)
-#             for c in range(start_col, start_col + subgrid_size)
-#         )
-#
-#     start_row, start_col = (row // subgrid_size) * subgrid_size, (col // subgrid_size) * subgrid_size
-#     return not in_row(row) and not in_col(col) and not in_subgrid(start_row, start_col)
+# from puzzle_handler.puzzle_solver.sudoku_solver import is_valid
+
+
+def is_valid(grid: Grid, row: int, col: int, num: int) -> bool:
+    grid_size = grid.grid_size
+    subgrid_size = int(grid_size ** 0.5)
+
+    def in_row(r: int) -> bool:
+        return any(grid[r, c].value.value == num for c in range(grid_size))
+
+    def in_col(c: int) -> bool:
+        return any(grid[r, c].value.value == num for r in range(grid_size))
+
+    def in_subgrid(start_row: int, start_col: int) -> bool:
+        return any(
+            grid[r, c].value.value == num
+            for r in range(start_row, start_row + subgrid_size)
+            for c in range(start_col, start_col + subgrid_size)
+        )
+
+    start_row, start_col = (row // subgrid_size) * subgrid_size, (col // subgrid_size) * subgrid_size
+    return not in_row(row) and not in_col(col) and not in_subgrid(start_row, start_col)
 
 
 def get_possible_values(grid: Grid, row: int, col: int) -> set:
@@ -127,8 +127,8 @@ def backtrack(grid: Grid) -> Tuple[Grid, bool]:
 
     def backtrack_callback(value: int, context: Tuple[Grid, int, int]) -> Optional[Tuple[Grid, bool]]:
         grid, row, col = context
-        numpy_grid = grid.to_numpy()  # Convert Grid to numpy array
-        if is_valid(numpy_grid, row, col, value, grid.grid_size):
+        # numpy_grid = grid.to_numpy()  # Convert Grid to numpy array
+        if is_valid(grid, row, col, value):
             new_grid = grid.with_updated_cell(Coordinate(row, col, grid.grid_size),
                                               Cell(CellValue(value, grid.grid_size), CellState.PRE_FILLED))
             solved_grid, success = backtrack(new_grid)
@@ -249,8 +249,8 @@ def count_solutions(grid: Grid, grid_size: int, max_solutions: int = 2) -> int:
             nonlocal num_solutions
             if num > grid_size:
                 return num_solutions
-            numpy_grid = grid.to_numpy()  # Convert Grid to numpy array
-            if is_valid(numpy_grid, row, col, num, grid.grid_size):
+            # numpy_grid = grid.to_numpy()  # Convert Grid to numpy array
+            if is_valid(grid, row, col, num):
                 new_grid = update_grid(grid, Coordinate(row, col, grid_size), num, CellState.PRE_FILLED)
                 num_solutions += count_solutions(new_grid, grid_size, max_solutions)
                 if num_solutions >= max_solutions:
@@ -264,10 +264,3 @@ def count_solutions(grid: Grid, grid_size: int, max_solutions: int = 2) -> int:
         return 0
 
 
-def update_grid(grid: Grid, coordinate: Coordinate, value: Optional[int], state: CellState) -> object:
-    new_cells = {coord: cell for row in grid.rows for coord, cell in row.cells.items()}
-    new_cells[coordinate] = Cell(CellValue(value, grid.grid_size), state)
-    rows = tuple(
-        Row({coord: new_cells[coord] for coord in new_cells if coord.row_index == row_index}, row_index) for row_index
-        in range(grid.grid_size))
-    return Grid(rows=rows, grid_size=grid.grid_size)

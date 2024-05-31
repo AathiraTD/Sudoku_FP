@@ -5,14 +5,15 @@ from behave import given, when, then
 
 from puzzle_handler.puzzle_generator.generate_puzzle import generate_puzzle
 from user_interface.display.display_grid import display_grid
-from user_interface.display.menu_display import display_difficulty_options, display_invalid_input
+from user_interface.display.menu_display import display_invalid_input
+from user_interface.input.user_input_handler import get_difficulty_choice
 
 
 @given('the user has been prompted to select a difficulty level')
 def step_given_prompted_to_select_difficulty(context):
     context.stdout = StringIO()
     sys.stdout = context.stdout
-    display_difficulty_options()
+    get_difficulty_choice()
     context.difficulty_prompt_output = context.stdout.getvalue().strip().split('\n')
     sys.stdout = sys.__stdout__
 
@@ -20,7 +21,7 @@ def step_given_prompted_to_select_difficulty(context):
 def step_when_user_selects_start_new_game_option(context):
     context.stdout = StringIO()
     sys.stdout = context.stdout
-    display_difficulty_options()
+    get_difficulty_choice()
     context.difficulty_prompt_output = context.stdout.getvalue().strip().split('\n')
     sys.stdout = sys.__stdout__
 

@@ -5,61 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e58a604-ff95-493a-8ec6-068cd11a0327" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cython.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/environment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/main_menu.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/main_menu_steps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gherkin_spec/make_move.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gherkin_spec/request_hint.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/build/temp.win-amd64-cpython-311/Release/sudoku_solver.cp311-win_amd64.exp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/build/temp.win-amd64-cpython-311/Release/sudoku_solver.cp311-win_amd64.lib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/build/temp.win-amd64-cpython-311/Release/sudoku_solver.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/sudoku_solver.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/sudoku_solver.pyx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/config/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/config/dummy_path.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/core_data/test_cell_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_backtracking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sudoku_Fp.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/main.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/main.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/warn-main.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/xref-main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/Aathu Sudoku.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/Analysis-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/EXE-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/PKG-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/PYZ-00.pyz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/PYZ-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/warn-project.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/xref-project.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project/your_project_name.pkg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/column.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/column.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core_data/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/row.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/row.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_data/subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_data/subgrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cython.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Aathu Sudoku.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/Sudoku_Fp.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/VCRUNTIME140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_bz2.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_ctypes.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_decimal.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_hashlib.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_lzma.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/_socket.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/libcrypto-3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/libffi-8.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/python312.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/select.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/unicodedata.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Sudoku_Fp/_internal/yaml/_yaml.cp312-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dist/error_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/your_project_name.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/error_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/make_move.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/request_hint.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/resume_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/resume_sudoku.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/save_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/save_game.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/common_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/common_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/load_save_game_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/load_save_game_step.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/make_a_move_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/make_a_move_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/save_game_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/save_game_step.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/step_undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/step_undo_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/test_main_menu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/test_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/test_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/steps/test_request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/test_request_hint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/test_main_menu.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/test_new_game.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/test_new_game.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/undo_redo_move.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/undo_redo_move.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/upload_sudoku.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/upload_sudoku.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/make_a_move_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/make_a_move_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/step_undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/step_undo_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gherkin_spec/test_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin_spec/test_new_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/remove_cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_generator/remove_cell.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/puzzle_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/puzzle_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/config/test_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/config/test_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_cell.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_cell.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_cell_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_cell_value.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_column.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_coordinate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_row.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_row.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/core_data/test_subgrid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_actions/test_start_new_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_actions/test_start_new_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_display_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_interface/test_display_grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_main_menu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user_interface/test_menu_display.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/make_a_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/make_a_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_actions/solve_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/solve_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/sudoku_solver.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle_handler/puzzle_solver/sudoku_solver.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qodana.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test06.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_oo1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/request_hint.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/request_hint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/undo_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/undo_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_actions/upload_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_actions/upload_sudoku.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface/controller/main_menu_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/controller/main_menu_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_interface/input/user_input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface/input/user_input_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +129,7 @@
     <setting file="file://$PROJECT_DIR$/features/steps/save_game_step.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -132,62 +143,63 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python tests.Python tests for test_config.test_load_config_invalid_format.executor": "Run",
-    "Python tests.Python tests for test_config.test_load_config_valid.executor": "Debug",
-    "Python tests.Python tests for test_coordinate.test_coordinate_comparison.executor": "Run",
-    "Python tests.Python tests for test_coordinate.test_coordinate_create_method.executor": "Run",
-    "Python tests.Python tests for test_coordinate.test_coordinate_creation_invalid.executor": "Run",
-    "Python tests.Python tests for test_coordinate.test_coordinate_creation_valid.executor": "Debug",
-    "Python tests.Python tests for test_grid.test_grid_get_row.executor": "Debug",
-    "Python tests.Python tests for test_grid.test_grid_invalid_update.executor": "Debug",
-    "Python tests.Python tests for test_row.test_row_creation_valid.executor": "Run",
-    "Python tests.Python tests for test_upload_sudoku.test_upload_sudoku_valid.executor": "Run",
-    "Python tests.Python tests in grid.py.executor": "Debug",
-    "Python tests.Python tests in row.py.executor": "Debug",
-    "Python tests.Python tests in subgrid.py.executor": "Debug",
-    "Python tests.Python tests in test_backtracking.py.executor": "Run",
-    "Python tests.Python tests in test_cell.py.executor": "Run",
-    "Python tests.Python tests in test_cell_state.py.executor": "Run",
-    "Python tests.Python tests in test_cell_value.py.executor": "Run",
-    "Python tests.Python tests in test_column.py.executor": "Run",
-    "Python tests.Python tests in test_config.py.executor": "Run",
-    "Python tests.Python tests in test_coordinate.py.executor": "Run",
-    "Python tests.Python tests in test_display_grid.py.executor": "Run",
-    "Python tests.Python tests in test_game_state.py.executor": "Run",
-    "Python tests.Python tests in test_grid.py.executor": "Run",
-    "Python tests.Python tests in test_main_menu.py.executor": "Run",
-    "Python tests.Python tests in test_make_a_move.py.executor": "Run",
-    "Python tests.Python tests in test_menu_display.py.executor": "Run",
-    "Python tests.Python tests in test_menu_displays.py.executor": "Run",
-    "Python tests.Python tests in test_request_hint.py.executor": "Run",
-    "Python tests.Python tests in test_row.py.executor": "Run",
-    "Python tests.Python tests in test_save_game_to_file.py.executor": "Run",
-    "Python tests.Python tests in test_start_new_game.py.executor": "Run",
-    "Python tests.Python tests in test_subgrid.py.executor": "Run",
-    "Python tests.Python tests in test_undo_move.py.executor": "Run",
-    "Python tests.Python tests in test_upload_sudoku.py.executor": "Run",
-    "Python.cell_value.executor": "Run",
-    "Python.coordinate.executor": "Run",
-    "Python.generate_puzzle.executor": "Run",
-    "Python.grid.executor": "Debug",
-    "Python.helpers.executor": "Run",
-    "Python.main.executor": "Debug",
-    "Python.row.executor": "Debug",
-    "Python.step_start_a_new_game.executor": "Run",
-    "Python.subgrid.executor": "Run",
-    "Python.upload_sudoku.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "git-widget-placeholder": "Refactored-UI",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Athu/Declarative Programming/Final Project/Sudoku_FP/tests/config",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.general"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test_config.test_load_config_invalid_format.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_config.test_load_config_valid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_comparison.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_create_method.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_creation_invalid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_coordinate.test_coordinate_creation_valid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_grid.test_grid_get_row.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_grid.test_grid_invalid_update.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_row.test_row_creation_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_upload_sudoku.test_upload_sudoku_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in grid.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests in row.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests in subgrid.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests in test_backtracking.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cell.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cell_state.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cell_value.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_column.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_config.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_coordinate.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_display_grid.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_game_state.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_grid.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_main_menu.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_make_a_move.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_menu_display.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_menu_displays.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_request_hint.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_row.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_save_game_to_file.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_start_new_game.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_subgrid.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_undo_move.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_upload_sudoku.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cell_value.executor&quot;: &quot;Run&quot;,
+    &quot;Python.coordinate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_puzzle.executor&quot;: &quot;Run&quot;,
+    &quot;Python.grid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.helpers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.row.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.step_start_a_new_game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.subgrid.executor&quot;: &quot;Run&quot;,
+    &quot;Python.upload_sudoku.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Refactored-UI&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Athu/Declarative Programming/Final Project/Sudoku_FP/core_data/grid.py&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
-}]]></component>
+}</component>
   <component name="QodanaHighlightedReportService">
     <option name="localRunNotPublishedPersistedInfo">
       <LocalReportPersistedInfo>
@@ -411,7 +423,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717106247567</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Final commit v1.0">
+      <option name="closed" value="true" />
+      <created>1717152930871</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717152930871</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -432,7 +452,8 @@
     <MESSAGE value="Refactored UI" />
     <MESSAGE value="Completed" />
     <MESSAGE value="Corrected Grid Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected Grid Class" />
+    <MESSAGE value="Final commit v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit v1.0" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

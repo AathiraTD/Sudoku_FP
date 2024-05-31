@@ -3,7 +3,7 @@ import os
 from core_data.cell import Cell
 from core_data.cell_state import CellState
 from core_data.cell_value import CellValue
-from puzzle_handler.puzzle_solver.puzzle_solver import update_grid
+from core_data.grid import update_grid
 from user_interface.display.menu_display import display_invalid_input, display_menu_with_title, display_move_prompt
 from user_interface.input.menu_enums import DifficultyOption, PostSolveOption, HintOption, \
     SaveLocationOption, get_menu_options

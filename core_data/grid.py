@@ -162,3 +162,12 @@ def test_grid():
 
 if __name__ == "__main__":
     test_grid()
+
+
+def update_grid(grid: Grid, coordinate: Coordinate, value: Optional[int], state: CellState) -> object:
+    new_cells = {coord: cell for row in grid.rows for coord, cell in row.cells.items()}
+    new_cells[coordinate] = Cell(CellValue(value, grid.grid_size), state)
+    rows = tuple(
+        Row({coord: new_cells[coord] for coord in new_cells if coord.row_index == row_index}, row_index) for row_index
+        in range(grid.grid_size))
+    return Grid(rows=rows, grid_size=grid.grid_size)
